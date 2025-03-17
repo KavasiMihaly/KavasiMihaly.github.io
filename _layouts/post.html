@@ -2,20 +2,40 @@
 layout: default
 ---
 <article class="post">
-  <h1>{{ page.title }}</h1>
-  <p class="post-meta">Posted on {{ page.date | date: "%B %-d, %Y" }}</p>
-  
-  <div class="post-content">
-    {{ content }}
+  {% if page.meta._thumbnail_id %}
+  <div class="featured-image">
+    <img src="{{ site.baseurl }}/assets/featured/{{ page.meta._thumbnail_id }}.png" alt="{{ page.title }}">
   </div>
+  {% endif %}
+  
+  <h1>{{ page.title }}</h1>
+  <p class="post-meta">Posted on {{ page.date | date: "%B %-d, %Y" }}{% if page.author.display_name %} · Written by {{ page.author.display_name }}{% endif %}</p>
   
   {% if page.categories.size > 0 %}
-  <div class="post-categories">
-    <p>Categories: 
+  <div class="post-categories-inline">
+    <p class="post-meta-categories">
+      Categories: 
       {% for category in page.categories %}
-        <a href="{{ site.baseurl }}/category/{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+        <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
       {% endfor %}
     </p>
   </div>
   {% endif %}
+  
+  <div class="post-content">
+    {{ content }}
+  </div>
 </article>
+
+<!-- In your index.html and category.html templates -->
+<li>
+  {% if post.meta._thumbnail_id %}
+  <div class="post-thumbnail">
+    <img src="{{ site.baseurl }}/assets/featured/{{ post.meta._thumbnail_id }}.png" alt="{{ post.title }}">
+  </div>
+  {% endif %}
+  <div class="post-content-preview">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <!-- rest of post preview -->
+  </div>
+</li>

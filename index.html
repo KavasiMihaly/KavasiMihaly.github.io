@@ -11,23 +11,30 @@ pagination:
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>
-        <h2>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        
-        {% if post.categories.size > 0 %}
-        <div class="post-categories-preview">
-          <small>
-            Categories: 
-            {% for category in post.categories %}
-              <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-            {% endfor %}
-          </small>
+        {% if post.meta and post.meta._thumbnail_id %}
+        <div class="post-thumbnail-header">
+          <a href="{{ post.url | relative_url }}">
+            <img src="{{ site.baseurl }}/assets/featured/{{ post.meta._thumbnail_id }}.png" alt="{{ post.title }}">
+          </a>
         </div>
         {% endif %}
-        
-        <p>{{ post.excerpt }}</p>
+        <div class="post-content-preview">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          
+          {% if post.categories.size > 0 %}
+          <div class="post-categories-preview">
+            <small>
+              Categories: 
+              {% for category in post.categories %}
+                <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            </small>
+          </div>
+          {% endif %}
+          
+          <p>{{ post.excerpt }}</p>
+        </div>
       </li>
     {% endfor %}
   </ul>
