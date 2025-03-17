@@ -3,6 +3,12 @@ layout: home
 title: Home
 ---
 
-# Welcome to My Site
+# How to make Self-Service BI work – A blog for data analysts and decision makers
 
-This is the home page of my GitHub Pages website. Here you'll find my blog posts, projects, and more.
+## Categories
+<div class="category-links">
+  {% assign categories_list = site.categories | sort %}
+  {% for category in categories_list %}
+    <a href="{{ site.baseurl }}/category/{{ category[0] | slugify }}">{{ category[0] }}</a>{% unless forloop.last %} • {% endunless %}
+  {% endfor %}
+</div>

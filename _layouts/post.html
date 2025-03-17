@@ -13,7 +13,7 @@ layout: default
   <div class="post-categories">
     <p>Categories: 
       {% for category in page.categories %}
-        <a href="{{ site.baseurl }}/categories/#{{ category | slugize }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+        <a href="{{ site.baseurl }}/category/{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
       {% endfor %}
     </p>
   </div>

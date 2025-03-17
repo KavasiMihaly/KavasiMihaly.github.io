@@ -1,9 +1,10 @@
-title: Your Site Title
-email: your-email@example.com
+title: Self-Service BI Blog
+email: kavasi.mihaly@outlook.com
 description: >-
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta and in your
-  feed.xml site description.
+  A practical guide to Self-Service Business Intelligence using Microsoft's Azure and Power BI. 
+  Explore best practices, overcome adoption challenges, and discover how to empower decision makers 
+  with data. Written by a practicing BI consultant sharing real-world strategies to help organizations 
+  unlock the full value of their data.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://KavasiMihaly.github.io" # the base hostname & protocol for your site
 
@@ -15,6 +16,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
+
+# Tell Jekyll to process files in the _pages directory
+include: ["_pages"]
 
 # Pagination settings
 paginate: 5

@@ -1,9 +1,12 @@
 <div class="site-header">
-  <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+  <div class="site-header-image">
+    <img src="{{ site.baseurl }}/assets/images/Header.png" alt="Self-Service BI Blog Header" width="100%">
+  </div>
+  <h1><a href="/">{{ site.title }}</a></h1>
   <nav>
     <ul>
-      <li><a href="{{ '/' | relative_url }}">Home</a></li>
-      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
     </ul>
   </nav>
 </div>
