@@ -1,0 +1,127 @@
+---
+layout: post
+title: Pinning to dashboard - How it works
+date: 2019-08-06 22:02:37.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Improve the Experience
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  _thumbnail_id: '117'
+  _wp_old_date: '2019-07-29'
+  _yoast_wpseo_primary_category: ''
+  _yoast_wpseo_focuskw: Power BI - Dashboard
+  _yoast_wpseo_metadesc: How pinning to dashboard works under the hood in Power BI.
+  _yoast_wpseo_linkdex: '53'
+  _yoast_wpseo_content_score: '90'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/pin-to-dashboard-how-does-it-work/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>When we create dashboards from reports, it is a quite an easy task. Just use the Pin Visuals icon. But under the hood this has some cool functionality that might not be visible at first glance.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I will use an example to demonstrate this.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the imaginary company where I work as a data analyst, I was tasked to create a commercial report. Now I want to create a commercial dashboard from the report I created.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":119} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/DemoReport-1024x575.jpg" alt="Demo Commercial Report" class="wp-image-119"><br />
+<figcaption>Demo Commercial Report</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>I want to involve decision makers to find the most important insights for them to focus on.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Pinning a filtered visual</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>As we went through the report with the decision makers, they spotted that one product subcategory is producing worse results compared to the others. So, they decided that for the next quarter, they want to focus on this subcategory.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":120} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/DemoReportWithFilter-1024x579.jpg" alt="Demo Commercial Report filtering on Subcategory 7" class="wp-image-120"><br />
+<figcaption>Demo Commercial Report filtering on Subcategory 7</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>We can solve this requirement without adding a new page filtered to the subcategory by clicking on the filter and then pinning the visual on to the dashboard. The tile will remain filtered even after our report is not.    </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":117} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/DemoDashboard.jpg" alt="Demo Commercial Dashboard" class="wp-image-117"><br />
+<figcaption>Demo Commercial Dashboard</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Pinning visual that isn't visible</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Secondly, the decision makers wanted to see in the dashboard how the Profit % changed over time.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":121,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/ProfitPercentVisual.jpg" alt="Profit % over time" class="wp-image-121"><br />
+<figcaption>Profit % over time</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns has-2-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:paragraph --></p>
+<p>This was not a requirement for the report and there is no more space to add it, but we can still solve it. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>We can create the visual in the page, pin it and then hide it in the Selection Pane.  </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the dashboard it will remain visible even if it is not in the report. </p>
+<p><!-- /wp:paragraph -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"id":122,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/SelectionPane.jpg" alt="Selection View" class="wp-image-122"><br />
+<figcaption>Selection View</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:heading --></p>
+<h2>Pinning different versions of a visual</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The filtered version of the Profit % goes under 0% a few times. It is hard to see when this happen, so it would be beneficial to see a 0 line. We can go back to the report and add a constant line, pin it and have 2 different versions of the visual in your dashboard.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":118} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/DemoDashboardMissingFromReport.jpg" alt="" class="wp-image-118"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Conclusion</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>To sum up, when you pin a visual, it is not a live connection between the visual in the report and the tile in the dashboard. Pinning takes a snapshot of the current state of the report visual and saves it to the dashboard.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope you like this short blog post. </p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

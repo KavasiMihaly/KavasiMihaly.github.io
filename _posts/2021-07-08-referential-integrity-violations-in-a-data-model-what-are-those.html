@@ -1,0 +1,222 @@
+---
+layout: post
+title: Referential Integrity violations in a Data model, what are those?
+date: 2021-07-08 22:30:36.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Improve the Experience
+tags:
+- Data Model
+- data quality
+- DAX Studio
+meta:
+  _oembed_21f6e4c84d1dd7b66232510b8714e26f: '<blockquote class="wp-embedded-content"
+    data-secret="peGMidvttF"><a href="https://dax.tips/2019/11/28/clean-data-faster-reports/">Clean
+    data = faster reports</a></blockquote><iframe class="wp-embedded-content" sandbox="allow-scripts"
+    security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);"
+    title="&#8220;Clean data = faster reports&#8221; &#8212; Phil Seamark on DAX"
+    src="https://dax.tips/2019/11/28/clean-data-faster-reports/embed/#?secret=peGMidvttF"
+    data-secret="peGMidvttF" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_21f6e4c84d1dd7b66232510b8714e26f: '1625494111'
+  _thumbnail_id: '667'
+  _edit_last: '1'
+  _aioseo_title: "#post_title #separator_sa #site_title"
+  _aioseo_description: "#post_excerpt"
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/referential-integrity-violations-in-a-data-model-what-are-those/"
+excerpt: What is referential integrity and why you need to make sure you have it.
+  Learn how you can find and solve issues with it.
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>This blog post is following on my previous posts using community tools to improve your data model. Previously we used Tabular Editor: <a href="https://selfservicebi.co.uk/custom-actions-from-best-practice-analyzer-recommendations/" target="_blank" rel="noreferrer noopener">here</a> and <a href="https://selfservicebi.co.uk/documenting-power-bi-data-model/" target="_blank" rel="noreferrer noopener">here</a>. Now let's define what RI (referential integrity) violations are? This is how it is described in the official documentation:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:quote --></p>
+<blockquote class="wp-block-quote">
+<p>The blank virtual rows are effectively <em>Unknown Members</em>. Unknown members represent <strong><em>referential integrity violations</em> </strong>where the "many" side value has no corresponding "one" side value. Ideally these blanks should not exist, and they can be eliminated by cleansing or repairing the source data. </p>
+<p><cite><a href="https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand#regular-relationships" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand#regular-relationships</a></cite>
+</p></blockquote>
+<p><!-- /wp:quote --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>There are two types of violations:</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Type 1</strong> - <strong>Fact table missing key value</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":672,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/MissingKey.png" alt="Missing key in the fact table" class="wp-image-672"><br />
+<figcaption>Missing key in the fact table</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>One reason for referential integrity problems if you miss the id from the fact table.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Type 2 -</strong> <strong>Dimension missing key value</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":673,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/ExtraKey.png" alt="Missing key in the dimension table" class="wp-image-673"><br />
+<figcaption>Missing key in the dimension table</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The other reason for referential integrity problems if you miss the id from the dimension table.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Result:</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":674,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/Blank.png" alt="Blank row" class="wp-image-674"><br />
+<figcaption>Blank row</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>In both cases a blank row will appear in a visual, aggregating all the rows that cannot be matched to any of the dimension values.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Why this can be a problem?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In terms of performance for simple and small models this won`t really influence performance. But in large, complex, or direct query data models can cause problems. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It is the most obvious in DQ. If you have referential integrity violations than the joins in the query PBI generates will need to be <strong><em>outer join</em></strong> instead of <em><strong>inner join</strong></em>. Therefore, there is an option in relationships to <a href="https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-assume-referential-integrity" target="_blank" rel="noreferrer noopener">assume referential integrity</a> because that have substantial performance effect.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":679,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} --></p>
+<div class="wp-block-image is-style-rounded">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/Assume-Referential-integrity.png" alt="" class="wp-image-679"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Even if you are in import mode these issues can have an effect on your performance, although less obvious.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>DAX Studio - Data model metrics:</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can use DAX Studio to uncover RI violations.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":669,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/DAX-Studio-View-Metrics.png" alt="DAX Studio Advanced\View Metrics" class="wp-image-669"><br />
+<figcaption>DAX Studio Advanced\View Metrics</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"align":"center","id":665,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/DAX-Studio-RI-1024x281.png" alt="Tables view - # Referential Integrity Violations" class="wp-image-665"><br />
+<figcaption>Tables view - # Referential Integrity Violations</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"align":"center","id":668,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/DAX-Studio-RI-Details-1024x344.png" alt="Relationship View - Sample Violations and affected row count" class="wp-image-668"><br />
+<figcaption>Relationship View - Sample Violations and affected row count</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>How to solve Referential Integrity violations?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The reason we separated the violations into two types is that the solution for these is different.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Type 1</strong> - <strong>Fact table missing key value</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>First always check if the data is valid if the missing value is acceptable. If not fix at the source.</li>
+<li>If missing values is valid, create an empty/undefined row in your dimension and map your missing fact rows to that.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column {"width":"70%"} --></p>
+<div class="wp-block-column" style="flex-basis:70%">
+<!-- wp:image {"id":677,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2021/07/ResolvedMissingKey.png" alt="" class="wp-image-677"></figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"id":678,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2021/07/ResolvedPivot.png" alt="" class="wp-image-678"></figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Type 2 -</strong> <strong>Dimension missing key value</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you have values in your fact table that are absent in your dimension table than it most likely means that there is an issue with the logic you prepared your data or the data source itself.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There can be few explanations why you have this:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>data value in the fact table was entered incorrectly and that id never existed</li>
+<li>id got deleted and there was not foreign key constraint on the tables</li>
+<li>only active ids were loaded in </li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>So, the solution is to correct the data preparation to make sure all the ids are added to the dimension tables or invalid facts are removed or corrected.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There is an excellent blog post by Phil Seamark about this:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https://dax.tips/2019/11/28/clean-data-faster-reports/","type":"wp-embed","providerNameSlug":"phil-seamark-on-dax","className":""} --></p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-phil-seamark-on-dax wp-block-embed-phil-seamark-on-dax">
+<div class="wp-block-embed__wrapper">
+https://dax.tips/2019/11/28/clean-data-faster-reports/
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Resources:</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Dax Studio: <a href="https://daxstudio.org/" target="_blank" rel="noreferrer noopener">https://daxstudio.org/</a>
+</li>
+<li>Model Relationships Documentation: <a href="https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand</a>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Summary</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If your data is perfect, as it usually is ?, you do need to care about this. But if you are among those unlucky few who must work imperfect data than this can mean the difference between usable and unusable performance.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

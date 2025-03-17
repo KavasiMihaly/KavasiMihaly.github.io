@@ -1,0 +1,768 @@
+---
+layout: post
+title: What are the options when a Power BI report is slow? - Power BI Performance
+  Guide
+date: 2020-03-16 08:42:00.000000000 +00:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+- Get to the Data
+- Improve the Experience
+tags:
+- Management
+- Optimization
+- Performance
+- Premium Capacity
+- Report Design
+- Service
+meta:
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: '12'
+  _yoast_wpseo_content_score: '60'
+  _thumbnail_id: '447'
+  _oembed_7fb75c3027620a79da0ce32fc7950838: '<blockquote class="wp-embedded-content"
+    data-secret="hwgw4CvBYh"><a href="https://blog.crossjoin.co.uk/2020/02/17/make-your-power-bi-report-run-faster-by-showing-the-same-data-in-fewer-visuals/">Make
+    Your Power BI Report Run Faster By Showing The Same Data In Fewer Visuals</a></blockquote><iframe
+    title="&#8220;Make Your Power BI Report Run Faster By Showing The Same Data In
+    Fewer Visuals&#8221; &#8212; Chris Webb&#039;s BI Blog" class="wp-embedded-content"
+    sandbox="allow-scripts" security="restricted" style="position: absolute; clip:
+    rect(1px, 1px, 1px, 1px);" src="https://blog.crossjoin.co.uk/2020/02/17/make-your-power-bi-report-run-faster-by-showing-the-same-data-in-fewer-visuals/embed/#?secret=hwgw4CvBYh"
+    data-secret="hwgw4CvBYh" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_7fb75c3027620a79da0ce32fc7950838: '1584351643'
+  _oembed_9f107bd85045a894b7750a83209b9144: '<blockquote class="wp-embedded-content"
+    data-secret="xandrwjDB5"><a href="https://www.thebiccountant.com/2020/01/01/tidy-up-power-bi-models-with-the-power-bi-cleaner-tool/">Tidy
+    up Power BI models with the Power BI Cleaner tool</a></blockquote><iframe title="&#8220;Tidy
+    up Power BI models with the Power BI Cleaner tool&#8221; &#8212; The BIccountant"
+    class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position:
+    absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://www.thebiccountant.com/2020/01/01/tidy-up-power-bi-models-with-the-power-bi-cleaner-tool/embed/#?secret=xandrwjDB5"
+    data-secret="xandrwjDB5" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_9f107bd85045a894b7750a83209b9144: '1584351647'
+  _oembed_5518b524e600d526a27a062925e2622a: '<blockquote class="wp-embedded-content"
+    data-secret="TPVrY28XLR"><a href="https://blog.crossjoin.co.uk/2020/02/24/adding-your-own-messages-to-power-query-query-diagnostics/">Adding
+    Your Own Messages To Power Query Query Diagnostics</a></blockquote><iframe title="&#8220;Adding
+    Your Own Messages To Power Query Query Diagnostics&#8221; &#8212; Chris Webb&#039;s
+    BI Blog" class="wp-embedded-content" sandbox="allow-scripts" security="restricted"
+    style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://blog.crossjoin.co.uk/2020/02/24/adding-your-own-messages-to-power-query-query-diagnostics/embed/#?secret=TPVrY28XLR"
+    data-secret="TPVrY28XLR" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_5518b524e600d526a27a062925e2622a: '1584351656'
+  _oembed_43be9a4390821bb54ac1f6fff52392af: '<blockquote class="wp-embedded-content"
+    data-secret="wBNWLyghWc"><a href="https://blog.crossjoin.co.uk/2020/02/10/an-m-function-to-help-you-explore-power-query-diagnostics-data/">An
+    M Function To Help You Explore Power Query Diagnostics Data</a></blockquote><iframe
+    title="&#8220;An M Function To Help You Explore Power Query Diagnostics Data&#8221;
+    &#8212; Chris Webb&#039;s BI Blog" class="wp-embedded-content" sandbox="allow-scripts"
+    security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);"
+    src="https://blog.crossjoin.co.uk/2020/02/10/an-m-function-to-help-you-explore-power-query-diagnostics-data/embed/#?secret=wBNWLyghWc"
+    data-secret="wBNWLyghWc" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_43be9a4390821bb54ac1f6fff52392af: '1584351658'
+  _oembed_fef5c89471760f84d1e8e8179b499887: '<blockquote class="wp-embedded-content"
+    data-secret="UYqnmtD2CF"><a href="https://blog.crossjoin.co.uk/2020/02/03/visualising-power-query-diagnostics-data-in-a-power-bi-decomposition-tree/">Visualising
+    Power Query Diagnostics Data In A Power BI Decomposition Tree</a></blockquote><iframe
+    title="&#8220;Visualising Power Query Diagnostics Data In A Power BI Decomposition
+    Tree&#8221; &#8212; Chris Webb&#039;s BI Blog" class="wp-embedded-content" sandbox="allow-scripts"
+    security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);"
+    src="https://blog.crossjoin.co.uk/2020/02/03/visualising-power-query-diagnostics-data-in-a-power-bi-decomposition-tree/embed/#?secret=UYqnmtD2CF"
+    data-secret="UYqnmtD2CF" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_fef5c89471760f84d1e8e8179b499887: '1584351658'
+  _oembed_7a54b8c500066dab24d4c41890a808d2: '<blockquote class="wp-embedded-content"
+    data-secret="qeZJc93icd"><a href="https://www.fourmoo.com/2019/05/15/power-bi-premium-performance-part-4-how-does-row-level-security-affect-performance/">Power
+    BI Premium Performance – Part 4 | How does Row Level Security affect performance?</a></blockquote><iframe
+    title="&#8220;Power BI Premium Performance – Part 4 | How does Row Level Security
+    affect performance?&#8221; &#8212; Reporting/Analytics Made easy with FourMoo
+    and Power BI" class="wp-embedded-content" sandbox="allow-scripts" security="restricted"
+    style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="https://www.fourmoo.com/2019/05/15/power-bi-premium-performance-part-4-how-does-row-level-security-affect-performance/embed/#?secret=qeZJc93icd"
+    data-secret="qeZJc93icd" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_7a54b8c500066dab24d4c41890a808d2: '1584351651'
+  _oembed_bb3d44b4764f2a5c3efe42e31283982b: '<blockquote class="wp-embedded-content"
+    data-secret="jB2ayIZLf5"><a href="https://blog.crossjoin.co.uk/2019/12/02/testing-performance-of-power-bi-reports-in-the-browser-part-1/">Testing
+    Performance Of Power BI Reports In The Browser, Part 1</a></blockquote><iframe
+    title="&#8220;Testing Performance Of Power BI Reports In The Browser, Part 1&#8221;
+    &#8212; Chris Webb&#039;s BI Blog" class="wp-embedded-content" sandbox="allow-scripts"
+    security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);"
+    src="https://blog.crossjoin.co.uk/2019/12/02/testing-performance-of-power-bi-reports-in-the-browser-part-1/embed/#?secret=jB2ayIZLf5"
+    data-secret="jB2ayIZLf5" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_bb3d44b4764f2a5c3efe42e31283982b: '1584351653'
+  _oembed_a93b8a446cfbc3b1d2f485b51a8d96ae: '<blockquote class="wp-embedded-content"
+    data-secret="VyaJMJakoH"><a href="https://blog.crossjoin.co.uk/2019/12/09/testing-performance-of-power-bi-reports-in-the-browser-part-2/">Testing
+    Performance Of Power BI Reports In The Browser, Part 2</a></blockquote><iframe
+    title="&#8220;Testing Performance Of Power BI Reports In The Browser, Part 2&#8221;
+    &#8212; Chris Webb&#039;s BI Blog" class="wp-embedded-content" sandbox="allow-scripts"
+    security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);"
+    src="https://blog.crossjoin.co.uk/2019/12/09/testing-performance-of-power-bi-reports-in-the-browser-part-2/embed/#?secret=VyaJMJakoH"
+    data-secret="VyaJMJakoH" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_a93b8a446cfbc3b1d2f485b51a8d96ae: '1584351653'
+  _oembed_55091bcb4f574f514bfc8e98bbb98726: '<blockquote class="wp-embedded-content"
+    data-secret="vcCM5z6U4e"><a href="https://blog.crossjoin.co.uk/2019/12/16/testing-performance-of-power-bi-reports-in-the-browser-part-3/">Testing
+    Performance Of Power BI Reports In The Browser, Part 3</a></blockquote><iframe
+    title="&#8220;Testing Performance Of Power BI Reports In The Browser, Part 3&#8221;
+    &#8212; Chris Webb&#039;s BI Blog" class="wp-embedded-content" sandbox="allow-scripts"
+    security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);"
+    src="https://blog.crossjoin.co.uk/2019/12/16/testing-performance-of-power-bi-reports-in-the-browser-part-3/embed/#?secret=vcCM5z6U4e"
+    data-secret="vcCM5z6U4e" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_55091bcb4f574f514bfc8e98bbb98726: '1584351654'
+  _oembed_0f29b42f26625e9697e0c89521af1853: <iframe title="Monitor and Manage Power
+    BI Premium Capacity" width="1090" height="613" src="https://www.youtube.com/embed/UgsjMbhi_Bk?feature=oembed"
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  _oembed_time_0f29b42f26625e9697e0c89521af1853: '1584351652'
+  _oembed_193e91823d15a155d93deafe5f6047ce: <iframe title="Power BI Premium Query
+    Profiling with DAX Studio and SQL Profiler" width="1090" height="613" src="https://www.youtube.com/embed/-dqt2-xpJd4?feature=oembed"
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  _oembed_time_193e91823d15a155d93deafe5f6047ce: '1584351652'
+  _oembed_eac3a16f858d535faf3a1ca1630c312e: '<iframe title="Microsoft Power BI: Premium
+    capacity - why use it how to plan for it evaluate your - BRK2046" width="1090"
+    height="613" src="https://www.youtube.com/embed/C6vk6wk9dcw?feature=oembed" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>'
+  _oembed_time_eac3a16f858d535faf3a1ca1630c312e: '1584351651'
+  _oembed_cba30314a3cc32d10f764157153a5975: <iframe title="2 ways to reduce your Power
+    BI dataset size and speed up refresh" width="1090" height="613" src="https://www.youtube.com/embed/c-ZqToc85Yc?feature=oembed"
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  _oembed_time_cba30314a3cc32d10f764157153a5975: '1584351644'
+  _oembed_aab33ecf06ea232e8fa62eb5ee709e46: <a href="https://ssbipolar.com/2019/10/12/power-bi-dataflows-and-query-folding/">Power
+    BI dataflows and query&nbsp;folding</a>
+  _oembed_time_aab33ecf06ea232e8fa62eb5ee709e46: '1584350115'
+  _oembed_39086feb71f2168a87449b0bde6a28c4: '<a href="https://ssbipolar.com/2019/12/11/power-bite-dataflows-enhanced-compute-engine/">Power
+    BIte: Dataflows enhanced compute&nbsp;engine</a>'
+  _oembed_time_39086feb71f2168a87449b0bde6a28c4: '1584350115'
+  _oembed_5c46e43a672dae805c526669868644d6: '<iframe title="My Power BI report is
+    slow: what should I do? by Marco Russo" width="1090" height="613" src="https://www.youtube.com/embed/B-h3Pohtn1Y?feature=oembed"
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>'
+  _oembed_time_5c46e43a672dae805c526669868644d6: '1584351643'
+  _oembed_3165563867336bc762b2b9807fd2f371: '<blockquote class="wp-embedded-content"
+    data-secret="tpcgPwy8or"><a href="https://blog.crossjoin.co.uk/2019/08/07/power-query-m-optimisation-part-1/">Power
+    Query/M Optimisation: Getting The Maximum Value From A Column, Part 1</a></blockquote><iframe
+    title="&#8220;Power Query/M Optimisation: Getting The Maximum Value From A Column,
+    Part 1&#8221; &#8212; Chris Webb&#039;s BI Blog" class="wp-embedded-content" sandbox="allow-scripts"
+    security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);"
+    src="https://blog.crossjoin.co.uk/2019/08/07/power-query-m-optimisation-part-1/embed/#?secret=tpcgPwy8or"
+    data-secret="tpcgPwy8or" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_3165563867336bc762b2b9807fd2f371: '1584351659'
+  _yoast_wpseo_focuskw: Power BI Performance
+  _yoast_wpseo_title: "%%title%% %%page%%"
+  _yoast_wpseo_metadesc: What to do when a Power BI report is slow? - How to analyze
+    and solve Power BI report performance issues.
+  _yoast_wpseo_linkdex: '69'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/what-are-the-options-when-a-power-bi-report-is-slow-power-bi-performance-guide/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>This blog post want to help how to understand the reasons and give you a starting point for improvements in Power BI report performance. Won't cover all the options in-depth instead will point you to a useful youtube video, blog post or tool.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It is not a comprehensive list but I hope it gives you a good starting point and view of the options.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Let's start</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>First establish what part of the report is slow?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Mainly it is either the visualizing or refreshing the data. In Direct Query both happens the same time.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let's talk about of them separately:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Report visualization is slow</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>When you click on a visual or even when you open the report it takes a long time for the visualizations to appear.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>What "slow" means?</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The easiest answer is what the user feels as slow.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There were some studies made about this generally for applications:  <a rel="noreferrer noopener" aria-label="https://www.nngroup.com/articles/response-times-3-important-limits/  (opens in a new tab)" href="https://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank">https://www.nngroup.com/articles/response-times-3-important-limits/ </a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"fontSize":"normal"} --></p>
+<p class="has-normal-font-size">It sets 3 limits:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>0.1 sec -  <strong>reacting instantaneously</strong> </li>
+<li>1 sec -  <strong>user's flow of thought</strong> </li>
+<li>10 sec - <strong>keeping the user's attention</strong> </li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>My experience is that under <strong>3 seconds</strong> is generally acceptable for report consumers, but there were expectations of sub-second response times..</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There are some general recommendations in the<strong> Power BI Documentation </strong>that you can start to explore:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-us/power-bi/guidance/power-bi-optimization">https://docs.microsoft.com/en-us/power-bi/guidance/power-bi-optimization</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Analyzing Performance</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The first principle is that you cannot fix something you don't measure first. Last year the <em>Performance Analyzer</em> was introduced to help debug your reports</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":414,"width":496,"height":501,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/03/Performance-Analyzer.jpg" alt="" class="wp-image-414" width="496" height="501"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here you can see the time it takes to render each visual in your report page. Performance Analyzer breaks it down to DAX Query, Visual display and Other.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you want more detail you can export the result, put it into <a href="https://www.sqlbi.com/tools/dax-studio/" target="_blank" rel="noreferrer noopener" aria-label="DAX Studio (opens in a new tab)">DAX Studio</a> to see the DAX Query your visual generates.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":415,"width":513,"height":315,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/03/Performance-Analyzer-Query.jpg" alt="" class="wp-image-415" width="513" height="315"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Further Reading:</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-us/power-bi/desktop-performance-analyzer">https://docs.microsoft.com/en-us/power-bi/desktop-performance-analyzer</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://www.sqlbi.com/articles/introducing-the-power-bi-performance-analyzer/">https://www.sqlbi.com/articles/introducing-the-power-bi-performance-analyzer/</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Visual optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you saw previously every visual in your report page generates a query. So it is useful to look at ways to reduce the number or the complexity of the queries your report generates.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The following blog post talks about how a small change in visual display can have a big effect on the number of queries:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://blog.crossjoin.co.uk/2020/02/17/make-your-power-bi-report-run-faster-by-showing-the-same-data-in-fewer-visuals/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2020/02/17/make-your-power-bi-report-run-faster-by-showing-the-same-data-in-fewer-visuals/
+</div>
+<figcaption>Crossjoin.co.uk by Chris Webb</figcaption>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:paragraph --></p>
+<p>Important to understand that only visible visuals generate queries.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So separating you visualization into multiple pages or hiding some visualizations before some filter are applied.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":416,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/03/PreFilter-1024x167.png" alt="" class="wp-image-416"><br />
+<figcaption>Prefilter slicers before showing the visuals</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>DAX optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Data Analysis Expressions are a really rich and powerful language that enables you to extract all the value out of the data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>But it also can be really complex.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you see that DAX takes up a lot of time in the performance analyzer, than its time to look into potential optimization possibilities.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>First blog talks about how you can find which part of you DAX calculation is causing the problem using Variables:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://www.youtube.com/watch?v=9SV2VnYbgg4">Debug DAX using Variables in Power BI</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This videos shows some optimization examples:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://www.sqlbi.com/tv/power-bi-dax-optimization-examples/">https://www.sqlbi.com/tv/power-bi-dax-optimization-examples/</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/youtube {"url":"https://www.youtube.com/watch?v=B-h3Pohtn1Y","type":"video","providerNameSlug":"youtube","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} --></p>
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+<div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=B-h3Pohtn1Y
+</div>
+<figcaption> My Power BI report is slow: what should I do? by Marco Russo </figcaption>
+</figure>
+<p><!-- /wp:core-embed/youtube --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Model optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Together with DAX you also need to look at your model.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There are a few important concepts for optimizing the model:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Don't load in anything you won't use</li>
+<li>Make sure your facts and dimension are separated in a star schema</li>
+<li>Only use many-many relationship if you cannot avoid it in anyway</li>
+<li>Don't use bidirectional filtering just to quickly solve a measure or slicer issue.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>The following video talks about some of these:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/youtube {"url":"https://www.youtube.com/watch?v=c-ZqToc85Yc","type":"video","providerNameSlug":"youtube","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} --></p>
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+<div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=c-ZqToc85Yc
+</div>
+<figcaption> 2 ways to reduce your Power BI dataset size and speed up refresh - Guy in a Cube</figcaption>
+</figure>
+<p><!-- /wp:core-embed/youtube --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here is the link to the Vertipaq Analyzer: <a href="https://www.sqlbi.com/tools/vertipaq-analyzer/">https://www.sqlbi.com/tools/vertipaq-analyzer/</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can use the Power BI Cleaner tool to understand which columns are used in your report and what is the footprint of each column.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":418,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/03/Power-BI-Cleaner-1.png" alt="" class="wp-image-418"><br />
+<figcaption>Power BI Cleaner by BICCOUNTANT</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>This blog post talks about how you can use it &amp; the link to download it:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://www.thebiccountant.com/2020/01/01/tidy-up-power-bi-models-with-the-power-bi-cleaner-tool/","type":"wp-embed","providerNameSlug":"the-biccountant","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-the-biccountant">
+<div class="wp-block-embed__wrapper">
+https://www.thebiccountant.com/2020/01/01/tidy-up-power-bi-models-with-the-power-bi-cleaner-tool/
+</div>
+<figcaption>The BIccountant blog by Imke Feldmann</figcaption>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:paragraph --></p>
+<p>The Power BI Helper tool has similar features and also helps with the documentation.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":434,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/03/PowerBIHelper-2-1024x556.jpg" alt="" class="wp-image-434"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://radacad.com/power-bi-helper">https://radacad.com/power-bi-helper</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Splitting the model</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you cannot make your single data model performant enough than you can explore other options. One of those options could be to split the model into different parts, maybe different granularities.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":428,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2020/03/Cross-Report-Page.jpg" alt="" class="wp-image-428"><br />
+<figcaption>Cross-report Drillthrough</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can utilize the cross report filtering capability in Power BI to connect those reports together. Just make sure that both of the models use the same dimensions, so the filters can be passed through.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://www.youtube.com/watch?v=OcZr_70OGPo">Cross-report Drillthrough in Power BI</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Composite models &amp; Aggregations</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Another possibility to consider is composite models and Aggregations. It was designed to enable analyzing billion of rows of data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Composite models enables you to have both import and direct query data sources in the same model.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Aggregations enables you to have 1 or more pre-aggregated facts next to the detailed fact table and let you set up the rules which one to use to maximize performance.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The next video by Alberto Ferrari talks about this capability in SSAS Tabular:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://www.sqlbi.com/tv/optimizing-multi-billion-row-tables-in-tabular-sqlbits-2017/">https://www.sqlbi.com/tv/optimizing-multi-billion-row-tables-in-tabular-sqlbits-2017/</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here you can read about composite models and aggregations in the docs:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-us/power-bi/desktop-composite-models">https://docs.microsoft.com/en-us/power-bi/desktop-composite-models</a> <a href="https://docs.microsoft.com/en-us/power-bi/desktop-aggregations">https://docs.microsoft.com/en-us/power-bi/desktop-aggregations</a> </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This video shows a detailed example of an aggregation model. <em>Adam Saxton</em> <em>(Guy in a Cube)</em> interviewing <em>Christian Wade</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://www.youtube.com/watch?v=RdHSo43LkQg">How to use the Power BI<br />
+Aggregations Feature</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Row Level Security optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>RLS can have a big effect on performance. It effects for example query caching in the service.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It is a good advice to test your report performance with and without RLS so you can measure the difference. Just make sure you are retrieving similar amount of data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://www.fourmoo.com/2019/05/15/power-bi-premium-performance-part-4-how-does-row-level-security-affect-performance/","type":"wp-embed","providerNameSlug":"reporting-analytics-made-easy-with-fourmoo-and-power-bi","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-reporting-analytics-made-easy-with-fourmoo-and-power-bi">
+<div class="wp-block-embed__wrapper">
+https://www.fourmoo.com/2019/05/15/power-bi-premium-performance-part-4-how-does-row-level-security-affect-performance/
+</div>
+<figcaption>Fourmoo blog by Gilbert Quevauvilliers </figcaption>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Premium Optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>After we are comfortable with the performance of our report in the desktop we can look at the optimization possibilities in the service. Especially for Premium.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>First we need the Premium Capacity Metrics added to our tenant.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":446,"width":302,"height":374,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/03/Power-BI-Premium-Capacity-Metrics-Dashboard.jpg" alt="Power BI Premium Metrics Dashboard" class="wp-image-446" width="302" height="374"><br />
+<figcaption>Power BI Premium Metrics Dashboard</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"align":"center","id":447,"width":542,"height":288,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/03/Power-BI-Premium-Capacity-Metrics-Report-1024x545.jpg" alt="Power BI Premium Metrics Report" class="wp-image-447" width="542" height="288"><br />
+<figcaption> Power BI Premium Metrics Report</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The first video is a general overview on how to plan your premium capacity</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/youtube {"url":"https://www.youtube.com/watch?v=C6vk6wk9dcw","type":"video","providerNameSlug":"youtube","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} --></p>
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+<div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=C6vk6wk9dcw
+</div>
+</figure>
+<p><!-- /wp:core-embed/youtube --></p>
+<p><!-- wp:paragraph --></p>
+<p>The next video is from <em>Adam Saxton (Guy in a Cube) </em>interviewing <em>Josh Caplan</em> about the Power BI Premium Capacity Metrics and try to answer the question of "How many users my capacity can handle?"</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It contains lot of valuable insights in the background details of a Premium </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/youtube {"url":"https://www.youtube.com/watch?v=UgsjMbhi_Bk","type":"video","providerNameSlug":"youtube","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} --></p>
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+<div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=UgsjMbhi_Bk
+</div>
+<figcaption> <em>Adam Saxton (Guy in a Cube) </em>interviewing <em>Josh Caplan</em> about the Power BI Premium Capacity Metrics </figcaption>
+</figure>
+<p><!-- /wp:core-embed/youtube --></p>
+<p><!-- wp:paragraph --></p>
+<p>There is the optimization guide in the microsoft docs that is worth to read:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-us/power-bi/service-premium-capacity-optimize">https://docs.microsoft.com/en-us/power-bi/service-premium-capacity-optimize</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It that guide they talk about how you can load test your reports in the capacity</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://github.com/microsoft/PowerBI-Tools-For-Capacities/tree/master/LoadTestingPowerShellTool/">https://github.com/microsoft/PowerBI-Tools-For-Capacities/tree/master/LoadTestingPowerShellTool/</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Microsoft introduced read XMLA endpoints. RW end-points are coming this year.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This enables to connect developer and management tools like visual studio, SSMS, Dax Studio and give access to the server behind the Premium capacity.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Radacad wrote about this in their blog:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://radacad.com/what-is-the-xmla-endpoint-for-power-bi-and-why-should-i-care">https://radacad.com/what-is-the-xmla-endpoint-for-power-bi-and-why-should-i-care</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":442,"width":508,"height":354,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/03/DAX-Studio-XMLA-endpoint-1024x714.jpg" alt="Connecting to a Premium Dataset with Dax Studio" class="wp-image-442" width="508" height="354"><br />
+<figcaption>Connecting to a Premium Dataset with Dax Studio</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>There is also a video that shows you how to connect DAX Studio or SQL Server Profiler to a Premium Capacity.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/youtube {"url":"https://www.youtube.com/watch?v=-dqt2-xpJd4","type":"video","providerNameSlug":"youtube","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} --></p>
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+<div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=-dqt2-xpJd4
+</div>
+</figure>
+<p><!-- /wp:core-embed/youtube --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Testing in the browser</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you really want to understand your reports performance for the consumer you need to do testing in the browser instead of Power BI Desktop.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The reason is that the way Power BI renders the reports in the browser is different then in the desktop. Also the type of browser can have an effect on the perceived performance of the report.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Chris Webb did a very detailed 3 part series on how to test performance on the browsers:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://blog.crossjoin.co.uk/2019/12/02/testing-performance-of-power-bi-reports-in-the-browser-part-1/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2019/12/02/testing-performance-of-power-bi-reports-in-the-browser-part-1/
+</div>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://blog.crossjoin.co.uk/2019/12/09/testing-performance-of-power-bi-reports-in-the-browser-part-2/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2019/12/09/testing-performance-of-power-bi-reports-in-the-browser-part-2/
+</div>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://blog.crossjoin.co.uk/2019/12/16/testing-performance-of-power-bi-reports-in-the-browser-part-3/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2019/12/16/testing-performance-of-power-bi-reports-in-the-browser-part-3/
+</div>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Report Refreshing is slow</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Other part to look at if the data refreshes. Even if you refresh times are not that important it can have an effect on the report consumption performance in Premium. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Analyzing Performance</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Same as in Report optimization the first thing you have to do is to start measure the performance.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://blog.crossjoin.co.uk/2020/02/24/adding-your-own-messages-to-power-query-query-diagnostics/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2020/02/24/adding-your-own-messages-to-power-query-query-diagnostics/
+</div>
+<figcaption> Crossjoin.co.uk by Chris Webb </figcaption>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://blog.crossjoin.co.uk/2020/02/10/an-m-function-to-help-you-explore-power-query-diagnostics-data/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2020/02/10/an-m-function-to-help-you-explore-power-query-diagnostics-data/
+</div>
+<figcaption> Crossjoin.co.uk by Chris Webb </figcaption>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://blog.crossjoin.co.uk/2020/02/03/visualising-power-query-diagnostics-data-in-a-power-bi-decomposition-tree/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2020/02/03/visualising-power-query-diagnostics-data-in-a-power-bi-decomposition-tree/
+</div>
+<figcaption> Crossjoin.co.uk by Chris Webb </figcaption>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the service you can check the refresh history of a dataset and see the amount of time a refresh took using the Rest API:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-us/rest/api/power-bi/datasets/getrefreshhistoryingroup">https://docs.microsoft.com/en-us/rest/api/power-bi/datasets/getrefreshhistoryingroup</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Power Query Optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>PowerBI's data preparation tool is robust so it can handle really inefficient queries. But the ripple effect of inefficient data preparation can be huge on the overall user experience.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":451,"width":472,"height":372,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/03/Query-Dependencies.jpg" alt="" class="wp-image-451" width="472" height="372"><br />
+<figcaption>Query Dependencies</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>I found that complex Query Dependencies can be a huge contributor of slow refresh times. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Few tips and tricks:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Do not load in any data (Row or Column) or table that is not needed in the model</li>
+<li>Delete unnecessary automatically created steps (like Changed Type or First rows as headers)</li>
+<li>Use Remove Other columns as soon as possible</li>
+<li>Don't use Sorting, they don't have an effect on the table loaded in</li>
+<li>Try to avoid errors rather then handle them.</li>
+<li>Try to find solutions to solve problems in 1 step rather then more (like use Text Before Delimiter instead of Split Column, Remove Column, Rename Column)</li>
+<li>Use merge as a dynamic filter to only load in necessary rows</li>
+<li>Make sure you maximize the effect of Query Folding when possible</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-gb/power-bi/guidance/power-query-folding">https://docs.microsoft.com/en-gb/power-bi/guidance/power-query-folding</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There are also a multi part series by Chris Webb on Power Query Optimization:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:core-embed/wordpress {"url":"https://blog.crossjoin.co.uk/2019/08/07/power-query-m-optimisation-part-1/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog","className":""} --></p>
+<figure class="wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2019/08/07/power-query-m-optimisation-part-1/
+</div>
+</figure>
+<p><!-- /wp:core-embed/wordpress --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Gateway Optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>For on-premises data sources the gateway is another factor you should consider. It has an even greater effect if you use Direct Query.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can analyze performance by turning on additional query logging.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you have both Import and Direct Query loads then separate them into different gateways on different machines.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The transformation steps that are not query folded will happen using the machines resources where the Gateway is installed, you need to make sure that the machine does not have other crucial resource intensive responsibilities.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here are the details of monitoring and optimizing performance:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-performance">https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-performance</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Data Flow Optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Dataflows are basically Power Query online. It runs in the service using Azure Data Lake as the storage engine. The performance of the queries can be sometimes different from the Desktop Power Query performance.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>My recommendation is not to create any dataflows directly but as a Power Query in Desktop first. Then copy the code into a dataflow.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This way you can easily compare performance differences alongside other advantages.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There is a blog that show an example of that principle:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://selfservicebi.co.uk/getting-files-folders-from-sharepoint-or-onedrive-in-dataflows/">https://selfservicebi.co.uk/getting-files-folders-from-sharepoint-or-onedrive-in-dataflows/</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here is what you can find on Dataflows in the Docs:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-gb/power-bi/service-dataflows-best-practices">https://docs.microsoft.com/en-gb/power-bi/service-dataflows-best-practices</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Blog posts by Matthew Roche about Dataflows:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><a rel="noreferrer noopener" aria-label="https://ssbipolar.com/2019/10/12/power-bi-dataflows-and-query-folding/ (opens in a new tab)" href="https://ssbipolar.com/2019/10/12/power-bi-dataflows-and-query-folding/" target="_blank">https://ssbipolar.com/2019/10/12/power-bi-dataflows-and-query-folding/</a></li>
+<li><a rel="noreferrer noopener" aria-label="https://ssbipolar.com/2019/12/11/power-bite-dataflows-enhanced-compute-engine/ (opens in a new tab)" href="https://ssbipolar.com/2019/12/11/power-bite-dataflows-enhanced-compute-engine/" target="_blank">https://ssbipolar.com/2019/12/11/power-bite-dataflows-enhanced-compute-engine/</a></li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Scheduling Optimization</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you have a big reporting estate, having a scheduling strategy is quite important. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>One recommendation is to avoid peak consumption times to do refreshes. Because if you refresh and consume a model at the same time that doubles the memory footprint of that model.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You could use the APIs to understand you current scheduling timelines.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":430,"width":395,"height":524,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/03/Schedule-Refresh.jpg" alt="" class="wp-image-430" width="395" height="524"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The scheduling options currently provided by the UI can be limiting. Like you can only schedule 2 different days with the same times. It would be good to have a matrix or table where we could pick half hour slots.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you have a lot of scheduled refreshes then start considering a more agile approach using the Data Refresh API instead of the built-in scheduling.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/rest/api/power-bi/dataflows/refreshdataflow">https://docs.microsoft.com/en-us/rest/api/power-bi/dataflows/refreshdataflow</a></li>
+<li> <a href="https://docs.microsoft.com/en-us/rest/api/power-bi/datasets/refreshdatasetingroup">https://docs.microsoft.com/en-us/rest/api/power-bi/datasets/refreshdatasetingroup</a>
+</li>
+<li> <a href="https://docs.microsoft.com/en-us/rest/api/power-bi/datasets/updatedirectqueryrefreshscheduleingroup">https://docs.microsoft.com/en-us/rest/api/power-bi/datasets/updatedirectqueryrefreshscheduleingroup</a> </li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Summary</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you saw there are endless triggers you can pull to squeeze out a little more performance of your Power BI models and reports.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I would like to thank all the hard work that these experts put into sharing the knowledge with us:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>
+<a rel="noreferrer noopener" aria-label="Guy in a Cube (opens in a new tab)" href="https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w" target="_blank">Guy in a Cube</a> - <a rel="noreferrer noopener" aria-label="Patrick LeBlanc (opens in a new tab)" href="https://twitter.com/patrickdba" target="_blank">Patrick LeBlanc</a> and <a rel="noreferrer noopener" aria-label="Adam Saxton (opens in a new tab)" href="https://twitter.com/awsaxton" target="_blank">Adam Saxton</a>
+</li>
+<li>
+<a rel="noreferrer noopener" aria-label="Crossjoin.co.uk (opens in a new tab)" href="https://blog.crossjoin.co.uk/" target="_blank">Crossjoin.co.uk</a> - <a rel="noreferrer noopener" aria-label="Chris Webb (opens in a new tab)" href="https://twitter.com/cwebb_bi" target="_blank">Chris Webb</a>
+</li>
+<li>
+<a rel="noreferrer noopener" aria-label="SQLBI.com (opens in a new tab)" href="https://www.sqlbi.com/" target="_blank">SQLBI.com</a> - <a rel="noreferrer noopener" aria-label="Marco Russo (opens in a new tab)" href="https://twitter.com/marcorus" target="_blank">Marco Russo</a> and <a rel="noreferrer noopener" aria-label="Alberto Ferrari (opens in a new tab)" href="https://twitter.com/FerrariAlberto" target="_blank">Alberto Ferrari</a>
+</li>
+<li>
+<a rel="noreferrer noopener" aria-label="The BIccountant (opens in a new tab)" href="https://www.thebiccountant.com/" target="_blank">The BIccountant</a> - <a rel="noreferrer noopener" aria-label="Imke Feldmann (opens in a new tab)" href="https://twitter.com/TheBIccountant" target="_blank">Imke Feldmann</a> </li>
+<li>
+<a rel="noreferrer noopener" aria-label="Fourmoo (opens in a new tab)" href="https://www.fourmoo.com/" target="_blank">Fourmoo</a> -  Gilbert Quevauvilliers</li>
+<li>
+<a rel="noreferrer noopener" aria-label="Radacad (opens in a new tab)" href="https://radacad.com/" target="_blank">Radacad</a> - <a rel="noreferrer noopener" aria-label="Reza Rad (opens in a new tab)" href="https://twitter.com/Rad_Reza" target="_blank">Reza Rad</a> and <a rel="noreferrer noopener" aria-label="Leila Etaati (opens in a new tab)" href="https://twitter.com/leila_etaati" target="_blank">Leila Etaati</a>
+</li>
+<li>
+<a href="https://ssbipolar.com/" target="_blank" rel="noreferrer noopener" aria-label="BI Polar (opens in a new tab)">BI Polar</a> - <a href="https://twitter.com/SQLAllFather" target="_blank" rel="noreferrer noopener" aria-label="Matthew Roche (opens in a new tab)">Matthew Roche</a>
+</li>
+<li>And everyone how participated in the Power BI Docs</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Please let me know if I left out anything important or I made any errors. I was so focused on the details that I could have missed something from the big picture.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

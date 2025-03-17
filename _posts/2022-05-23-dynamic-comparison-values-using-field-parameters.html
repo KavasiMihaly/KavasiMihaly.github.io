@@ -1,0 +1,138 @@
+---
+layout: post
+title: Dynamic Comparison values using Field Parameters
+date: 2022-05-23 22:47:43.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+- Improve the Experience
+tags:
+- Best Practice
+- CX
+- DAX
+- Parameters
+- Report Design
+meta:
+  _aioseo_twitter_description: ''
+  _oembed_ca0957d8e555e27cd5a2106c56bd0e94: '<blockquote class="wp-embedded-content"
+    data-secret="gDB1elpbH4"><a href="https://blog.crossjoin.co.uk/2022/05/22/stopping-some-users-seeing-certain-columns-or-measures-in-your-power-bi-report-with-object-level-security-and-field-parameters/">Stopping
+    Some Users Seeing Certain Columns Or Measures In Your Power BI Report With Object
+    Level Security And Field Parameters</a></blockquote><iframe class="wp-embedded-content"
+    sandbox="allow-scripts" security="restricted" style="position: absolute; clip:
+    rect(1px, 1px, 1px, 1px);" title="&#8220;Stopping Some Users Seeing Certain Columns
+    Or Measures In Your Power BI Report With Object Level Security And Field Parameters&#8221;
+    &#8212; Chris Webb&#039;s BI Blog" src="https://blog.crossjoin.co.uk/2022/05/22/stopping-some-users-seeing-certain-columns-or-measures-in-your-power-bi-report-with-object-level-security-and-field-parameters/embed/#?secret=pwP3jXlmLj#?secret=gDB1elpbH4"
+    data-secret="gDB1elpbH4" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _aioseo_twitter_title: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_description: ''
+  _aioseo_og_title: ''
+  _aioseo_keywords: ''
+  _aioseo_description: "#post_excerpt"
+  _edit_last: '1'
+  _aioseo_title: "#post_title #separator_sa #site_title"
+  _oembed_e05c3f83840b55d56261789b1a0a83bd: "{{unknown}}"
+  _oembed_time_ca0957d8e555e27cd5a2106c56bd0e94: '1653339955'
+  _oembed_9863bb74c9b238df0427cfa83be46ced: '<blockquote class="wp-embedded-content"
+    data-secret="ab82rUsbk8"><a href="https://selfservicebi.co.uk/slicers-or-filters-comprehensive-guide/">Slicers
+    or Filters &#8211; Comprehensive Guide</a></blockquote><iframe class="wp-embedded-content"
+    sandbox="allow-scripts" security="restricted" style="position: absolute; clip:
+    rect(1px, 1px, 1px, 1px);" title="&#8220;Slicers or Filters &#8211; Comprehensive
+    Guide&#8221; &#8212; Self-Service Business Intelligence" src="https://selfservicebi.co.uk/slicers-or-filters-comprehensive-guide/embed/#?secret=DqxpBIMz6S#?secret=ab82rUsbk8"
+    data-secret="ab82rUsbk8" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_9863bb74c9b238df0427cfa83be46ced: '1653342300'
+  _thumbnail_id: '780'
+  gd_system_blocks_used: '{"core/paragraph":11,"core/image":2,"core/heading":3,"core/list":2,"syntaxhighlighter/code":1,"core/embed":2}'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/dynamic-comparison-values-using-field-parameters/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>I have been reading a lot of good feedback of the <a href="https://powerbi.microsoft.com/en-us/blog/power-bi-may-2022-feature-summary/" target="_blank" rel="noreferrer noopener">Power BI May 2022</a> update especially and the introduction of field parameters. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Do not want to go into details what it is, because the official blog post and <a href="https://youtu.be/LTdpe2ENW4M?t=178" target="_blank" rel="noreferrer noopener">video</a> gives a good explanation. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I would like to highlight this post from <a href="https://twitter.com/cwebb_bi" target="_blank" rel="noreferrer noopener">Chris Webb</a>'s about how to utilize field parameters alongside Object and Row level security to control what columns user see in a report.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https://blog.crossjoin.co.uk/2022/05/22/stopping-some-users-seeing-certain-columns-or-measures-in-your-power-bi-report-with-object-level-security-and-field-parameters/","type":"wp-embed","providerNameSlug":"chris-webb-039-s-bi-blog"} --></p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-chris-webb-039-s-bi-blog wp-block-embed-chris-webb-039-s-bi-blog">
+<div class="wp-block-embed__wrapper">
+https://blog.crossjoin.co.uk/2022/05/22/stopping-some-users-seeing-certain-columns-or-measures-in-your-power-bi-report-with-object-level-security-and-field-parameters/
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:heading --></p>
+<h2>Comparative analysis with Field Parameters</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>What I wanted to try out is how you can use field parameter to do comparative analysis easily.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I wanted to provide a selection of comparison values alongside the main metric in a simple way.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>For the comparison test I used my <a href="https://factfactory.co.uk/2019/05/england-wales-crime-statistics/" target="_blank" rel="noreferrer noopener">ENGLAND &amp; WALES CRIME STATISTICS</a> report for my other site <a href="http://factfactory.co.uk" target="_blank" rel="noreferrer noopener">factfactory.co.uk</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":776,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2022/05/Comparison-values-1.gif" alt="" class="wp-image-776"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>It was about 5 minutes to implement the solution for a quick demo.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I wanted to have an option when no comparison values are displayed. So, I amended the created filed parameter table a bit to add a <em>blank measure</em> to the list.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":777,"width":653,"height":97,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="{{site.baseurl}}/assets/2022/05/Blank-value.png" alt="Blank measure added to the field parameter table" class="wp-image-777" width="653" height="97"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Lessons learnt</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This was a really quick test, but I already learned a lot about this new feature and see lots of potential use cases.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>For dynamic titles what I learned that you cannot use <strong>Selectedvalue </strong>but <strong>Max</strong> to make it work:</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"csharp","lineNumbers":false} --></p>
+<pre class="wp-block-syntaxhighlighter-code">Comparison title = "Crime per 1000 capita"&amp; if(MAX('Comparison values'[Comparison values]) = "None", BLANK()," vs " &amp; max('Comparison values'[Comparison values]))</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Not all visuals support dynamic element in all their attributes, so there is a limitation you need to overcome as you can see in the KPI visual example.</li>
+<li>Adding a None option is working but not perfect because it can cause issues in some visuals and still shows up in the legend.</li>
+<li>This new feature will further the debate about using <a href="https://selfservicebi.co.uk/slicers-or-filters-comprehensive-guide/" title="Slicers or Filters – Comprehensive Guide">slicers or filter</a> on a report page which my previous post covers.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:embed {"url":"https://selfservicebi.co.uk/slicers-or-filters-comprehensive-guide/","type":"wp-embed","providerNameSlug":"self-service-business-intelligence"} --></p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-self-service-business-intelligence wp-block-embed-self-service-business-intelligence">
+<div class="wp-block-embed__wrapper">
+https://selfservicebi.co.uk/slicers-or-filters-comprehensive-guide/
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:heading --></p>
+<h2>Summary</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Field parameter will simplify a lot of complex requirements for developers and gives a nice user experience. Really looking forward implementing it in solutions. Hope you found this blog post useful.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

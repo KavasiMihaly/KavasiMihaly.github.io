@@ -1,0 +1,109 @@
+---
+layout: post
+title: Difference between creating a dataset for yourself or creating for others
+date: 2021-04-29 19:53:07.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Big Picture
+- Improve the Experience
+tags:
+- Authoring
+- Data Model
+- Dataset
+meta:
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: '11'
+  _yoast_wpseo_content_score: '30'
+  _thumbnail_id: '545'
+  gd_system_blocks_used: '{"core/paragraph":9,"core/heading":3,"core/list":1,"core/list-item":6,"core/gallery":1,"core/image":2}'
+  _aioseo_description: ''
+  _aioseo_og_title: ''
+  _aioseo_keywords: ''
+  _aioseo_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/difference-between-creating-a-dataset-for-yourself-or-creating-for-others/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>When I began working with Power BI, all the datasets I created were intended to support the reports I was building. However, as more of my colleagues started embracing Power BI, they also wanted to create their own reports. Despite sharing the datasets with them, they often ended up not using them, even though the datasets contained all the information they needed.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I began to realize that what they saw in my datasets wasn't something that could help them achieve their goals faster, but rather a complex arrangement that they needed to decipher before they could start creating their reports. It was simpler for them to start from scratch and build their own datasets.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Initially, I didn't see any problems with my datasets because I was the one creating them. I had performed all the <em>transformations, renaming, aggregations, filters, establishing relationships, creating bridge tables, calculations</em>, and so on, so it was easy for me to understand them. I knew all the potential issues, which measures worked with which dimensions, and so forth. However, for my colleagues, it was just a confusing mess.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:gallery {"linkTo":"none"} --></p>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":541,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2021/04/Raw-Fields.png" alt="" class="wp-image-541"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"id":540,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2021/04/Cleaned-Fields.png" alt="" class="wp-image-540"></figure>
+<p><!-- /wp:image --><br />
+<figcaption class="blocks-gallery-caption wp-element-caption">Which one looks less intimidating? :)</figcaption>
+</figure>
+<p><!-- /wp:gallery --></p>
+<p><!-- wp:paragraph --></p>
+<p>With the addition of <strong><a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/power-bi/create-reports/power-bi-personalize-visuals" target="_blank">Personalized visuals</a></strong>, which enables end users to modify the visuals in a report without been an author, the quality and usability of the datasets became much more important than ever.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4 class="wp-block-heading">Why is this important?</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Datasets in Power BI contain a most important part of any analytics solution. The data model with the calculations.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The ability to reuse datasets is one of the key ways to eliminate unnecessary duplications of effort and data. It also helps you get closer to achieve a single source of truth. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>One good dataset can be a source of 10s or even 100s of reports. If you think about maintenance and change management than it is obvious why having a smaller number of good quality, optimized and clean datasets is better.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4 class="wp-block-heading">Ideas to improve the data model</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<!-- wp:list-item --></p>
+<li>Make column names easy to understands and use business lingo</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Hide unnecessary columns, measures, and tables</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Organize columns and measures with folders</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Provide descriptions to measures (add the DAX formula at least) and columns that need explanation</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Make sure that additional filters are not needed to display the right values using a measure. For example, the need to filter out returned sales in the visual filter to give you the proper sales volume, have a measure that already provides that</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Create Layouts for each Fact table in the Model view</li>
+<p><!-- /wp:list-item -->
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4 class="wp-block-heading">Conclusion</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you think your data model will be used by someone other than you, make sure it is as easy to use as you can possibly make it.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The ability to reuse datasets is one of the most under used feature of Power BI.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

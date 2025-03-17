@@ -1,0 +1,246 @@
+---
+layout: post
+title: How to find which visual generated the query in Log Analytics?
+date: 2024-03-11 18:28:51.000000000 +00:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Get to the Data
+- Governance is key
+- Improve the Experience
+tags: []
+meta:
+  _edit_last: '1'
+  _aioseo_title: ''
+  _aioseo_description: ''
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+  _oembed_a9336d2bc6c73d0e08c2cb4d20bf041a: '<blockquote class="wp-embedded-content"
+    data-secret="8ZdVdSbi2j"><a href="https://selfservicebi.co.uk/log-analytics-for-power-bi-how-to-start-and-improve-insights-for-better-model-performance/">Log
+    Analytics for Power BI: How to start and improve insights for better model performance</a></blockquote><iframe
+    class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position:
+    absolute; clip: rect(1px, 1px, 1px, 1px);" title="&#8220;Log Analytics for Power
+    BI: How to start and improve insights for better model performance&#8221; &#8212;
+    Self-Service Business Intelligence" src="https://selfservicebi.co.uk/log-analytics-for-power-bi-how-to-start-and-improve-insights-for-better-model-performance/embed/#?secret=9pwPx8M2CB#?secret=8ZdVdSbi2j"
+    data-secret="8ZdVdSbi2j" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_a9336d2bc6c73d0e08c2cb4d20bf041a: '1709675910'
+  _oembed_c97eed8be4ad2626ff2372aab1f8ade9: '<blockquote class="wp-embedded-content"
+    data-secret="L93iRgBI8J"><a href="https://powerbihelper.org/">Front Page</a></blockquote><iframe
+    class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position:
+    absolute; clip: rect(1px, 1px, 1px, 1px);" title="&#8220;Front Page&#8221; &#8212;
+    Power BI Helper" src="https://powerbihelper.org/embed/#?secret=L93iRgBI8J" data-secret="L93iRgBI8J"
+    width="600" height="338" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_c97eed8be4ad2626ff2372aab1f8ade9: '1709893799'
+  gd_system_blocks_used: '{"core/paragraph":23,"core/image":12,"core/heading":10,"core/columns":1,"core/column":2,"core/list":2,"core/list-item":10,"core/embed":1,"core/quote":1}'
+  _thumbnail_id: '1027'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/how-to-find-which-visual-generated-the-query-in-log-analytics/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>Model metadata in Power BI is getting more and more accessable and there are a fair amount of tool that we can use to work with it. Report metadata on the otherhand is not easy to work with. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In my previous <a href="https://selfservicebi.co.uk/log-analytics-for-power-bi-how-to-start-and-improve-insights-for-better-model-performance/" title="">blog post</a>, I showed how you can use Log Analytics to improve the performance of models and reports. The only missing piece was how you can find the visual that you need to work on.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https://selfservicebi.co.uk/log-analytics-for-power-bi-how-to-start-and-improve-insights-for-better-model-performance/","type":"wp-embed","providerNameSlug":"self-service-business-intelligence"} --></p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-self-service-business-intelligence wp-block-embed-self-service-business-intelligence">
+<div class="wp-block-embed__wrapper">
+https://selfservicebi.co.uk/log-analytics-for-power-bi-how-to-start-and-improve-insights-for-better-model-performance/
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>This post will try to cover all the different ways we can extract and interact with report metadata.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Manual method</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you have access to the PBIX file for the report, you can extract the information for the file.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"id":997,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2024/03/image-4.png" alt="" class="wp-image-997"></figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"id":1000,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2024/03/image-7.png" alt="" class="wp-image-1000"></figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<!-- wp:list-item --></p>
+<li>Rename the file from .pbix to .zip</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Open the zip file and find the Layout file</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Open it in an editor like VS Code</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Format file to JSON</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Search for the VisualID (CTRL+F)</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Search for the Display name that you can look up in the Selection View in Power BI Desktop</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>To make your life easier with larger report, you can also the find the Page name. You need to search for the ReportSection that encompasses the visual</li>
+<p><!-- /wp:list-item -->
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"id":993,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2024/03/image-2.png" alt="" class="wp-image-993"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Limited Python knowledge &amp; GitHub Copilot method :)</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I long wanted to find a meaningful task, where I could see how to use GitHub Copilot to enhance my limited python knowledge. It was quite an interesting learning experience that helped me understand how to interact with Copilot in a way that is productive.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4 class="wp-block-heading">Python Script:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://github.com/KavasiMihaly/SelfServiceBIBlog/blob/main/Governance/ExportReportMetadata.py" target="_blank" rel="noopener" title="">SelfServiceBIBlog/Governance/ExportReportMetadata.py at main · KavasiMihaly/SelfServiceBIBlog (github.com)</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This script is currently extracts the most essential information to help with the analysis in Log Analytics. Feel free to add to this script and update with additional information extracted. Happy for any code contributions in GitHub.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"align":"center"} --></p>
+<p class="has-text-align-center">⚠️<em>You might need to open the Layout file in VS Code first and format the file to JSON</em>.⚠️</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Output:</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Script will create a csv file containing the Visual and Page details.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":1007,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2024/03/ExportMetadataScriptOutput-1024x681.png" alt="Metadata export" class="wp-image-1007"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Adding the results to Log Analytics</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"align":"center","id":1016,"width":"579px","height":"auto","sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="{{site.baseurl}}/assets/2024/03/image-13.png" alt="Data model" class="wp-image-1016" style="width:579px;height:auto"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>When you add this extracted information to the Log Analytics template report, we discussed in my previous post, it greatly improve the insights and makes it really easy to find the visuals in a report.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":1008,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2024/03/Page-and-Visual-information-added-to-Log-Analytics-Visual-Report.png" alt="Visual details" class="wp-image-1008"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Also enables you to do more generally analytics about the type of visualisations used and their performance.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":1018,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2024/03/Page-and-Visual-analysis-1024x328.png" alt="Visual analysis" class="wp-image-1018"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Community tools available</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Power BI Helper</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:quote --></p>
+<blockquote class="wp-block-quote"><p>
+<!-- wp:paragraph --></p>
+<p>"Power BI Helper is an external tool for Power BI Desktop. Using this tool, you can analyze your Power BI file, explore the data sources, the Power Query script, the data model, DAX expressions, and visualizations. This is a tool for Power BI developers and analysts and administrators, architects, and managers to create documentation of their work and have a better Power BI development experience."</p>
+<p><!-- /wp:paragraph --><cite>https://powerbihelper.org/</cite>
+</p></blockquote>
+<p><!-- /wp:quote --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://powerbihelper.org/">https://powerbihelper.org/</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This tool give you an overview of the visuals and the ability to export this information.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":1012,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2024/03/image-9-1024x520.png" alt="" class="wp-image-1012"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"id":1019,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2024/03/image-14.png" alt="" class="wp-image-1019"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Measure Killer</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://en.brunner.bi/measurekiller">https://en.brunner.bi/measurekiller</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<!-- wp:list-item --></p>
+<li>Analyzing the model and report to find unused measures and column</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Entreprise version allow tenant level analysis</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>The UI doesn't show the visual information but after exporting the data you can get to the visual details.</li>
+<p><!-- /wp:list-item -->
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"id":1013,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2024/03/image-10-1024x502.png" alt="" class="wp-image-1013"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Microsoft Fabric APIs</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>With the appearance of Fabric APIs, we now have a Microsoft supported way to access Power BI Report metadata among a lot of other items available in Azure. As you can see in the image the API could be also used to manage these items.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":1014,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2024/03/image-11.png" alt="Fabric API Item details" class="wp-image-1014"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Fabric Report Definition API: <a href="https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/report-definition">https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/report-definition</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here are the information you can access through the API. The visual and page metadata is stored in the <strong>report.json</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":1015,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2024/03/image-12.png" alt="Report Item details" class="wp-image-1015"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Conclusion</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Report metadata is useful for performance monitoring and integrating it with log analytics data can improve the usability.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

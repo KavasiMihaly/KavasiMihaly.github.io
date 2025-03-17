@@ -1,0 +1,117 @@
+---
+layout: post
+title: Hidden features of Analyze in Excel - Part 2 - Give me all the data
+date: 2022-07-11 11:01:51.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+- Get to the Data
+- Improve the Experience
+tags:
+- Analyze in Excel
+- CX
+- Excel
+meta:
+  _aioseo_title: "#post_title #separator_sa #site_title"
+  _edit_last: '2'
+  _aioseo_description: "#post_excerpt"
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+  _thumbnail_id: '878'
+  gd_system_blocks_used: '{"core/paragraph":10,"core/heading":5,"core/image":4,"core/list":1}'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/hidden-features-of-analyze-in-excel-part-2-give-me-all-the-data/"
+excerpt: This blog series is about the hidden features in Analyze in Excel. There
+  are lot of tiny details which can help the adoption of Power BI for Excel users.
+  In this blog we are going to talk about increasing the records retrieved by Show
+  Details.
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>In the <a href="https://selfservicebi.co.uk/hidden-features-of-analyze-in-excel-part-1-show-me-the-details/" target="_blank" rel="noreferrer noopener" title="previous blog">previous blog</a> post we discussed how to define the details of the drill through feature of a Pivot table.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Show Details - default results</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>As we learned how to define the results of the Show Details capability, we encounter another potential issue. As you can see in the image below the cell selected represented almost 2.000 rows, but by default you only get the first 1.000 rows. This way this feature it not that useful.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":855,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/Top1000.gif" alt="" class="wp-image-855"><br />
+<figcaption>Default <strong>Show Details</strong> functionality - 1.000 rows</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>In an ideal world you would expect to see all the data and if you miss the first row you might believe you actual have it. This can cause a lot of confusion.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Fortunately, there is a solution to get all the details.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Connection Properties - OLAP Drill Through</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you go to the properties of the connection, you will see an option that most people ignored so far.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It is called <em>Maximum number of records retrieve.</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":860,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/MaxDrillthrough.png" alt="" class="wp-image-860"><br />
+<figcaption>Connection properties</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can increase this number to anything that an excel sheet can cope with. Of course, getting more data require an efficient data model, good internet connection and a suitable hardware spec. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Show Details made more useful</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Together with the Details Rows Expression and increasing number of rows retrieved in Show Details, we can increase the value of these standard Excel functions.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":859,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/Top10000.gif" alt="" class="wp-image-859"><br />
+<figcaption>Modified <strong>Show Details</strong> functionality - 10.000 rows</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Considerations</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Because this setting is in Excel it cannot be set in the Power BI model.</li>
+<li>You need to open the file in the desktop version of Excel you cannot use or set this feature in the Excel Online.</li>
+<li>It is possible to create a connection file to save the details, but it does not save this setting. This will be useful in the next part of this series. For now, you need to save the excel file created from Analyze in Excel with this setting modified to a shared drive for the excel users to use.</li>
+<li>Currently searching for a solution to change this setting globally for all excel files so it is not a manual effort every time. If you know one, please share it with me.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"align":"center","id":883,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/Export-Connection-File.png" alt="" class="wp-image-883"><br />
+<figcaption>Export Connections into an .ODS file</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Summary</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This and the previous post not just ensure that the Excel users do not feel any negative impact by using a Power BI dataset but instead adds value to them. In the next blog I will show how you can reduce distractions and complexity when working with a Power BI dataset in Excel.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope you like this blog post, see you in the next one.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

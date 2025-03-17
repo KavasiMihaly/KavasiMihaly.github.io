@@ -1,0 +1,180 @@
+---
+layout: post
+title: Documenting Power BI - Data Model
+date: 2021-05-05 17:32:03.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Governance is key
+tags:
+- C#
+- Data Model
+- Dataset
+- documentation
+- Scripting
+- Tabular Editor
+- Video
+meta:
+  _edit_last: '1'
+  _thumbnail_id: '599'
+  _oembed_4a9518af3ba7a04c5a4a91620f2aa884: '<iframe title="MBAS 2020: Microsoft citizen
+    developers innovate account planning solution using the Power Platform" width="1090"
+    height="613" src="https://www.youtube.com/embed/dcpolnCQBJs?feature=oembed" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>'
+  _oembed_time_4a9518af3ba7a04c5a4a91620f2aa884: '1620232285'
+  _aioseo_title: "#post_title"
+  _aioseo_description: 'Documenting Power BI - How to create documentation for your
+    Power BI data model with simple steps. #separator_sa #author_name #separator_sa
+    #site_title Blog'
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: 'How to create a complete documentation for your Power
+    BI data model with simple steps. #separator_sa #author_name #separator_sa #site_title
+    Blog @MSPowerBI, #SSBI, #Governance'
+  _oembed_19740df5cb3e47eca992a1541a57cd05: <iframe title="Documenting a Power BI
+    Dataset" width="1090" height="613" src="https://www.youtube.com/embed/z5Mktjfm9I0?feature=oembed"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+    gyroscope; picture-in-picture" allowfullscreen></iframe>
+  _oembed_time_19740df5cb3e47eca992a1541a57cd05: '1620658098'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/documenting-power-bi-data-model/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>I wanted to find an easy-to-use documentation script for my data models. In <a rel="noreferrer noopener" href="https://tabulareditor.com/" target="_blank">Tabular Editor</a>`s documentation there is a useful script for <a href="https://docs.tabulareditor.com/Useful-script-snippets.html#generating-documentation" target="_blank" rel="noreferrer noopener">generating documentation</a>. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I thought I will use what <a href="https://twitter.com/DOtykier" target="_blank" rel="noreferrer noopener"><strong>Daniel</strong> <strong>Otykier</strong></a> created as a starting point and try to create a solution that can give me all the information I would like to get.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>After a few hours I managed to get to a stage where I was quite satisfied with the result and wanted to share it with you to help in your documentation needs.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>What I have created is still not a perfect solution and has some manual steps, but at least you can create a documentation in less than 2 minutes.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>At the end of this blog post you will find a downloadable template excel where all the transformations are setup you just need to paste in some data from Tabular Editor.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Video:</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The easiest way to explain how the solution works is to show you so I created a short video about it.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https://www.youtube.com/watch?v=z5Mktjfm9I0","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} --></p>
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+<div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=z5Mktjfm9I0
+</div>
+<figcaption>Documenting a Power BI dataset</figcaption>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph {"align":"left"} --></p>
+<p class="has-text-align-left">This is my first step into video blogging, so I hope you find the content useful.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Documentation Script:</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"align":"center","id":612,"width":769,"height":210,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2021/05/Advanced-Scripting.png" alt="" class="wp-image-612" width="769" height="210"><br />
+<figcaption>Advanced scripting in Tabular Editor</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>This script will give you information about your:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Tables</li>
+<li>Columns</li>
+<li>Measures</li>
+<li>Hierarchies</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"csharp"} --></p>
+<pre class="wp-block-syntaxhighlighter-code">// Collect all measures, columns, hierarchies and tables (ignore automatically generated entities):
+var objects = Model.AllMeasures.Cast&lt;ITabularNamedObject&gt;()
+      .Concat(Model.AllColumns.Where(c =&gt; !c.Table.Name.Contains("Template") 
+                                       &amp;&amp; !c.Table.Name.Contains("LocalDate"))
+              )
+      .Concat(Model.AllHierarchies.Where(h =&gt; !h.Table.Name.Contains("Template") 
+                                       &amp;&amp; !h.Table.Name.Contains("LocalDate"))
+              )
+      .Concat(Model.AllLevels.Where(h =&gt; !h.Table.Name.Contains("Template") 
+                                       &amp;&amp; !h.Table.Name.Contains("LocalDate"))
+              )
+      .Concat(Model.Tables);
+
+// Get their properties:
+var tsv = ExportProperties(objects,"Name,ObjectType,Parent,Description,FormatString,DataType,Expression,IsHidden,DisplayFolder,Synonyms,DataCategory");
+
+// Output to screen (can then be copy-pasted into Excel):
+ tsv.Output();
+</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:heading --></p>
+<h2>Get Relationship info:</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I have not spent enough time with the script to figure out how I can get the relationship information out but found an effortless way to do it.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>As shown in the video, you can select all the relationships and copy them as json data into Excel is relatively easily.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:gallery {"ids":[607,606],"linkTo":"none"} --></p>
+<figure class="wp-block-gallery columns-2 is-cropped">
+<ul class="blocks-gallery-grid">
+<li class="blocks-gallery-item">
+<figure><img src="{{site.baseurl}}/assets/2021/05/relationships.png" alt="" data-id="607" data-full-url="https://selfservicebi.co.uk/wp-content/uploads/2021/05/relationships.png" data-link="https://selfservicebi.co.uk/?attachment_id=607" class="wp-image-607"></figure>
+</li>
+<li class="blocks-gallery-item">
+<figure><img src="{{site.baseurl}}/assets/2021/05/json.png" alt="" data-id="606" data-full-url="https://selfservicebi.co.uk/wp-content/uploads/2021/05/json.png" data-link="https://selfservicebi.co.uk/?attachment_id=606" class="wp-image-606"></figure>
+</li>
+</ul>
+<figcaption class="blocks-gallery-caption">Copy relationships into Excel</figcaption>
+</figure>
+<p><!-- /wp:gallery --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Download the Excel file:</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This will contain 2 grey sheets where you can insert the extracted information. One is for the script results the outer is for the relationship copy results.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>There are 5 blue sheets that will populate with data once you refreshed the excel file (after inserting the extracts). There is a sheet for<em> Tables, Columns, Measures, Hierarchies, Relationships</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":599,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2021/05/Documentation-Excel-1.png" alt="" class="wp-image-599"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:file {"id":561,"href":"https://selfservicebi.co.uk/wp-content/uploads/2021/05/Documentation_Empty.xlsx"} --></p>
+<div class="wp-block-file">
+<a href="https://selfservicebi.co.uk/wp-content/uploads/2021/05/Documentation_Empty.xlsx">Documentation Excel File</a><a href="https://selfservicebi.co.uk/wp-content/uploads/2021/05/Documentation_Empty.xlsx" class="wp-block-file__button" download>Download</a>
+</div>
+<p><!-- /wp:file --></p>
+<p><!-- wp:heading --></p>
+<h2>Summary</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope this little solution can help you with your documentation needs going forward.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you would like to get notified about similar post, then please subscribe to the newsletter.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

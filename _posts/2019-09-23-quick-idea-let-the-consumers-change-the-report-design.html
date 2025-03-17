@@ -1,0 +1,98 @@
+---
+layout: post
+title: 'Quick Idea: Let the consumers change the report design'
+date: 2019-09-23 11:09:47.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Improve the Experience
+tags:
+- Consumers
+- CX
+- DAX
+- Report Design
+- Tips and Tricks
+- Visualization
+meta:
+  _thumbnail_id: '329'
+  _yoast_wpseo_focuskw: Power BI Report Design
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: '13'
+  _yoast_wpseo_content_score: '30'
+  _yoast_wpseo_metadesc: See how you can give the power to the consumers over the
+    report design with the recent changes in Power BI.
+  _yoast_wpseo_linkdex: '52'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/quick-idea-let-the-consumers-change-the-report-design/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>In the <a rel="noreferrer noopener" aria-label="September 2019 (opens in a new tab)" href="https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-september-2019-feature-summary/" target="_blank">September 2019</a> version of Power BI <a rel="noreferrer noopener" aria-label="new dynamic conditional formatting options (opens in a new tab)" href="https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-september-2019-feature-summary/#conditionalFormatting" target="_blank">new dynamic conditional formatting options</a> appeared. So I thought it's time to talk about the  possibilities that open up once all the different aspects of a visual can be dynamically formatted.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the latest Microsoft Business Applications Summit, there was a really game changing announcement, which showed how in the future report consumers (!) will be able to change the visuals in reports they have access to.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:html --><br />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8WhXCwHynEE?start=785" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><br />
+<!-- /wp:html --></p>
+<p><!-- wp:paragraph --></p>
+<p>And, I thought it would be awesome, if they could also change the look and feel of the reports.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This post won't discuss in detail the how-to, just wanted to give you the idea.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Power BI Example:</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:html --><br />
+<iframe width="600" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiNjdmY2U1MWItYjY5Ni00M2RlLTliOGQtMmJiYmUyZDNiZWUzIiwidCI6IjRjY2JjMDY3LWExM2QtNDNjMC1hYTRhLTM1MDViZTJmMzI2ZiIsImMiOjh9" frameborder="0" allowfullscreen="true"></iframe><br />
+<!-- /wp:html --></p>
+<p><!-- wp:paragraph --></p>
+<p>So, I wanted the consumer to change the visual experience of the report.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Currently you are limited to a few formatting options, like title text and background , visual background, etc.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>What you need to do to be able to dynamically set is the following:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>Create parameter tables to use as inputs</li>
+<li>Add calculated columns to calculate the hex values (it can be omitted)</li>
+<li>Then use measures to generate the dynamic value to be used as a color (important don't forget there is a "#" sign needed to precede the color value)</li>
+<li>Use the created measure in conditional formatting as field values.</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>I created 3 measures in this example:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Color without Transparency</li>
+<li>Color with Transparency: did you know that the 4th value controls the transparency (#FFFFFF<strong>00</strong>)</li>
+<li>Turn Title ON/OFF (turn it totally transparent)</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ideas that you can use this for:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Print ready version ON/OFF</li>
+<li>Color blind version ON/OFF</li>
+<li>Everyone set its desired formatting options like hide/show certain elements of a visual.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let me know, if you are interested about the details.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

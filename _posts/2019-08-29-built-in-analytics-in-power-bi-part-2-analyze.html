@@ -1,0 +1,181 @@
+---
+layout: post
+title: Built-in Analytics in Power BI - Part 2 - Analyze
+date: 2019-08-29 15:50:50.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  _yoast_wpseo_primary_category: '12'
+  _yoast_wpseo_content_score: '90'
+  _thumbnail_id: '146'
+  _wp_old_date: '2019-07-30'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/built-in-analytics-in-power-bi-part-2-analyze/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>In this part of the series we will look into the different <strong>Analyze</strong> options of Power BI.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Previous part of this series can be found <a href="https://selfservicebi.co.uk/built-in-analytics-in-power-bi-part-1-visuals/">here</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Explain the Increase/Decrease</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is the first type of the <strong>Analyze</strong> features. If your visual is containing a date dimension than by right clicking on any point you will be able to see <strong>Analyze -&gt; Explain the (increase/decrease)</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":145,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/Explain-the-increase-decrease-1-1024x531.jpg" alt="" class="wp-image-145"><br />
+<figcaption>Explain the decrease option </figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>This functionality then automatically try to find statistically significant differences between the selected and the previous point. In this example between July and June 2017.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The way it works is to create 2 measures. One for each point. Than it applies various dimension values to these 2 measures and ranks them by the difference.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It is generating this popup view, where you can scroll through the findings.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":146,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/Explain-the-increase-decrease-2-1024x608.jpg" alt="" class="wp-image-146"><br />
+<figcaption>Explain the decrease results</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>On the top you will see a short description of the analysis</li>
+<li>In the bottom of each visual you are able to change the visualization type.</li>
+<li>In the top right corner with the plus icon you can add the selected visual to your analysis. <em>(If you are in desktop or in edit mode)</em>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Actually this feature comes in 3 flavors, dependent on the kind of calculation we use it on. The most common one is this, when the measure calculation uses "SUM".</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Using with average measures</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In this second example I want to use this feature to show me the difference between the average sales per month between 2 years.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you can see based on the dimension and the chart type 2 <strong>Analyze</strong> options are visible. We will talk about the second one a bit later.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":300,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/Explain-the-increase-decrease-5-1024x347.jpg" alt="Explain the increase-decrease on averages" class="wp-image-300"><br />
+<figcaption>Explain the increase-decrease on averages</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>What you can see here is that :</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>there are fewer visual options</li>
+<li>you can select if you want to see the largest changes (default), or all the values.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"id":302} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Explain-the-increase-decrease-6.jpg" alt="Explain the increase decrease on averages results" class="wp-image-302"><br />
+<figcaption>Explain the increase decrease on averages results</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Using with percentage measures</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The third version is if you want to use it on semi-additive measures like a profit % in this example.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":147,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/Explain-the-increase-decrease-3-1024x460.jpg" alt="Explain the decrease on %" class="wp-image-147"><br />
+<figcaption>Explain the decrease on %</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Difference here are:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>There is only 1 visual option that shows you the difference between the to periods.</li>
+<li>You have the option to <em>declutter the visual</em> (default), that only shows the biggest changes.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"id":148} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Explain-the-increase-decrease-4-1024x454.jpg" alt="Explain the decrease on % results" class="wp-image-148"><br />
+<figcaption>Explain the decrease on % results</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Explain where the distribution is different</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The other <strong>Analyze</strong> option is showing you if there is significant difference between the distribution of the measure from the original distribution in the visual.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This one is maybe bit harder to grasp first.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In this example what you can see:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>grey dashed line is the original distribution of the profit by product category</li>
+<li>bars are the distribution of profit if we filter down to Fujitsu products.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"id":157} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Where-the-distribution-is-different-1024x774.jpg" alt="" class="wp-image-157"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>How to understand the meaning of this?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In this example the findings show the these 3 products subcategories (brands) had the biggest effect on the distribution of profit.  Fujitsu is responsible for 15% of the products and it has a significantly different distribution that the overall numbers. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So one of the reasons that Consumer Electronics have a lower overall profit than Office Electronics is because Fujitsu had negative profit in Consumer Electronics.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Limitations</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Not all visuals have these functions. Mainly bar and line charts.</li>
+<li>It won`t work with any type of data connection. Import mode is the best.</li>
+<li>It mostly works with simple measures. Use of certain DAX functions (filters, iterators, etc.) disables this functionality. <em>Will be posting about this soon.</em>
+</li>
+<li>It works best in a well prepared and clean data model. <em>Will be a post about that later also.</em>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Conclusion</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>These solutions are really effective way to answer question on the fly, for example in a meeting. Make sure you fully utilize it`s capabilities by preparing and testing the data model you use for your reports and using the right visuals.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

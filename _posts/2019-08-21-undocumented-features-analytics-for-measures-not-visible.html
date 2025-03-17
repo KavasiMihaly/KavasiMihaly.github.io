@@ -1,0 +1,107 @@
+---
+layout: post
+title: 'Undocumented Features: Analytics for measures not visible'
+date: 2019-08-21 21:35:43.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+tags: []
+meta:
+  _thumbnail_id: '283'
+  _wp_old_date: '2019-08-11'
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: '12'
+  _yoast_wpseo_content_score: '90'
+  _yoast_wpseo_focuskw: Analytics feature in Power BI
+  _yoast_wpseo_metadesc: In Power BI, how to show analytics line on measure not visible
+    in the visual?
+  _yoast_wpseo_linkdex: '49'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/undocumented-features-analytics-for-measures-not-visible/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>As I work with Power BI sometimes I encounter strange behaviours that I not heard before, and sometimes feel unintentional by the developers. I have to be honest I am not sure it is not documented, I just did not found it.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The first one I would like to write about is how to use the analytics features on measures that are not visible in the visual.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I posted about <a href="https://selfservicebi.co.uk/built-in-analytics-in-power-bi-part-1-visuals/">analytics features of visuals on this blog post</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Compared to the overall business</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In this example I<br />
+would like to analyse the <strong>profit %</strong><br />
+achieved by different parts of the business, compared to the overall business.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I chose the product<br />
+category as dimension first. In order the get a better view how it compares to<br />
+the overall values I used the analytics pane to show the average profit %. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":281} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Profit-basic.jpg" alt="Profit % with average<br />
+" class="wp-image-281"><br />
+<figcaption>Profit % with average</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>If I drag the same<br />
+measure in a card visual next to it we already see that using the average in<br />
+not showing the same result.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Showing a filtered result</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"id":282} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Profit-with-filter.jpg" alt="Profit % with average filtered" class="wp-image-282"><br />
+<figcaption>Profit % with average filtered</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>In addition, when I use another filter on the visual, than it becomes obvious that we need to find a different solution to show the overall % value regardless of the filters on the visual.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I want to make sure that the analytics line always show 11,59%. For that I need to create a new measure:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:preformatted --></p>
+<pre class="wp-block-preformatted"><strong>Total Profit %</strong> = CALCULATE([% Profit], all(Orders)) </pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:paragraph --></p>
+<p>Orders is my fact table. By ignoring the filter on the fact table, makes sure that any filter coming from any dimension will be ignored.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Adding the measure in the visual will enable me to show an average line.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":284} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Profit-with-total-in-visual-1024x483.jpg" alt="Profit % with total in visual" class="wp-image-284"><br />
+<figcaption>Profit % with total in visual</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>But, I really don`t like to see the total % number as part of the visual, I would only want to see the line, so I can move the measure in the <strong>Tooltips</strong>, but the Analytics <strong>Average line</strong> will stay.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":283} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Profit-with-total-in-tooltip-1024x408.jpg" alt="Profit % with total in tooltip" class="wp-image-283"><br />
+<figcaption>Profit % with total in tooltip</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>It gets trickier, if we have <strong>RLS</strong> in our model. I will post about that shortly.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope you liked today`s post.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

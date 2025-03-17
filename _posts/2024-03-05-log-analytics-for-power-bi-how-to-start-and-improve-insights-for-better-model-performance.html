@@ -1,0 +1,236 @@
+---
+layout: post
+title: 'Log Analytics for Power BI: How to start and improve insights for better model
+  performance'
+date: 2024-03-05 17:55:28.000000000 +00:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Get to the Data
+- Governance is key
+tags:
+- Governance
+- Log Analytics
+- Optimization
+- Performance
+meta:
+  _edit_last: '1'
+  _aioseo_title: ''
+  _aioseo_description: ''
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+  _thumbnail_id: '1002'
+  gd_system_blocks_used: '{"core/paragraph":22,"core/image":10,"core/heading":11,"core/list":3,"core/list-item":12,"core/code":1}'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/log-analytics-for-power-bi-how-to-start-and-improve-insights-for-better-model-performance/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>I had a task to help a managed services team in monitoring multiple production datasets and reports in Power BI. These resources, accessed by thousands of users, demanded optimal performance.  For this we had to streamline information gathering, implement an intuitive platform, and empower the team to explore both high-level overviews and granular query details.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This was a perfect opportunity to work with Log Analytics for Power BI and to dig deep into the data and find ways to advance the available solutions.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>What is Azure Log Analytics?</strong></h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<!-- wp:list-item --></p>
+<li>
+<strong>Azure Log Analytics (LA)</strong> is a service within <strong>Azure Monitor</strong> that Power BI uses to save activity logs.</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Azure Monitor enables you to collect, analyze, and act on telemetry data from both Azure and on-premises environments.</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Key features of Azure Log Analytics include long-term storage, an ad-hoc query interface, and API access for data export and integration with other systems.</li>
+<p><!-- /wp:list-item -->
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading"><strong>How does the integration work?</strong></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<!-- wp:list-item --></p>
+<li>Power BI integrates with Log Analytics to expose events from the <strong>Analysis Services engine</strong>. </li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>These events are derived from existing diagnostic logs available for <strong>Azure Analysis Services</strong>.</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Once connected to Power BI, data is sent continuously and becomes available in Log Analytics in approximately <strong>5 minutes</strong>.</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Integration is on the <strong>Workspace</strong> level, which allows selective<strong> data collection</strong> and better <strong>cost control</strong>.</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Only work with Workspaces in a <strong>Premium</strong> <strong>capacity</strong>
+</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>By default 30 days of data is preserved. This can be modified and there are options for archiving.</li>
+<p><!-- /wp:list-item -->
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"align":"center","id":983,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2024/03/Log-Analytics-Workspace-Setup-1.png" alt="Power BI and Log Analytics integration" class="wp-image-983"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you need further guidance on setting up Log Analytics, refer to the <a href="https://learn.microsoft.com/en-us/power-bi/transform-model/log-analytics/desktop-log-analytics-configure">official documentation</a>. 🚀</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Analyzing collected data</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">In Azure</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the Azure Portal you can analyse the data in the <strong>Logs</strong> section of the <strong>Log Analytics Workspace</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":984,"width":"1133px","height":"auto","sizeSlug":"full","style":{"color":{}}} --></p>
+<figure class="wp-block-image size-full is-resized"><img src="{{site.baseurl}}/assets/2024/03/Azure-Log-Analytics.png" alt="Log Analytics Query Interface" class="wp-image-984" style="width:1133px;height:auto"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here is the official tutorial that help getting familiar with the <a href="https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial">https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>⚠️There is a big limitation of analysing data from Log Analytics which is the limited query resultset size. It is the same if you are analysing the data in Azure or connecting through the API via Power BI. You can see that in the notification in the picture above. ⚠️</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">In Power BI</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Fortunately <a href="https://github.com/RuiRomano" target="_blank" rel="noopener" title="">Rui Romano</a>, <a href="https://github.com/Bhavik-MSFT" target="_blank" rel="noopener" title="">Bravik Merchant</a> and other from Microsoft contributors created a really useful Power BI report template to analyse Log Analytics data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":986,"sizeSlug":"medium","style":{"color":{}}} --></p>
+<figure class="wp-block-image aligncenter size-medium"><img src="{{site.baseurl}}/assets/2024/03/image-300x216.png" alt="Log Analytic Power BI Template Report" class="wp-image-986"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Power BI Log Analytics Template Reports</strong>: <a href="https://github.com/microsoft/PowerBI-LogAnalytics-Template-Reports">https://github.com/microsoft/PowerBI-LogAnalytics-Template-Reports</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is a brilliant report that provided a wide range of insights about  both model query and refresh performance. I highly recommend to use if you plan to implement Log Analytics at your organization.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":992,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2024/03/image-1.png" alt="Available pages in the report" class="wp-image-992"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The solution also resolved the data volume issue by querying Log Analytics in increments:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":988,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2024/03/Log-Analytics-Parameters.png" alt="Log Analytics Power BI Report Parameters" class="wp-image-988"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">But something was missing...</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>As I implemented the solution at one of the projects I noticed that there was no way in the template report to attribute a query to a particular visual. The reports that connected to the models had multiple pages and potentially more than 100 visual elements, this made finding the problematic visuals quite hard.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So I started searching through the logs to see if there is any information available that would help. As you can see in the image the Visual details were buried in the <strong>Application Context</strong> column.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":978,"width":"840px","height":"auto","sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full is-resized"><img src="{{site.baseurl}}/assets/2024/03/Azure-Log-Analytics-Application-Name-.png" alt="Report and Visual details in Logs" class="wp-image-978" style="width:840px;height:auto"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">How to add the missing piece?</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Because the report is really sophisticated it took me a while to understand its inner workings and also received some help from <a href="https://www.linkedin.com/in/%F0%9F%93%8A%F0%9F%94%AC-william-cisler-20837327/" target="_blank" rel="noopener" title="">Will Cisler</a>, thank you for that!</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Add Visual ID to the data</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>First we need to modify the <strong>Power Query</strong> and embedded <strong>KQL code</strong> to add the missing element.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>As a starting point extend <strong>fnGetOperationsExceptRefreshes</strong> function:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>    | extend Sources = parse_json(ApplicationContext).Sources
+    | mv-expand Sources
+    | extend ReportId = tostring(parse_json(Sources).ReportId)
+    <em><strong>| extend VisualId = tostring(parse_json(Sources).VisualId)</strong></em>
+    | extend TextDataHash = hash(EventText)
+    | extend DurationMs = coalesce(DurationMs, 0)
+    | extend User = iff(toupper(PowerBIWorkspaceId) in (workspaceIdList), hash_md5(User), User)
+    | extend ExecutingUser = iff(toupper(PowerBIWorkspaceId) in (workspaceIdList), hash_md5(ExecutingUser), ExecutingUser)
+    | distinct  ApplicationName, CpuTimeMs, ArtifactId, ArtifactName, ArtifactKind, DatasetMode, DurationMs, EventText, ExecutingUser, OperationDetailName, OperationName, PremiumCapacityId, ReportId, SourceSystem, Status, StatusCode, TenantId, TextDataHash, TimeGenerated, Type, User, PowerBIWorkspaceId, PowerBIWorkspaceName, XmlaRequestId, XmlaSessionId, _ResourceId, _SubscriptionId, <strong><em>VisualId</em></strong>
+    | extend QuerySubeventKey = case(
+        OperationName == 'QueryEnd' and isnotempty(XmlaRequestId), XmlaRequestId,  // add rootActivityId as the key if this is a QueryEnd. This joins to the Suboperation table.
+        dynamic(null)) // if we are not expecting subevents then make this null. In PowerQuery we will add a dummy index value for null values to keep this column unique for the 1:* relationship
+    | project-rename DatasetId = ArtifactId, Dataset = ArtifactName, StartTime = TimeGenerated, ResourceId = _ResourceId, SubscriptionId = _SubscriptionId,  ['Duration (ms)'] = DurationMs, <em><strong>VisualGUID = VisualId</strong></em>
+"],Timeout=#duration(0,0,60,0)])),</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>⚠️There might be other parts of the solution need to be adjusted to let this new column to flow through the pipeline.⚠️</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Add Visual Details Page to the Report</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Finding the visuals that cause the performance issue was our main goal, so I created a page dedicated to showcase query summary by visuals. Also added some time analysis to show how changes in usage or improvements in the solution affect the performance.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":973,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2024/03/LogAnalytics-Visual-Details.png" alt="Extended report with visual detail information" class="wp-image-973"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>To connect the page with the rest of the report a drill through was added from the Workspace summary page to the Visuals details.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":974,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2024/03/LogAnalytics-Report-Overview.png" alt="" class="wp-image-974"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Also from the Visual details to the Query details to understand how each query performs.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":972,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2024/03/LogAnalytics-Query-Details-drill.png" alt="" class="wp-image-972"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Real life examples of performance improvements using Log Analytics</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here are some examples that we were able to achive with analysing Log Analytics data with our current setup.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<!-- wp:list-item --></p>
+<li>Slow table visual (40s+) that was designed for exporting data running more than 3.000 time in 2 weeks, was moved to a separate drill through page (<em><a href="https://www.nngroup.com/articles/progressive-disclosure/" target="_blank" rel="noopener" title="">Progressive Disclosure</a></em>). Turns out nobody really wanted to export data because it only run less then 20 times in the next 2 weeks.</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Complex DAX issue causing visual to failed after running for more than 4 minutes. Corrected the calculation, now it runs under 10 seconds.</li>
+<p><!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Legacy, currently unnecessary filters in some visuals for "data cleansing" removed improving query performace from 60 sec to 2 sec.</li>
+<p><!-- /wp:list-item -->
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">What's next?</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Unfortunately currently in Power BI there is no option to extract report metadata information from the published reports through the Power BI APIs.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In my next blog post I will show how you can find the exact details of a visual and page in a PBIX file manually, what are the community built options and how Fabric APIs will help.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":993,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2024/03/image-2.png" alt="" class="wp-image-993"></figure>
+<p><!-- /wp:image --><br />
+</body></html></p>

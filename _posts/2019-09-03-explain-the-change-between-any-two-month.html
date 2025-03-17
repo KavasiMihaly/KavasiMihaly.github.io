@@ -1,0 +1,119 @@
+---
+layout: post
+title: Explain the Change between any two month
+date: 2019-09-03 21:00:34.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+tags:
+- CX
+- DAX
+- Report Design
+- Tips and Tricks
+meta:
+  _yoast_wpseo_content_score: '90'
+  _edit_last: '1'
+  _thumbnail_id: '213'
+  _wp_page_template: default
+  _yoast_wpseo_primary_category: ''
+  _wp_old_date: '2019-08-03'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/explain-the-change-between-any-two-month/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>I started collecting the different built-in analytics capabilities of Power BI. (You can find <a href="https://selfservicebi.co.uk/built-in-analytics-in-power-bi-part-1-visuals/">Part 1</a> and <a href="https://selfservicebi.co.uk/built-in-analytics-in-power-bi-part-2-analyze/">Part 2</a> here.) As I went through all the possibilities I found that I really miss the ability to define the 2 months I would like to compare with each other. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So I thought let's build something that can give me this functionality.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Explain the Change - Power BI Demo</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can use the time slider to select any 2 dates and this example with compare the 2 selected month with each other showing the difference across 6 dimensions using scatter plots.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Also you have the ability to select between 4 metrics (Sales, Profit, Profit %, Quantity)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:html --><br />
+<center><br />
+<figure><iframe width="600" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiNDM4YTE1MTctZmEwMS00NjM5LWIwNmEtNWE2MDg0YThkODk1IiwidCI6IjRjY2JjMDY3LWExM2QtNDNjMC1hYTRhLTM1MDViZTJmMzI2ZiIsImMiOjh9" allowfullscreen="true"></iframe></figure>
+<p></center><br />
+<!-- /wp:html --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns has-2-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:paragraph --></p>
+<p><strong>Pro Tip:</strong> In some circumstances it is useful to turn on <em>"Show items with no data". </em><br>This way we are not losing cities that did not produced any sales in the selected period. Because that can also be a valuable information.</p>
+<p><!-- /wp:paragraph -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"id":158} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/09/Scatter-Plot-show-no-data.jpg" alt="Show items with no data" class="wp-image-158"><br />
+<figcaption>Show items with no data</figcaption>
+</figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:heading --></p>
+<h2>How to create this?</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>1st step</strong>: We need to create a table using <strong>Enter Data</strong>, that will hold the different measure names we want to select from.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":211,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/09/Metric-Selector-table.jpg" alt="Metric Selector table" class="wp-image-211"><br />
+<figcaption>Metric Selector table</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>2nd step:</strong> We need to create the measure what we can use together with a slicer to select between our desired measure. See the <strong>Selected Metric</strong> in the <strong>Dax Measures used </strong>section.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>3rd step: </strong>I wanted to use a simple slider slicer with the dates to quickly select 2 months I would like to compare. So I need to create 2 measure that will calculate the first months and the last months value selected in that slicer.  See the <strong>Metric for max month </strong>and <strong>Metric for min month</strong> in the <strong>Dax Measures used </strong>section. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong> 4th step:</strong> I wanted to visuals on a line chart the values by month between the 2 selected months. Because the user will be able to select any day in the month, but I wanted to show the full month values for all the months, I had to calculate it in another measure. See the <strong>Full Month Metric</strong> in the <strong>Dax Measures used </strong>section. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>5th step:</strong> Create dynamic titles for the line chart and the scatter charts.  See the <strong>Title for Line Chart  </strong>and <strong>Title for Scatter Charts</strong> in the <strong>Dax Measures used </strong>section.  </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Dax Measures used</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph {"fontSize":"small"} --></p>
+<p class="has-small-font-size"><strong>Selected Metric</strong> = SWITCH(SELECTEDVALUE('Metric Selector'[Metric],"Sales"),"Sales", [£ Sales],"Profit",[£ Profit],"Profit %", [% Profit], "Quantity", [# Quantity]) </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"fontSize":"small"} --></p>
+<p class="has-small-font-size"><strong>Metric for max month</strong> =  var maxdate = [MaxDate] return CALCULATE([Selected Metric], filter(ALL('Calendar'[Dates]), MONTH('Calendar'[Dates]) = MONTH(maxdate) &amp;&amp; YEAR('Calendar'[Dates]) = YEAR(maxdate)))  </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"fontSize":"small"} --></p>
+<p class="has-small-font-size"><strong>Metric for min month</strong> =  var mindate = [MinDate] return CALCULATE([Selected Metric], filter(ALL('Calendar'[Dates]), MONTH('Calendar'[Dates]) = MONTH(mindate) &amp;&amp; YEAR('Calendar'[Dates]) = YEAR(mindate)))  </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"fontSize":"small"} --></p>
+<p class="has-small-font-size"><strong>Full Month metric</strong> = CALCULATE('Metric Selector'[Selected Metric], all('Calendar'), VALUES('Calendar'[Year Month]))  </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"fontSize":"small"} --></p>
+<p class="has-small-font-size"><strong>Title for Line Chart</strong> = SELECTEDVALUE('Metric Selector'[Metric],"Sales") &amp; " by Year, Quarter and Month"  </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph {"fontSize":"small"} --></p>
+<p class="has-small-font-size"><strong>Title for Scatter Charts</strong> = SELECTEDVALUE('Metric Selector'[Metric],"Sales") &amp; " comparison between " &amp; MONTH([MinDate]) &amp;"/"&amp; year([MinDate]) &amp; " and " &amp; MONTH([MaxDate]) &amp;"/"&amp; year([MaxDate]) </p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

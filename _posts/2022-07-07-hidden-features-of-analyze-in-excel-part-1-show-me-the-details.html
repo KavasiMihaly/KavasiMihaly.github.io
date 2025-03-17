@@ -1,0 +1,218 @@
+---
+layout: post
+title: Hidden features of Analyze in Excel - Part 1 - Show me the details
+date: 2022-07-07 17:10:33.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+- Get to the Data
+- Improve the Experience
+tags:
+- Analyze in Excel
+- CX
+- Data Model
+- DAX
+- Excel
+- Tabular Editor
+meta:
+  _edit_last: '1'
+  _aioseo_title: "#post_title #separator_sa #site_title"
+  _aioseo_description: "#post_excerpt"
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+  gd_system_blocks_used: '{"core/heading":9,"core/paragraph":22,"core/image":9,"core/list":1,"core/columns":1,"core/column":2,"syntaxhighlighter/code":1}'
+  _thumbnail_id: '875'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/hidden-features-of-analyze-in-excel-part-1-show-me-the-details/"
+excerpt: This blog series is about the hidden features in Analyze in Excel. There
+  are lot of tiny details which can help the adoption of Power BI for Excel users.
+  In this blog we are going to talk about Detail Rows Expressions.
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:heading --><html><body></p>
+<h2>Why focus on Analyze in Excel?</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In my previous post about <strong><a href="https://selfservicebi.co.uk/organizational-data-types-supercharge-your-excel-users-productivity/">Organizational Data Types</a></strong> I introduced this chart showing the potential reach of certain features in an organization. There we covered the widest reaching feature.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":828,"width":252,"height":256,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2022/07/Organizational-sphere-of-influence-1-1009x1024.png" alt="Organizational sphere of influence" class="wp-image-828" width="252" height="256"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>In this series I would like to cover some hidden features of <strong>Analyze in Excel</strong>. These will improve the usability of your solutions and solves some of the issues you would face on your adoption journey to <strong>Power BI</strong>. There is an <strong><a href="https://docs.microsoft.com/en-us/power-bi/guidance/powerbi-adoption-roadmap-overview" target="_blank" rel="noreferrer noopener">Adoption Roadmap</a></strong> available that also talks about the challenges.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Not everyone will want to use Power BI in an organization, but that does not mean we should not focus on them too. We need to reach people where they are currently and not necessarily force them to change.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Show Details</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In a Pivot table there is a standard feature called Show Details. This gives a filtered view of top 1000 rows based on our selection.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":856,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/Top1000-1.gif" alt="Show Details functionality in Excel" class="wp-image-856"><br />
+<figcaption><strong>Show Details</strong> functionality in Excel</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>While it works with standard pivot tables by default, this behaviour changes when we use Analyze in Excel.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Data Model</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>First let's understand the data model we are going to use with Analyze in Excel. This is a fair straightforward subset of a bigger model.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>One fact table - Housing Market Data</li>
+<li>Three dimension tables - Calendar, Post Code, Lower Super Output Area</li>
+<li>Calculations table that only contains measures organized into folders<em> (following Power BI data modelling best practice)</em>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"align":"center","id":854,"width":840,"height":394,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2022/07/HousingMarketDataModel-1024x481.png" alt="Data model" class="wp-image-854" width="840" height="394"><br />
+<figcaption>Data model</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Standard experience</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let's see what happens when you try to use Analyze in Excel with this standard model.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>After connecting to the published dataset, it is straightforward to use the pivot table as expected. If you want to see the details, you can double click on the cell...</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"align":"center","id":852,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/AnalyzeInExcel.png" alt="Click to Show Details from a cell in a Pivot table" class="wp-image-852"><br />
+<figcaption>Click to <strong>Show Details</strong> from a cell in a Pivot table</figcaption>
+</figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"align":"center","id":853,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/PivotTable.png" alt="Pivot table fields" class="wp-image-853"><br />
+<figcaption>Pivot table fields</figcaption>
+</figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:paragraph --></p>
+<p>...or right click and select Show Details</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":857,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/Show-Details.png" alt="Show Details option" class="wp-image-857"><br />
+<figcaption>Show Details option</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>What you would expect is a nice table of columns from the Housing Market table with the filtered rows. This is how it works with simple Excel pivot tables. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":851,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-large"><img src="{{site.baseurl}}/assets/2022/07/nocolumns-1024x545.png" alt="No data shown - measure table is empty" class="wp-image-851"><br />
+<figcaption>No data shown - measure table is empty</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Instead, this screen is going to welcome you. But why?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Because we are using a Power BI data model, the measures are in their own data table, which does not have any columns or rows. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>What if the measures are in the fact table?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>We would still have a problem because it would <strong>exclude all the relationship columns</strong> like date and postcode in our example, losing valuable information from the details.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So, using Power BI have some limitation for Excel users?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>How to see the details - Detail Rows Expression</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>To solve this issue and even provide better results we need to use <a href="https://tabulareditor.com/" target="_blank" rel="noreferrer noopener">Tabular Editor</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The rows that are displayed on Show Details are dependent on the measures. To determine which columns should appear we need to provide a Detail Rows Expression.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":869,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-large"><img src="{{site.baseurl}}/assets/2022/07/DetailedRowsExpression-1024x231.png" alt="Detail Rows Expression in Tabular Editor" class="wp-image-869"><br />
+<figcaption><strong>Detail Rows Expression</strong> in Tabular Editor</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Because we are using a data model, we are not just limited to columns from one table, but any related information can be added to it.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You will see a sample Dax query that I used for this blog post. The best way to design a query for your data model is to use <a href="https://daxstudio.org/" target="_blank" rel="noreferrer noopener">DAX studio</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Detail Rows Expression sample:</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"powershell"} --></p>
+<pre class="wp-block-syntaxhighlighter-code">SELECTCOLUMNS(
+'Housing Market Data',
+"Transaction ID", [Transaction ID],
+"Estate Type", [Estate Type],
+"Property Type", [Property Type],
+"New Build",[New Build?],
+"Local Areas District", RELATED('Local Area District'[LA Name]),
+"Post Code",RELATED('Post Code'[Post Codes]),
+"Street",[Street],
+"House Number/Name",[House Number/Name],
+"Transaction Date",RELATED('Calendar'[Date]),
+"Properties Sold", [Properties Sold],
+"Average Price Paid", [Average Price Paid]
+)</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Default expression</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you have a lot of measures it could seem like a lot of work to add this to each of the measures. If you would like the same expression for all the measures in a table, then you can use the <strong>Default Detail Rows Expression</strong> setting for the table.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":870,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/07/image.png" alt="" class="wp-image-870"><br />
+<figcaption>Table level Expression</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>You are still able to add specific expression to certain measures if they need to differ.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Summary</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Using Detail Rows Expression, you can ensure that the Excel users do not feel that they lost a valuable feature because of Power BI, instead they not have an even better version of that.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope you like this blog post, the next part will arrive shortly.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

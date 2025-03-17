@@ -1,0 +1,270 @@
+---
+layout: post
+title: Custom Actions from Best Practice Analyzer recommendations
+date: 2021-07-01 17:38:54.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+- Improve the Experience
+tags:
+- Best Practice
+- Data Model
+- Dataset
+- Tabular Editor
+meta:
+  _edit_last: '1'
+  _aioseo_title: "#post_title #separator_sa #site_title"
+  _aioseo_description: "#post_excerpt"
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+  _thumbnail_id: '652'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/custom-actions-from-best-practice-analyzer-recommendations/"
+excerpt: Turn Best Practice Analyzer recommendations into Custom Actions in Tabular
+  Editor. Improve your data models with a few clicks.
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>This post is a follow on from the <a href="https://selfservicebi.co.uk/documenting-power-bi-data-model/" target="_blank" rel="noreferrer noopener">DOCUMENTING POWER BI – DATA MODEL</a>, where I looked at how you can use Tabular editor to document your data model. In this post we are going to look at Best Practice Analyzer and Custom Actions.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Creating automated solution for generic data modelling tasks based on the Best Practice Analyzer recommendations.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let start first with introducing these two components of Tabular Editor.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Best Practice Analyzer</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.tabulareditor.com/Best-Practice-Analyzer.html" target="_blank" rel="noreferrer noopener">Best Practice Analyzer</a> in <a href="https://tabulareditor.github.io/" target="_blank" rel="noreferrer noopener">Tabular Editor</a> is an incredibly powerful tool to optimize and clean up Power BI Data models.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":638,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/Best-Practice-Analyzer.png" alt="Best Practice Analyzer recommendations" class="wp-image-638"><br />
+<figcaption>Best Practice Analyzer recommendations</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>It helps by highlighting common best practices and in some cases gives you one click fixes.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":639,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/Generate-Fix.png" alt="Resolve Best Practice Analyzer recommendations" class="wp-image-639"><br />
+<figcaption>Resolve Best Practice Analyzer recommendations</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"id":640,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2021/07/GeneratedScript-1024x216.png" alt="BPA Generated script" class="wp-image-640"><br />
+<figcaption>BPA Generated script</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you can see the generated fix script generates one line of code for each entity it would like to change.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Custom Actions</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Custom Actions are an effective way to create generic scripts to preform data model modifications. Scripts a written in C#. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":655,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/Save-Custom-Action.png" alt="" class="wp-image-655"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>When you created your script, you can save them as Custom Actions. Here you can define the context where you want the action to be available.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":646,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/Custom-Actions-Setup.png" alt="" class="wp-image-646"><br />
+<figcaption>Custom Action setup</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Now you just need to select and right click to see the custom actions appearing. This way you can use them on not just the actual model you are working on but on any data model in the future.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":645,"width":612,"height":317,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2021/07/Custom-Actions.png" alt="" class="wp-image-645" width="612" height="317"><br />
+<figcaption>Custom Actions in action</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>BPA Recommendations to Custom Actions</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let's get back to the current topic. When I encounter a task with a data model, I usually try to think through if this task might appear with future data models. If the answer is yes, then I try to find a generic and preferably automated/scripted solution for it to become more efficient with every project.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>So, I thought to create generic scripts from the BPA recommendations and a few others to help me achieve a good quality and report creator friendly data model.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":660,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/07/Measure-Description.png" alt="" class="wp-image-660"><br />
+<figcaption>Dax formatting and default measure descriptions</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here is the list:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:table {"className":"is-style-stripes"} --></p>
+<figure class="wp-block-table is-style-stripes">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Desciption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hide all relationship columns</strong></td>
+<td>Hide all columns on many side of a join</td>
+</tr>
+<tr>
+<td><strong>Hide fact table numeric columns</strong></td>
+<td>Hide all numeric columns to avoid report creators using them instead of measures</td>
+</tr>
+<tr>
+<td><strong>Format string to numeric columns</strong></td>
+<td>Formats all numeric columns that do not have a format already</td>
+</tr>
+<tr>
+<td><strong>Format measures</strong></td>
+<td>Format all measures that do not have a format already</td>
+</tr>
+<tr>
+<td><strong>Do not summarize numeric columns</strong></td>
+<td>Change all numeric columns to do not summarize to avoid dimension columns to be treated as implicit measures</td>
+</tr>
+<tr>
+<td><strong>Format DAX</strong></td>
+<td>Run DAX formatter on all the measures</td>
+</tr>
+<tr>
+<td><strong>Default Measure Description</strong></td>
+<td>Adds DAX expression to the description</td>
+</tr>
+<tr>
+<td><strong>ID columns into folder and hide</strong></td>
+<td>Puts ID columns in an id folder and hides them.</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<p><!-- /wp:table --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here are some examples:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"csharp"} --></p>
+<pre class="wp-block-syntaxhighlighter-code">//Name: Organize ID Columns
+//Tooltip: Puts ID columns in an id folder and hides them.
+//Enable: Model
+//Created by Mihaly Kavasi
+//Tabular Editor version 2.16.0
+
+foreach(var c in Model.AllColumns)
+{
+    if(c.Name.ToLower().Contains("id"))
+    {
+        c.DisplayFolder = "_IDs";
+        c.IsHidden = true;
+    }
+   
+}</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"csharp"} --></p>
+<pre class="wp-block-syntaxhighlighter-code">{% raw %}
+//Name: Default Measure Description
+//Tooltip: Adds expression to the description
+//Enable: Model
+//Created by Mihaly Kavasi
+//Tabular Editor version 2.16.0
+
+//It is better to format DAX before adding it into the descriptions
+foreach(var m in Model.AllMeasures)
+{
+    if(m.Description == "")
+    {    
+        m.Description = "Expression: " + m.Expression;
+    }
+    else if (!m.Description.Contains("Expression"))
+    {
+        m.Description = m.Description + " Expression: " + m.Expression;
+    }
+}
+{% endraw %}</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"csharp"} --></p>
+<pre class="wp-block-syntaxhighlighter-code">//Name: Numeric column to Do not summarize
+//Tooltip: Change all numeric columns to do not summarize
+//Enable: Model
+//Created by Mihaly Kavasi
+//Tabular Editor version 2.16.0
+
+foreach (var c in Model.AllColumns)
+{
+    if(c.DataType == DataType.Decimal ||  c.DataType == DataType.Double || c.DataType == DataType.Int64)
+    {  
+    c.SummarizeBy = AggregateFunction.None;
+    }
+}</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can find the latest version of all the scripts in the blogs GitHub repo: <a href="https://github.com/KavasiMihaly/SelfServiceBIBlog/tree/main/TabularEditor/CustomActions" target="_blank" rel="noreferrer noopener">https://github.com/KavasiMihaly/SelfServiceBIBlog/tree/main/TabularEditor/CustomActions</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I plan to constantly add and improve upon the scripts there.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Resources</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Self Service BI Blog GitHub site: <a href="https://github.com/KavasiMihaly/SelfServiceBIBlog" target="_blank" rel="noreferrer noopener">https://github.com/KavasiMihaly/SelfServiceBIBlog</a>
+</li>
+<li>Tabular Editor 3: <a href="https://tabulareditor.com/" target="_blank" rel="noreferrer noopener">https://tabulareditor.com/</a>
+</li>
+<li>Tabular Editor (<em>Open Source Version</em>): <a href="https://tabulareditor.github.io/" target="_blank" rel="noreferrer noopener">https://tabulareditor.github.io/</a>
+</li>
+<li>Tabular Editor Documentation: <a href="https://docs.tabulareditor.com/index.html#" target="_blank" rel="noreferrer noopener">https://docs.tabulareditor.com/index.html#</a>
+</li>
+<li>How to setup Custom Actions: <a href="https://docs.tabulareditor.com/Custom-Actions.html" target="_blank" rel="noreferrer noopener">https://docs.tabulareditor.com/Custom-Actions.html</a>
+</li>
+<li>How to use BPA: <a href="https://docs.tabulareditor.com/Best-Practice-Analyzer.html" target="_blank" rel="noreferrer noopener">https://docs.tabulareditor.com/Best-Practice-Analyzer.html</a>
+</li>
+<li>BPA Rules: <a href="https://github.com/TabularEditor/BestPracticeRules" target="_blank" rel="noreferrer noopener">https://github.com/TabularEditor/BestPracticeRules</a>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>Summary</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>By creating custom actions from BPA recommendation enables automated data model refinement for any future projects.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope you found this blog post useful. If you want the get notified about new posts, you can subscribe to a newsletter.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

@@ -1,0 +1,534 @@
+---
+layout: post
+title: Slicers or Filters - Comprehensive Guide
+date: 2021-10-25 15:12:32.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+- Improve the Experience
+tags:
+- Best Practice
+- Report Design
+- Slicers
+meta:
+  _yoast_wpseo_primary_category: '12'
+  _edit_last: '1'
+  _yoast_wpseo_content_score: '90'
+  _aioseo_title: "#post_title #separator_sa #site_title"
+  _aioseo_description: "#post_excerpt"
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+  gd_system_blocks_used: '{"core/paragraph":45,"core/heading":16,"core/image":20,"core/code":5,"core/columns":2,"core/column":4,"core/table":2,"core/html":2,"core/list":2}'
+  _thumbnail_id: '603'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/slicers-or-filters-comprehensive-guide/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>Slicer and filter were around in Power BI for a long time now, and plenty of blog posts were created comparing them to each other. Because these features constantly get updated and there are considerations outside of just a single report, I thought to write a comprehensive guide that I can point to every time this question comes up.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>And this comes up a lot of time even now, when a discussing report design principles and best practices.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong><em>So, should be use Slicers or Filters in our Power BI reports?</em></strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It is not a simple decision because there are a lot of reasons to choose either of them. Or is it really a choice we need to make?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>Note: This topic requires basic knowledge on how slicers and filters work</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading --></p>
+<h2>Why does it matter? Why would you want to choose?</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>One main reason you would want to decide is that by providing consistent way consumer can interact with your reports helps them learn new reports easier. That helps adoption. This way if they learn one report, they learn all! This is extremely important if you have multiple teams designing report that is used by the same/similar audiance.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Using slicer or filters does not seem that important when you only think about one report, but when you have to decide for potentially hundreds of reports and hundreds of consumers than it suddenly becomes important.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Having seen inconsistent design patterns and spoken with consumers about the problems it causes, made me realize that this is an important topic.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Feature overview</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I tried to collect and evaluate certain capabilities that are important in reporting, which can help you in this decision.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:table {"hasFixedLayout":true,"style":{"color":{"background":"#e7f5fe"}},"className":"is-style-regular"} --></p>
+<figure class="wp-block-table is-style-regular">
+<table class="has-background has-fixed-layout" style="background-color:#e7f5fe">
+<thead>
+<tr>
+<th class="has-text-align-left" data-align="left">Features</th>
+<th class="has-text-align-center" data-align="center">Slicer</th>
+<th class="has-text-align-center" data-align="center">Filter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="has-text-align-left" data-align="left">1. Filter options</td>
+<td class="has-text-align-center" data-align="center">✓</td>
+<td class="has-text-align-center" data-align="center"> ✓*</td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">2. Partial filtering</td>
+<td class="has-text-align-center" data-align="center">✓</td>
+<td class="has-text-align-center" data-align="center"></td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">3. Brand integration</td>
+<td class="has-text-align-center" data-align="center">✓</td>
+<td class="has-text-align-center" data-align="center">✓</td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">4. Synchronization</td>
+<td class="has-text-align-center" data-align="center">✓</td>
+<td class="has-text-align-center" data-align="center"></td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">5. Real estate usage</td>
+<td class="has-text-align-center" data-align="center"> ✓*</td>
+<td class="has-text-align-center" data-align="center">✓</td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">6. Hierarchies</td>
+<td class="has-text-align-center" data-align="center">✓ </td>
+<td class="has-text-align-center" data-align="center"></td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">7. Empty result set</td>
+<td class="has-text-align-center" data-align="center">✓ </td>
+<td class="has-text-align-center" data-align="center"></td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">8. Top N filter</td>
+<td class="has-text-align-center" data-align="center"></td>
+<td class="has-text-align-center" data-align="center">✓</td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">9. Parameters</td>
+<td class="has-text-align-center" data-align="center">✓</td>
+<td class="has-text-align-center" data-align="center"></td>
+</tr>
+<tr>
+<td class="has-text-align-left" data-align="left">10. Data cleansing/Permanent filtering</td>
+<td class="has-text-align-center" data-align="center"> ✓*</td>
+<td class="has-text-align-center" data-align="center">✓</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Evaluation criteria (*: partial capability or need to mitigate limitations by using certain techniques)</figcaption>
+</figure>
+<p><!-- /wp:table --></p>
+<p><!-- wp:paragraph --></p>
+<p>You will see that some use cases will require one or the other feature. Sometimes both.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>1. Filter options</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>The first feature we going to examine is the filter options available. This is one of the important deciding factors between slicers and filters. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Slicers options:</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:table {"hasFixedLayout":true,"style":{"color":{"background":"#e7f5fe"}},"className":"is-style-regular"} --></p>
+<figure class="wp-block-table is-style-regular">
+<table class="has-background has-fixed-layout" style="background-color:#e7f5fe">
+<thead>
+<tr>
+<th class="has-text-align-center" data-align="center">Text</th>
+<th class="has-text-align-center" data-align="center">Number</th>
+<th class="has-text-align-center" data-align="center">Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="has-text-align-center" data-align="center">List</td>
+<td class="has-text-align-center" data-align="center">List</td>
+<td class="has-text-align-center" data-align="center">List</td>
+</tr>
+<tr>
+<td class="has-text-align-center" data-align="center">Dropdown</td>
+<td class="has-text-align-center" data-align="center">Dropdown</td>
+<td class="has-text-align-center" data-align="center">Dropdown</td>
+</tr>
+<tr>
+<td class="has-text-align-center" data-align="center"></td>
+<td class="has-text-align-center" data-align="center">Between</td>
+<td class="has-text-align-center" data-align="center">Between</td>
+</tr>
+<tr>
+<td class="has-text-align-center" data-align="center"></td>
+<td class="has-text-align-center" data-align="center">Less than or equal to</td>
+<td class="has-text-align-center" data-align="center">Before</td>
+</tr>
+<tr>
+<td class="has-text-align-center" data-align="center"></td>
+<td class="has-text-align-center" data-align="center">Greater than or equal to</td>
+<td class="has-text-align-center" data-align="center">After</td>
+</tr>
+<tr>
+<td class="has-text-align-center" data-align="center"></td>
+<td class="has-text-align-center" data-align="center"></td>
+<td class="has-text-align-center" data-align="center">Relative Date</td>
+</tr>
+<tr>
+<td class="has-text-align-center" data-align="center"></td>
+<td class="has-text-align-center" data-align="center"></td>
+<td class="has-text-align-center" data-align="center">Relative Time</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<p><!-- /wp:table --></p>
+<p><!-- wp:image {"align":"center","id":521,"width":808,"height":105,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2021/10/Slicers.png" alt="" class="wp-image-521" width="808" height="105"><br />" height="105"><br />
+<figcaption>Slicer variations</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can also enable search or create a button like appearance. There are custom slicer visuals that can be really useful. Also, you can control if they are single select, multi select or multiselect with control.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>Tip: Just learned if you can control the visibility of the search bar using CTRL + F, but the report creator needs to turn search on first.</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:html --><br />
+<center><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6855929788130050048" height="400" width="500" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></center><br />
+<!-- /wp:html --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Filter options:</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"align":"center","id":707,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/filter-options.png" alt="" class="wp-image-707"></figure>-image-707"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Basic filtering</strong> which is like list multi select in slicers. It has <em>require single select</em> option but it does not have the same capability as the similar slicer option. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Advanced filtering</strong> capabilities are similar to <strong>Excel's</strong> number/text filters. The options will change based on the data type of the column.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"align":"center","id":708,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/filter-text-options.png" alt="Filter text options" class="wp-image-708"><br />"wp-image-708"><br />
+<figcaption>Filter text options</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"align":"center","id":709,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/filter-number-options.png" alt="Filter number options" class="wp-image-709"><br />"wp-image-709"><br />
+<figcaption>Filter number options</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Relative date and time</strong>: gives you filtering capabilities based on current date and time.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you can see filters also give you lot of options as well but are <strong>missing some key features</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>sliders, </li>
+<li>forced single select</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Update:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Marcus Wegener shared with me another great idea how to expand the capabilities of Advanced Filtering in the filter pane by enabling selection of more than two values. Here it is:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:html --><br />
+<center><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6788773722825351168" height="400" width="500" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></center><br />
+<!-- /wp:html --></p>
+<p><!-- wp:heading --></p>
+<h2>2. Partial filtering <em>(within a page)</em><br />
+</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In some cases, you want to be able to filter only some of the visuals on a given report page.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the Filter Pane you can either do a filter on a whole page or on a given visual. This is usually not flexible enough in these use cases. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":700,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/Edit-Interactions.gif" alt="" class="wp-image-700"><br />"wp-image-700"><br />
+<figcaption>Edit interactions </figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Slicers give you the ability using <strong>Edit Interactions</strong> to selectively affect visuals on your page.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":603,"sizeSlug":"large","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2021/10/Partial-filter-1024x500.png" alt="" class="wp-image-603"><br />"wp-image-603"><br />
+<figcaption>Comparing two movie titles from Metacritic BEST OF 2020 Movie Category</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>3. Brand Integration</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Both slicers and the filter pane can fully integrate with your branding. With slicers you can also use pictures like brand logos or product images.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":604,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/10/Image-Slicer.png" alt="Images as slicers" class="wp-image-604"><br />"wp-image-604"><br />
+<figcaption>Images as slicers</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>4. Synchronization</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Filter synchronization between pages can also be very important factor. The users prefer to set the context (filters) once and used that to analyze the data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Filter Pane</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the filter pane you have 2 options:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Filter all pages</li>
+<li>Filter one page</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Slicer</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>With the sync slicer option, you can fully customize the interaction between report pages for each slicer.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Synchronization can be one way or both ways and you can also control visibility separately.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":702,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/Sync-Slicers.png" alt="Sync Slicers" class="wp-image-702"><br />"wp-image-702"><br />
+<figcaption>Sync slicers</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>5. Real estate usage</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>One important aspect is how much space they take up from the available real estate. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Filter pane</strong> is totally separated from the report area and can be closed.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>Tip: you can also hide the filter pane if you don`t want your users to use it. Filters setup there will still affect the report.</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:image {"align":"center","id":519,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/10/Hide-filter-pane.png" alt="Hide filter pane" class="wp-image-519"><br />"wp-image-519"><br />
+<figcaption>Hide filter pane</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Slicers</strong> on the other hand generally consume report real estate. There are techniques to create "pop-up" slicer panels. Here is one example by <strong>Mara Pereira:</strong> <a href="https://www.datapears.com/post/how-to-build-a-customised-filter-pane-in-power-bi">https://www.datapears.com/post/how-to-build-a-customised-filter-pane-in-power-bi</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Also, with slicers you can create a dedicated filter/slicer page and just use the sync slicer functionality with hidden slicers to apply them to other pages without taking up any real estate.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>6. Hierarchy</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is a really valuable feature if you want to narrow down the list you want to find what you are looking for. This helps organize the options and guides the users. This is only available for slicers currently. Previously only custom visuals had this functionality, but it was added to the default slicers some time ago.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":715,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/Hierarchy-Slicer.gif" alt="Hierarchy Slicer" class="wp-image-715"><br />"wp-image-715"><br />
+<figcaption>Hierarchy Slicer</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>7. Empty result set</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is a technical term for no data is available based on the combination of your filter selections (context).</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":716,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/EmptyResultSet.gif" alt="Empty result set" class="wp-image-716"><br />"wp-image-716"><br />
+<figcaption>Empty result set</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>This feature requires a bit of problem and solution requires a bit of explanation. For that we turn to the data model.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":717,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/10/data-model-1024x593.png" alt="Data models with one to many relationships and single direction filters" class="wp-image-717"><br />"wp-image-717"><br />
+<figcaption>Data models with one-to-many relationships and single direction filters</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is a classic example of the star schema. You can learn about star schemas <strong><a href="https://docs.microsoft.com/en-us/power-bi/guidance/star-schema" target="_blank" rel="noreferrer noopener">HERE</a></strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The problem is the dimensions, where the slicers are from, cannot filter each other. Therefore, creating a possibility of an empty result set.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>How can we solve it? With filters for slicers. ? </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can use measures as filters in the slicers visual level filters. Here are used a simple row count measure on the <strong>Fact</strong> <strong>table</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":719,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/image.png" alt="Measure filter for a slicer" class="wp-image-719"><br />"wp-image-719"><br />
+<figcaption>Measure filter for a slicer</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>This will ensure that only those slicer values will be displayed that have rows associated with them in the fact table.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":720,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/NonEmptyResultSet.gif" alt="Nonempty result set" class="wp-image-720"><br />"wp-image-720"><br />
+<figcaption>Nonempty result set</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>8. Top N filter</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is a special capability that is only available for the visual level filter in the filter pane.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you want to display for example the TOP 10 customer by sales, then instead of writing this logic in DAX you can just simply use this TOP N filter type for your visual.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":520,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/10/TopN-Filter.png" alt="Top N filter" class="wp-image-520"><br />"wp-image-520"><br />
+<figcaption>Top N filter</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>9. Parameters</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you would like to do some what-if analysis than parameters are a way to create an input for those scenarios. When you create a parameter, you will have an option to add a slicer to the page.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"align":"center","id":697,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/Parameter-creation-3.png" alt="Parameter creation" class="wp-image-697"><br />"wp-image-697"><br />
+<figcaption>Parameter creation</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"align":"center","id":699,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/Parameter-Slicer.gif" alt="Parameter Slicer in Action" class="wp-image-699"><br />"wp-image-699"><br />
+<figcaption>Parameter Slicer in Action</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>Note: it is possible to use the parameters in filters, but the lack of proper single select support can easily confuse the end users.</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading --></p>
+<h2>10. Data cleansing/Permanent filters</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In slicers there are no ability to prevent users to change the selected value apart from hiding the slicer itself.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In filters you can chose to lock a filter or even hide it. This way you can specify a certain page to show a subset of the data or to filter out data errors that are still present in the data like <a href="https://selfservicebi.co.uk/referential-integrity-violations-in-a-data-model-what-are-those/" target="_blank" rel="noreferrer noopener">RI violations.</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":690,"style":{"color":{}}} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2021/10/Filter-Lock-Hide.png" alt="Filter Pane - Lock and Hide options" class="wp-image-690"><br />"wp-image-690"><br />
+<figcaption>Filter Pane - Lock and Hide options</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Important note that if you hide the filter then the end users won`t be aware that filter is active. This might be desirable in certain occasions, but generally I would recommend against using it in production reports. Users should have the full context on what insights they are getting.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":691,"sizeSlug":"full","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img src="{{site.baseurl}}/assets/2021/10/Filter-Hide.png" alt="Hidden filters are not showing in the filter list of a visual" class="wp-image-691"><br />"wp-image-691"><br />
+<figcaption>Hidden filters are not showing in the filter list of a visual</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>Tip: did you now that hidden slicers are still filtering the visuals?</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:image {"align":"center","id":517,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/10/Hidden-Slicer.png" alt="Hidden slicers are still affecting a visual and is visible in the filter list" class="wp-image-517"><br />"wp-image-517"><br />
+<figcaption>Hidden slicers are still affecting a visual and are visible in the filter list</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Summary</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>It is not an easy decision because both slicers and filters have some unique advantages in certain scenarios. Creating guidelines on their usage for your organization however can go a long way <strong>helping creator and consumer adoption in Power BI.</strong></p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

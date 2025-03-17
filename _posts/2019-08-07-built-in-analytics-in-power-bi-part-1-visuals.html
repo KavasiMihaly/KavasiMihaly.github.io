@@ -1,0 +1,237 @@
+---
+layout: post
+title: 'Built-in Analytics in Power BI - Part 1: Visuals'
+date: 2019-08-07 15:08:43.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Analytics Edge
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  _thumbnail_id: '188'
+  _wp_old_date: '2019-07-30'
+  _yoast_wpseo_primary_category: ''
+  _yoast_wpseo_focuskw: Built-in analytical features in Power BI
+  _yoast_wpseo_metadesc: What are the built-in analytical features of visuals in Power
+    BI.
+  _yoast_wpseo_linkdex: '51'
+  _yoast_wpseo_content_score: '90'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/built-in-analytics-in-power-bi-part-1-visuals/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>In this blog series, I will cover all of Power BI's built-in analytical capabilities. Basically, anything that doesn't require you to know the DAX (Data Analysis Expressions) language.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>These can help you find insight, or even uncover valuable information that otherwise could have been overlooked.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>The Analytics Pane</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns has-2-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:paragraph --></p>
+<p>The simplest, but undoubtedly the most versatile area, is the <em>Analytics Pane</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>These options can help you add context to the numbers you want to visualize, like which product produces above average sales or which shops reached the desired profit %.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>These options can be found under the <em>Analytics Pane</em> as shown in the picture.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Not all visuals have multiple analytics options.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>Constant line</em> is available on most of the column, bar, and line charts.</p>
+<p><!-- /wp:paragraph -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"id":143,"width":174,"height":489} --></p>
+<figure class="wp-block-image is-resized"><img src="{{site.baseurl}}/assets/2019/08/AnalyticsForColumnChart.jpg" alt="Analytics Pane" class="wp-image-143" width="174" height="489"><br />
+<figcaption>Analytics Pane</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>The following charts have additional options:</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Clustered Column Chart</li>
+<li>Clustered Bar Chart</li>
+<li>Area Chart</li>
+<li>Line Chart</li>
+<li>Scatter Chart</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Clustered Column Chart</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This chart type gives you basic analytics options, such as: <em>Constant Line, Min, Max, Average, Median and Percentile Line</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":183,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/Column-Chart-Average-Line.jpg" alt="Average Line" class="wp-image-183"><br />
+<figcaption>Average Line</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you use a numeric value as a dimension like Age in this example, you get 1 additional option, the <em>Trend line</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":184,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/Column-Chart-Trend-line.jpg" alt="Trend Line" class="wp-image-184"><br />
+<figcaption>Trend Line</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Line Chart</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Line charts have 1 additional feature which is the <em>Forecast</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":144} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/AnalyticsForLineChart.jpg" alt="Trend and Forecast" class="wp-image-144"><br />
+<figcaption>Trend and Forecast</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns has-2-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:paragraph --></p>
+<p>Neither the <em>Trend line</em>, nor the <em>Forecast</em> calculation logic can be changed currently. Also, Forecast only works if 1 line is visible in the visual.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the forecast, you can set the length of the forecast and the seasonality.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This will help create a more accurate forecast value.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>Ignore last</em> is a really useful setting. It will ignore the last number of points in the visual when calculating the forecast.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It has two use cases. First, it helps you ignore the data points that are not yet finalized, like the last month that is not a full month. Or there can be modifications in the data for the not closed quarter.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The other is to test if the forecast it generates actually fits with your data. You can see the forecasted band and the actual value next to each other.</p>
+<p><!-- /wp:paragraph -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"id":149,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/Forecast.jpg" alt="Forecast settings" class="wp-image-149"><br />
+<figcaption>Forecast settings</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Scatter Chart</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"id":188} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Scatter-Plot.jpg" alt="Scatter Plot with Analytics" class="wp-image-188"><br />
+<figcaption>Scatter Chart with Analytics</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>In my opinion, Scatter Charts are one of the best visuals. They can give you tons of insight with a really small footprint. They're mainly used for uncovering correlation between 2 measures.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Scatter Charts will give you 2 more additional options:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Symmetry shading</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The colored yellow and blue (colors can be changed) background makes it easy to see if the Y or the X axis value is bigger. The border between the 2 colors, where the X and Y axis value is the same.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Ratio Line</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This will be the <a rel="noreferrer noopener" aria-label="linear regression (opens in a new tab)" href="https://en.wikipedia.org/wiki/Linear_regression" target="_blank">linear regression</a> line that can be drawn using the visible point and can be used as an average. It will help you quickly see if on average the X or the Y value is bigger. You can also determine which points are above or below the average, making it easier to compare 2 distant points with each other.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In this example we are looking at sales between 2 months: </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>We can easily see, using their built-in analytical features, that (on average) the sales represented in the Y axis are bigger. Also, we can see that Fujitsu in Computer Parts (top left point) had the highest Y value but Fujitsu in Consumer Electronics (black point in the bottom right quarter) increased more percentage wise from the previous month because it is further from the <em>Ratio line</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Charts with built-in analytics</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>There are a few charts that have built-in analytical capabilities as default.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>These two standard visuals have it:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Ribbon Chart</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"id":154} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/RibbonChart-1024x428.jpg" alt="Ribbon Chart" class="wp-image-154"><br />
+<figcaption>Ribbon Chart</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>This can be used as a substitute for Stacked Column Chart. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In a Column Chart, the order of the legend will always stay the same regardless of the values. In a Ribbon Chart, the order is determined by the values, so it is easier to see any changes in the proportion.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Also, if you hover over to the ribbon area between the column, you will get a nice little analysis as shown above.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Waterfall Chart</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>These are a must in all financial reporting, and previously they were a pain to create in Excel.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":156} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/WaterfallChart.jpg" alt="Waterfall Chart" class="wp-image-156"><br />
+<figcaption>Waterfall Chart</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>In Power BI, this chart type has a nice feature where you can easily change the number of top changes visible. Also, you'll get a small analysis in the tooltips about the change visible.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The next part in this series will be about different types of <strong>Explain features</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p> Hope you liked this post.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

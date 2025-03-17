@@ -1,0 +1,276 @@
+---
+layout: post
+title: Security Series - Part 1 - Export Data
+date: 2020-02-24 11:59:00.000000000 +00:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Governance is key
+tags:
+- Export
+- Management
+- Security
+- Sensitive Data
+- Service
+meta:
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: '15'
+  _yoast_wpseo_content_score: '90'
+  _yoast_wpseo_focuskw: Export Data
+  _yoast_wpseo_metadesc: How export data works in Power BI.
+  _yoast_wpseo_linkdex: '71'
+  _thumbnail_id: '394'
+  _wp_old_date: '2020-02-23'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/security-series-part-1-export-data/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>Today I will talk about exporting data from the Power BI service. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Long wanted to start a new blog series covering governance considerations. It is such a huge topic so I decided to focus on security first.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This first post will cover one of the most frequently discussed security question. Should we enable the users to export data from the reports, datasets and to what extent?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":379,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2020/02/Report-Export-Right-Click.jpg" alt="Export Data option" class="wp-image-379"><br />
+<figcaption>Export Data option</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>When we talk about exporting we generally think about the Export Data option that comes up for a visual if I click on the ellipses. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I briefly talked about in the DataLounge video about Power BI Administration. You can check the blog post about it here: <a href="https://selfservicebi.co.uk/why-understanding-administration-matters-for-customer-experience/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">https://selfservicebi.co.uk/why-understanding-administration-matters-for-customer-experience/</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In order to control this we will see there are much more considerations and dependencies. Let's head to the Admin settings to check how we can control exporting.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Admin settings </h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the Tenant settings there is a central area focusing on <strong>Export and Sharing</strong>:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":375,"width":497,"height":712,"sizeSlug":"full"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img src="{{site.baseurl}}/assets/2020/02/Export-and-Sharing-Settings.jpg" alt="Export and Sharing Settings" class="wp-image-375" width="497" height="712"><br />
+<figcaption>Export and Sharing Settings in Admin Tenant Settings</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>What you can see here is all the different features that single toggle controls at once.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>All of these different features basically can be used to export.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Personally I would prefer much greater control over all of these different aspects of Power BI.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>What does disabling Export Data affects?</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>
+<strong>Export Data: </strong>If you want to control the exporting of information from Power BI in general this is the toggle to change. But if you read the detail it controls a lot more than just simple export.</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"align":"center","id":382,"width":506,"height":212,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/02/Report-Settings-without-Export-Data.jpg" alt="Export Data disabled" class="wp-image-382" width="506" height="212"><br />
+<figcaption>Export Data disabled</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"align":"center","id":381,"width":510,"height":247,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/02/Report-Settings-with-Export-Data.jpg" alt="Export Data enabled" class="wp-image-381" width="510" height="247"><br />
+<figcaption>Export Data enabled</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:list {"ordered":true,"start":2} --></p>
+<ol start="2">
+<li> <strong>Analyze in Excel</strong>: one very important capability that is controlled is Analyze in Excel. This enables you to connect excel to the published datasets to easily create pivot tables and dynamic excel reports. </li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"align":"center","id":374,"width":215,"height":87,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/02/Disabled-export-Report-options.jpg" alt="Disabled Analyze in Excel" class="wp-image-374" width="215" height="87"><br />
+<figcaption>Disabled Analyze in Excel</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:list {"ordered":true,"start":3} --></p>
+<ol start="3">
+<li> <strong>Dataset download:</strong> This is important mainly to report creators. This enables to download the embedded Power BI Desktop file to start modify the pbix file using the Desktop editor.</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"id":386,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/Disabled-export-Dataset-options.jpg" alt="Download .pbix" class="wp-image-386"><br />
+<figcaption>Download .pbix</figcaption>
+</figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column {"verticalAlignment":"center"} --></p>
+<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:image {"align":"center","id":385,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2020/02/Cant-Export.jpg" alt="Disabled download .pbix" class="wp-image-385"><br />
+<figcaption>Disabled download .pbix</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:list {"ordered":true,"start":4} --></p>
+<ol start="4">
+<li>
+<strong>Power BI Service Live Connect</strong>: This feature is enabling the ability to reuse existing datasets to create new reports in Power BI Desktop by using the <em>Power BI datasets</em> connector</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"align":"center","id":391,"width":365,"height":177,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/02/Connect-Live-Disabled.jpg" alt="Connect Live disabled" class="wp-image-391" width="365" height="177"><br />
+<figcaption>Connect Live disabled</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Other layers of control</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you see disabling Export data has a huge effect on the consumer and creator experience. So what other options are out there?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Report level controls</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the report level you also have the option to set exporting from a particular report. It can be found in the <em>Report Settings</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":383,"width":303,"height":749,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/02/Report-Settings.jpg" alt="Report Settings" class="wp-image-383" width="303" height="749"><br />
+<figcaption>Report Settings</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>There are 3 options:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":380,"width":304,"height":139,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/02/Report-Settings-Export-Data.jpg" alt="Report Settings Export Data options" class="wp-image-380" width="304" height="139"><br />
+<figcaption>Report Settings options</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>
+<strong>Summarized data</strong>: only enables to export the same information that is already visible in the visual.</li>
+<li>
+<strong>Underlying data:</strong> it will allow you to see the detail rows up to 150.000 rows as xlsx.</li>
+<li>
+<strong>None</strong>: disables any extracts from this report</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"align":"center","id":394,"width":368,"height":304,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/02/Export-Data-Dialog.jpg" alt="Export Data Dialog" class="wp-image-394" width="368" height="304"><br />
+<figcaption>Export Data Dialog</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Visual level controls</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>There is one more slightly different layer to control exporting. It is not necessary was the intended way of use for this functionality, but it can help implement certain controls on a visual level.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"align":"center","id":378,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2020/02/Report-Export-More-Options.jpg" alt="Visual More Options" class="wp-image-378"><br />
+<figcaption>Visual More Options</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column --></p>
+<div class="wp-block-column">
+<!-- wp:image {"align":"center","id":379,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2020/02/Report-Export-Right-Click.jpg" alt="Export Data option" class="wp-image-379"><br />
+<figcaption>Export Data option</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:image {"align":"center","id":384,"width":240,"height":301,"sizeSlug":"large"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img src="{{site.baseurl}}/assets/2020/02/Visual-Headers.jpg" alt="Visual Headers" class="wp-image-384" width="240" height="301"><br />
+<figcaption>Visual Headers</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>In the visual formatting pane the <em>Visual header</em> section make it possible to turn of the <em>More Options</em>, so the export data </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let say your report has information about Sales and Profit. You are happy to let consumers export the Sales data but not the profit data. You can turn of the export button for the visuals that are containing profit data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is mainly usable if the consumers only have access to the report through an <em>App without build permissions</em> (more on this later).</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>One more thing: Embedding to Sharepoint, Teams or Portal and Publish to Web</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>As I explored all the finer details I wondered what happens to exporting when the report is embedded.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>All the embedding options apart from Publish to Web gives you the same option as a report in the Power BI service. </li>
+<li>Publish to Web automatically disables exporting so you don't have to separately control. You can check out for example this published report:  <a href="https://factfactory.co.uk/2019/05/england-wales-crime-statistics/" target="_blank" rel="noreferrer noopener" aria-label="England &amp; Wales Crime Statistics (opens in a new tab)">England &amp; Wales Crime Statistics</a>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Summary</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you see know it is not a simple decision to choose if you want to enable data exports from your reports/datasets. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Fortunately there a different levels you can control this to give you the right level of security while enabling your organization to extract the most value out of your data. </p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

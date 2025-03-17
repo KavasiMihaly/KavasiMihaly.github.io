@@ -1,0 +1,241 @@
+---
+layout: post
+title: Semi geocoded data in Power BI Maps
+date: 2020-02-16 23:30:00.000000000 +00:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Improve the Experience
+tags:
+- Maps
+- Visualization
+meta:
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: '13'
+  _yoast_wpseo_metadesc: 'How Power BI treats data that only has been partially geocoded.
+    Analysed some of the most commonly used visuals like: Map, Filled Map, ESRI Map,
+    Icon Map'
+  _yoast_wpseo_content_score: '30'
+  _thumbnail_id: '354'
+  _yoast_wpseo_focuskw: Geocoding in Power BI
+  _yoast_wpseo_linkdex: '61'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/semi-geocoded-data-in-power-bi-maps/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>Recently encountered a dataset that only partially had latitude and longitude information and observed some strange behaviour that I was unaware before. So I decided I do a little exploration to find out how geocoding works in Power BI.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I will test it on 4 visuals that I most commonly use for mapping. There are others there that might behave differently.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Data</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"id":355,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/Data.jpg" alt="The Data" class="wp-image-355"><br />
+<figcaption>The Data</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The data I used is simple to make it easy to spot difference in behaviour.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Map visual</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let's start with the most commonly used Map visual first.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":362,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/MapWithoutValue.jpg" alt="Map with Location and Coordinates filled but without size" class="wp-image-362"><br />
+<figcaption>Map with Location and Coordinates filled but without size</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column {"width":66.66} --></p>
+<div class="wp-block-column" style="flex-basis:66.66%">
+<!-- wp:paragraph --></p>
+<p>I added City in Location, Average Lat and Long in the Coordinates section and the With Coordinates column to the Legend.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you can see that only those cities are shown that have coordinates.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is what I expected and experienced before.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Notice that the Size field is empty currently.</p>
+<p><!-- /wp:paragraph -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column {"width":33.33} --></p>
+<div class="wp-block-column" style="flex-basis:33.33%">
+<!-- wp:image {"id":358,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/FieldWithoutValue.jpg" alt="Fields without Size" class="wp-image-358"></figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>What happens if I add a measure into size?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"id":363,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/MapWithValue.jpg" alt="With Size" class="wp-image-363"><br />
+<figcaption>With Size</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column {"width":66.66} --></p>
+<div class="wp-block-column" style="flex-basis:66.66%">
+<!-- wp:paragraph --></p>
+<p>My initial expectation was that the previous behaviour won't change.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>As you can see that know all the cities are shown.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I started to wonder that what is happening here.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Are all the points are sent to bing to geocode or only those that does not have that information in the data?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Unfortunately the cities currently in the data would be in the right place regardless.</p>
+<p><!-- /wp:paragraph -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column {"width":33.33} --></p>
+<div class="wp-block-column" style="flex-basis:33.33%">
+<!-- wp:image {"id":359,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/FieldWithValue.jpg" alt="Fields with Size" class="wp-image-359"></figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Let's add Cambridge to the mix</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I had to find a city that was not geocoded correctly by the Bing Map API.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Correctly in this case means: did not found the city I was looking for, but another one in another country.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>UK cities are generally a good examples for this because they are more likely to have US or Australian counterparts for some reason. :)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>One example is <strong>Cambridge.</strong> So I added one more line to the dataset.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":365,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/CambridgeData.jpg" alt="" class="wp-image-365"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>I wanted to try it without using coordinates first just to verify that it shows a different Cambridge.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":367,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/CambridgeWOCoordinates.jpg" alt="Cambridge without Coordinates" class="wp-image-367"><br />
+<figcaption>Cambridge without Coordinates</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Once I added a Latitude and Longitude information the city appeared in the right place.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":366,"sizeSlug":"large","className":"is-style-default"} --></p>
+<figure class="wp-block-image size-large is-style-default"><img src="{{site.baseurl}}/assets/2020/02/CambridgeWCoordinates.jpg" alt="Cambridge with Coordinates" class="wp-image-366"><br />
+<figcaption>Cambridge with Coordinates</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>So it seems that the map visual uses the information that are in the data and tries to geocode for the missing values if you have a measure in the size column. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>In practical terms it means that this behaviour can be utilized that you only need to provide geocodes for those locations that are not recognized correctly by the Bing Map API.</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Filled Map visual</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"id":361,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/FilledMapVisual-1024x597.jpg" alt="Filled Map with Coordinates" class="wp-image-361"><br />
+<figcaption>Filled Map with Coordinates</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:columns --></p>
+<div class="wp-block-columns">
+<!-- wp:column {"width":66.66} --></p>
+<div class="wp-block-column" style="flex-basis:66.66%">
+<!-- wp:paragraph --></p>
+<p>Filled Maps behave differently because they don't have a size option.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can add conditional formatting but that does not change this behaviour.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It will still only show the locations that have latitude and longitude information.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you remove the Latitude and Longitude data, then it will revert back to the Bing Map API and it will show all the cities (some of them potentially not where you want)</p>
+<p><!-- /wp:paragraph -->
+</div>
+<p><!-- /wp:column --></p>
+<p><!-- wp:column {"width":33.33} --></p>
+<div class="wp-block-column" style="flex-basis:33.33%">
+<!-- wp:image {"id":360,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/FilledMapFields.jpg" alt="" class="wp-image-360"></figure>
+<p><!-- /wp:image -->
+</div>
+<p><!-- /wp:column -->
+</div>
+<p><!-- /wp:columns --></p>
+<p><!-- wp:heading --></p>
+<h2>ESRI Map visual</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Esri Map behaves similar to Filled Maps.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":356,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/ESRIwithCoordinates.jpg" alt="ESRI with Coordinates" class="wp-image-356"><br />
+<figcaption>ESRI with Coordinates</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"id":357,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/ESRIwithoutCoordinates.jpg" alt="ESRI without Coordinates" class="wp-image-357"><br />
+<figcaption>ESRI without Coordinates</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Icon Map by Altius</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Icon Map is a great visual to do complex geographical analytics, I highly recommend for you to try it out. It was created by <a rel="noreferrer noopener" aria-label="James Dales (MVP) (opens in a new tab)" href="https://powerbi.jamesdales.com/" target="_blank">James Dales (MVP)</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381497?tab=Overview" target="_blank" rel="noreferrer noopener" aria-label="Link to the Visual in AppSource (opens in a new tab)">Link to the Visual in AppSource</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":354,"sizeSlug":"large"} --></p>
+<figure class="wp-block-image size-large"><img src="{{site.baseurl}}/assets/2020/02/Altius-Icon-Map-1024x622.jpg" alt="Icon Map by Altius" class="wp-image-354"><br />
+<figcaption>Icon Map by Altius</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Because this is a custom visual it is a bit different.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It needs geocodes to show points in the map. So it will only work with the already geocoded data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope this blog post gave you some good ideas in mapping.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

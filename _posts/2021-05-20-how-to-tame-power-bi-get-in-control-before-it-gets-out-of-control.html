@@ -1,0 +1,327 @@
+---
+layout: post
+title: How to tame Power BI - Get in control before it gets out of control
+date: 2021-05-20 19:45:06.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Big Picture
+- Governance is key
+tags:
+- Governance
+- Security
+- Tenant
+- Tenant Administration
+meta:
+  _edit_last: '1'
+  _aioseo_title: "#post_title #separator_sa #site_title"
+  _aioseo_description: 'For organizations and admins who are just starting their journey
+    with Power BI. First step in Power BI Administration #separator_sa #author_name
+    #separator_sa #site_title'
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+  _oembed_e10696e742da065ab80314724e30429d: <iframe title="Disable free signups in
+    the Power BI service" width="1090" height="613" src="https://www.youtube.com/embed/CyYLDbRBHDQ?feature=oembed"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+    gyroscope; picture-in-picture" allowfullscreen></iframe>
+  _oembed_time_e10696e742da065ab80314724e30429d: '1621537950'
+  _oembed_d3c3f81ccf77e3a5382170f184d524ac: '<blockquote class="wp-embedded-content"
+    data-secret="aA39hgd5it"><a href="https://selfservicebi.co.uk/why-understanding-administration-matters-for-customer-experience/">Why
+    understanding administration matters for customer experience</a></blockquote><iframe
+    class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position:
+    absolute; clip: rect(1px, 1px, 1px, 1px);" title="&#8220;Why understanding administration
+    matters for customer experience&#8221; &#8212; Self-Service Business Intelligence"
+    src="https://selfservicebi.co.uk/why-understanding-administration-matters-for-customer-experience/embed/#?secret=aA39hgd5it"
+    data-secret="aA39hgd5it" width="600" height="338" frameborder="0" marginwidth="0"
+    marginheight="0" scrolling="no"></iframe>'
+  _oembed_time_d3c3f81ccf77e3a5382170f184d524ac: '1621537950'
+  _thumbnail_id: '569'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/how-to-tame-power-bi-get-in-control-before-it-gets-out-of-control/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:heading --><html><body></p>
+<h2>Getting started with Power BI Administration</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This blog post is for those organizations and admins who are just starting their journey with Power BI. I try to give you some recommendation for temporary tenant setup until you get familiar with Power BI and make the necessary decisions about how you want to use it. Until you have your <em>Power BI Governance Framework</em> in place.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Lot of times when I start discussing governance with organizations, they are already deep into using Power BI. Hundreds and thousands of Workspaces, Reports and Datasets. This is when they realize that Self-Service BI can easily get out of control, and they need to do something to be able to manage it.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><em>In one example the company had more the 3.000 published reports with less than 20% actually used, generating a lot of asset management, data security and performance problems.</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I did a piece on <a href="https://selfservicebi.co.uk/why-understanding-administration-matters-for-customer-experience/">Power BI administration</a> a while back that covered some of these topics, but it was not specifically focused on this specific area, so I thought I will cover this in a separately.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https://selfservicebi.co.uk/why-understanding-administration-matters-for-customer-experience/","type":"wp-embed","providerNameSlug":"self-service-business-intelligence","className":""} --></p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-self-service-business-intelligence wp-block-embed-self-service-business-intelligence">
+<div class="wp-block-embed__wrapper">
+https://selfservicebi.co.uk/why-understanding-administration-matters-for-customer-experience/
+</div>
+<figcaption>Power BI Administration</figcaption>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Since then, plenty of new setting are available, but the general approach still remains the same.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I will list those first few tenant settings that you should change before the situation gets out of hand.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>1. Automatic Free Licences Assignment</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>By default, anyone in your organization who visits PowerBI.com or receives a shared link of a Power BI report can sign-up for a free licence.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here is a video by <strong>Adam Saxton</strong> from <strong>Guy in a Cube</strong> YouTube channel explaining this:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:embed {"url":"https://www.youtube.com/watch?v=CyYLDbRBHDQ","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} --></p>
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+<div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=CyYLDbRBHDQ
+</div>
+</figure>
+<p><!-- /wp:embed --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here is the article about this topic from <strong>Power BI documentation</strong>:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><a href="https://docs.microsoft.com/en-us/power-bi/admin/service-admin-disable-self-service#enable-or-disable-self-service-purchase-in-your-organization" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/power-bi/admin/service-admin-disable-self-service#enable-or-disable-self-service-purchase-in-your-organization</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Reasons to have it turned off:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>To be in control who can use Power BI specially to control access to 3rd parties who have users in your tenant.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>2. Paid Trial Features</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>By default, anyone can sign up to 60-day trial period for either a Pro or Premium Per User licence.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":574,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Paid-features.png" alt="" class="wp-image-574"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Reasons to have it turned off:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>If you have a premium <strong>capacity</strong> licences, then free and pro <strong>user</strong> licences are used to differentiate between creators and consumers. Let's you control who can be creator. For example, by requiring training participation to get Pro licences.</li>
+<li>Enabling this feature can generate a lot of half-finished or abandoned reports in the service which will create a lot of management need going forward. </li>
+<li>If you end up not giving paid Pro licences to some trial users that can generate unnecessary tension within the organization. </li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>3. Workspace creation</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Workspace creation is one of the areas that can get out of hand pretty quickly if not controlled. You should limit this ability to a small group of people before you have a clear concept how you want to use workspaces. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Eventually this should be part of an automated process which will setup workspaces for a project/department/region/etc. in a controlled way.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":577,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Workspace-creation.png" alt="" class="wp-image-577"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Also make sure that classic workspace creation is blocked. Should be set up this way by default. You can read about classic and new workspaces <a href="https://docs.microsoft.com/en-us/power-bi/collaborate-share/service-new-workspaces#new-and-classic-workspace-differences" target="_blank" rel="noreferrer noopener">here</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":571,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Disable-Classic-WS.png" alt="" class="wp-image-571"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Reasons to have it turned off:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Workspaces should be used to manage access to different entities and state of solutions: <em>Data and Report, Dev, Test, and Prod</em>
+</li>
+<li>Empty, abandoned workspaces generate a lot of asset management tasks</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>4. Custom Message for Publishing</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is a really useful recent addition to the administrator's toolbox. I recommend that you make it clear in the message that what responsibility they bear when they publish a dataset. Especially initially when most likely not all the security automation is in place.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":570,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Custom-message.png" alt="" class="wp-image-570"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is how it appears for an author when trying to publish a report.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":569,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Custom-message-result.png" alt="" class="wp-image-569"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Reasons to have it turned on:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Make sure the authors have a clear understanding about their responsibilities</li>
+<li>Until a more structured governance is implemented you need to rely more on the authors making the right decision about data security and sharing</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>5. Publish to Web</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>This feature is an effective way to share data with the public. You can check some examples here: <a href="https://www.factfactory.co.uk" target="_blank" rel="noreferrer noopener nofollow">https://www.factfactory.co.uk</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>But it is a security risk if not used properly. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Initially most organizations do not want to use Power BI to share information with the public, so it is safe to feature off.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":575,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Publish-to-Web.png" alt="" class="wp-image-575"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can also check if anything is already published this way:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":584,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Embed-Codes.png" alt="" class="wp-image-584"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Reasons to have it turned off:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Unsecure way to share a report</li>
+<li>Discoverable by search engines</li>
+<li>People sometimes unintentionally use this feature</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>6. Guest user access</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>These settings control how people outside of your organization can get access to the content in your tenant.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Again, initially until you define proper rules and processes it is better to block access. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":572,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Guest-User-Access.png" alt="" class="wp-image-572"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:image {"align":"center","id":573,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Guest-User-Invite.png" alt="" class="wp-image-573"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Reasons to have it turned off:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Guest user access can easily be misused.</li>
+<li>Currently available audit information makes it hard to fully understand who has access to what data. </li>
+<li>Better to make sure you have the policies in place before you allow external sharing.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>7. R &amp; Python visuals</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>R &amp; Python are programming languages that have strong data analytics capabilities. In Power BI you can use them for data preparation and data visualization.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>These can either be turned on or off. You don`t have the option to limit is to a certain group of users.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":576,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/R-and-Python.png" alt="" class="wp-image-576"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Reasons to have it turned off:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Because they are programming languages, that is a risk to create, run code that can be harmful</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>8. Custom visuals</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Power BI is an open platform for the community to create visualization using the SDK provided by Microsoft.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Custom Visuals then can be shared with the community using the <a href="https://appsource.microsoft.com/en-us/marketplace/apps?page=1&amp;product=power-bi-visuals" target="_blank" rel="noreferrer noopener">AppSource marketplace</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":596,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Custom-Visual-Certification.png" alt="" class="wp-image-596"><br />
+<figcaption>Custom Visuals - Certified and uncertified</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Developer can certify their visuals with Microsoft. This ensures that it has a good quality code and data is not sent outside of the tenant.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":568,"sizeSlug":"large","linkDestination":"none"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img src="{{site.baseurl}}/assets/2021/05/Certified-Custom-Visuals.png" alt="" class="wp-image-568"></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>It is also possible to block uncertified custom visual in the desktop. Here is the <a href="https://docs.microsoft.com/en-us/power-bi/admin/organizational-visuals#certified-power-bi-visuals" target="_blank" rel="noreferrer noopener">documentation </a>on this.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Reasons to have it turned on:</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Uncertified visuals might send data outside your organization</li>
+<li>Setting it later can break already published reports</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>Conclusion</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>There is a lot more administration/governance decisions you will have to make in the future, but if you are just starting with Power BI at least you know what to focus on first.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope you found this useful and if you want to get notified about similar blog posts please register for the newsletter.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

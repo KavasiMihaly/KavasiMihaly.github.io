@@ -1,0 +1,233 @@
+---
+layout: post
+title: Getting Files (Folders) from SharePoint or OneDrive into Dataflows
+date: 2019-08-06 23:23:58.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Get to the Data
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  _thumbnail_id: '131'
+  _wp_old_date: '2019-07-29'
+  _yoast_wpseo_primary_category: '14'
+  _yoast_wpseo_focuskw: Power BI - Connecting to Sharepoint Folders with Dataflows
+  _yoast_wpseo_metadesc: This blog post shows you how you can connect to "folders"
+    in SharePoint or OneDrive with Dataflows in Power BI.
+  _yoast_wpseo_linkdex: '47'
+  _yoast_wpseo_content_score: '90'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/getting-files-folders-from-sharepoint-or-onedrive-in-dataflows/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>With the introduction of<strong> Dataflows</strong> in Power BI, the platform's capabilities have increased quite a bit. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>(Note: I'll do a detailed overview of Dataflows in another post.)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Dataflows</strong> became <strong>generally available</strong> not long ago, but have<strong> not yet reached feature parity</strong> to <strong>Power Query in the Desktop</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>One really wildly used source that is missing is the ability to <strong>connect to folders</strong>. Especially <strong>SharePoint/OneDrive folders</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Fortunately, it turns out that it is mostly a UI issue, not a lack of functionality.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In order to join Excel files, you can use a technique that I learned a while back when the Folder connector in Desktop was not able to handle Excel sources.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This technique will require 2 queries.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The first will be a sample query that connects to one the files. We will turn it into a function and our second query will invoke this function on our selected list of files.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>It will be a similar logic to connect to CSVs too.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Let`s see the<br />
+solution:</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>For this task, first you need your OneDrive/SharePoint site URL</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The URL looks like this:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":137,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/OneDriveURL.jpg" alt="OneDrive URL" class="wp-image-137"><br />
+<figcaption>OneDrive URL</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Then in Dataflows, create a blank query.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Paste in this code:</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>let
+   Query = (Name as text, Folder as text, Data as text, Type as text) =&gt;
+ let
+   Source = SharePoint.Files("your-site-url", [ApiVersion = 15]),
+   Navigation = Source{[Name = Name, #"Folder Path" = Folder]}[Content],
+   #"Imported Excel" = Excel.Workbook(Navigation, null, true),
+   #"Navigation 1" = #"Imported Excel"{[Item = Data, Kind = Type]}[Data]
+ in
+   #"Navigation 1"
+ in
+   Query</code></pre>
+<p><!-- /wp:code --></p>
+<p>This will be our connector to an Excel file.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Change the "your-site-url" part to your actual site url.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Name this function <strong>GetDataFromExcel</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>This is connecting to a sheet or table in an Excel file.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You will see that the <strong>invoke function</strong> settings appear with 4 parameters.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":139} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Function-Parameters-e1564955163774.jpg" alt="Function Parameters" class="wp-image-139"><br />
+<figcaption>Function Parameters</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can try them out. This is what the input parameters should look like:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>
+<strong>Folder:</strong> <a href="https://examplesite-my.sharepoint.com/personal/examplesite/Documents/SelfService%20BI%20Blog/Combine%20Files%20from%20SharePoint/">https://examplesite-my.sharepoint.com/personal/examplesite/Documents/SelfService BI Blog/Combine Files from SharePoint/</a>
+</li>
+<li>
+<strong>File:</strong> SalesData_2016.xlsx</li>
+<li>
+<strong>Source: </strong>Table1 (this is the sheet or table you want to connect to)</li>
+<li>
+<strong>Type:</strong> Table (your source type, for example: Sheet, Table, etc...)</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Let's create our second query</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I recommend you to create this part in the <em>Desktop</em> first to test if it works and then paste the code in <em>Dataflows</em> in a new query.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The first step is to create a blank query and copy the previous code.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Then create a second blank query.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Then right click on the new <strong>Query</strong> and select <strong>Advanced Editor.</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>let
+     Source = SharePoint.Files("your-site-url", [ApiVersion = 15])
+in
+     Source </code></pre>
+<p><!-- /wp:code --></p>
+<p>Change "your-site-url" to your actual site url.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>You will be prompted to sign in.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Then search for the files you want to combine.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":132} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/filesinPQ.jpg" alt="" class="wp-image-132"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph {"fontSize":"small"} --></p>
+<p class="has-small-font-size"><em><strong>Pro Tip:</strong> try to make sure that your filter will produce the right results in the future, so be as specific as you can be. Like set the filter on an attribute that currently won`t change the results but might solve problems in the future. </em> <strong>For example</strong>: <em>If filtering to ".xlsx" type already gave you the right list, that might not be the case in the future when other Excel files gets uploaded, so add a name or folder filter also.</em> </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Once you are filtered down to the needed files, use<strong> Choose columns</strong> to keep the <strong>Name </strong>and <strong>Folder Path</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":130,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="{{site.baseurl}}/assets/2019/08/choose-columns.jpg" alt="Select columns" class="wp-image-130"><br />
+<figcaption>Select columns</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Once we have all the needed parameters for the function, we can invoke it.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Create a custom column and add this code:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>GetDataFromExcel(Text.From([Folder Path]),Text.From([Name]), "Table1", "Table")</code></pre>
+<p><!-- /wp:code --></p>
+<p>Then use the expand button to get to the data.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":221,"align":"center","width":409,"height":507} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter is-resized"><img src="{{site.baseurl}}/assets/2019/08/Expand.jpg" alt="Expand" class="wp-image-221" width="409" height="507"><br />
+<figcaption>Expand</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>After deleting the unnecessary columns and setting the data type, your M query should look like this:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>{% raw %}
+let
+   Source = SharePoint.Files("your-site-url", [ApiVersion = 15]),
+   #"Filtered rows" = Table.SelectRows(Source, each Text.Contains([Name], "Sales")),
+   #"Filtered rows 1" = Table.SelectRows(#"Filtered rows", each ([Extension] = ".xlsx")),
+   #"Remove other columns" = Table.SelectColumns(#"Filtered rows 1", {"Name", "Folder Path"}),
+   #"Invoked Custom Function" = Table.AddColumn(#"Remove other columns", "GetDataFromExcel", each GetDataFromExcel(Text.From([Name]), Text.From([Folder Path]), "Table1", "Table")),
+   #"Expanded GetDataFromExcel" = Table.ExpandTableColumn(#"Invoked Custom Function", "GetDataFromExcel", {"Cart ID", "Date", "Sales", "Quantity", "Discount", "Profit", "Shipping Cost", "Payment Type", "Product ID", "Shop_id", "CustomerID"}, {"Cart ID", "Date", "Sales", "Quantity", "Discount", "Profit", "Shipping Cost", "Payment Type", "Product ID", "Shop_id", "CustomerID"}),
+   #"Removed columns" = Table.RemoveColumns(#"Expanded GetDataFromExcel", {"Folder Path", "Name"}),
+   #"Changed column type" = Table.TransformColumnTypes(#"Removed columns", {{"Cart ID", type text}, {"Date", type date}, {"Sales", type number}, {"Quantity", Int64.Type}, {"Discount", type number}, {"Profit", type number}, {"Shipping Cost", type number}, {"Payment Type", type text}, {"Product ID", Int64.Type}, {"Shop_id", type text}, {"CustomerID", type text}})
+ in
+   #"Changed column type"
+{% endraw %}</code></pre>
+<p><!-- /wp:code --></p>
+<p>Now you can paste it in <em>Dataflows</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Make sure you turn off the load for the function. Now you can <strong>Save &amp; Close</strong>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":222} --></p>
+<figure class="wp-block-image"><img src="{{site.baseurl}}/assets/2019/08/Validating-Queries.jpg" alt="Validating Queries" class="wp-image-222"><br />
+<figcaption>Validating Queries</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Validation might take a while.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>After it is done you should start a refresh and it is ready to be used.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope you like this blog post, it turned out to be quite long.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>

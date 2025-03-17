@@ -1,0 +1,160 @@
+---
+layout: post
+title: Documenting Power BI - Data model V2 - Now with VertiPaq included
+date: 2022-06-27 14:00:20.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Governance is key
+tags:
+- Data Model
+- documentation
+- Management
+meta:
+  _edit_last: '1'
+  _aioseo_title: "#post_title #separator_sa #site_title"
+  _aioseo_description: Expanding the documentation capabilities for a Power BI data
+    model with additional attributes and Vertipaq information.
+  _aioseo_keywords: ''
+  _aioseo_og_title: ''
+  _aioseo_og_description: ''
+  _aioseo_og_article_section: ''
+  _aioseo_og_article_tags: ''
+  _aioseo_twitter_title: ''
+  _aioseo_twitter_description: ''
+  gd_system_blocks_used: '{"core/paragraph":11,"core/heading":10,"core/image":5,"core/list":4,"core/preformatted":3}'
+  _thumbnail_id: '599'
+author:
+  login: selfservicebi
+  email: kavasi.mihaly@outlook.com
+  display_name: Mihaly Kavasi
+  first_name: ''
+  last_name: ''
+permalink: "/documenting-power-bi-data-model-v2-now-with-vertipaq-included/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<!-- wp:paragraph --><html><body></p>
+<p>It has been a while I published about <a href="https://selfservicebi.co.uk/documenting-power-bi-data-model/" target="_blank" rel="noreferrer noopener">Documenting a data model in Power BI</a>. I thought I would update the solution with some added features to make the documentation more complete.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Updated the meta data that can be extracted from the tabular model but also expanded with data related metrics that are not part of the model by default. Also, now there is a script for the relationships instead of the original method that you can run.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2>Additional attributes</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I have added a few more details to the documentation:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>SortByColumn</li>
+<li>SummarizeBy</li>
+<li>SourceColumn</li>
+<li>IsAvailableInMDX - will write a short blog post about this soon.</li>
+<li>IsUnique</li>
+<li>Annotations for VPAX details - more in this in the next section</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2>Adding data related metrics</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>There is an interesting blog post from Michael Kovalsky about how to add <strong>VertiPaq </strong>details to the <strong>BIM</strong> file. Link: <a href="https://www.elegantbi.com/post/vpaxtotabulareditor" target="_blank" rel="noreferrer noopener">https://www.elegantbi.com/post/vpaxtotabulareditor</a></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>What is VertiPaq?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>In <a href="https://daxstudio.org/" target="_blank" rel="noreferrer noopener">DAX Studio</a> you can analyze the metrics of a data model. This is based on the actual data that is contained within your data model. This is a valuable information what you cannot get by simply analyzing your model structure which is what the <strong>BIM</strong> file contains in <a href="https://tabulareditor.com/" target="_blank" rel="noreferrer noopener">Tabular Editor</a> (<a href="https://github.com/TabularEditor/TabularEditor/releases/tag/2.16.6" target="_blank" rel="noreferrer noopener">link to free version</a>).</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"align":"center","id":793,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/06/Metrics-View.png" alt="" class="wp-image-793"><br />
+<figcaption>VertiPaq Analyzer Metrics</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>To export these metrics just select Export Metrics from the Advanced menu in DAX Studio.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":807,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2022/06/Export-metrics.png" alt="" class="wp-image-807"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>What are the main Vertipaq metrics?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Table</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Row count</li>
+<li>Table Size</li>
+<li>Table Size % of Model</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Column</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Cardinality</li>
+<li>Column Size</li>
+<li>Column Size % of Table</li>
+<li>Column Size % of Model</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Relationship</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>RI Violation Invalid Rows - you can read about this in more detail <a href="https://selfservicebi.co.uk/referential-integrity-violations-in-a-data-model-what-are-those/" target="_blank" rel="noreferrer noopener">here</a>.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Importing VertiPaq</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Here is an example adding Vertipaq information to a data model:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":805,"sizeSlug":"full","linkDestination":"none","className":"is-style-default"} --></p>
+<figure class="wp-block-image size-full is-style-default"><img src="{{site.baseurl}}/assets/2022/06/ImportVPAX-1.gif" alt="" class="wp-image-805"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:preformatted --></p>
+<pre class="wp-block-preformatted">Note 1: To see the annotations you need to turn on Unsupported Power BI features at the Preferences.</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre class="wp-block-preformatted">Note 2: Because these are data related information make sure to update frequently to represent the current data.</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading --></p>
+<h2>Using the documentation scripts</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>You need to insert the code into the Advanced Editor section of Tabular Editor and run it. Then you can export the results and paste it into the documentation file.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:preformatted --></p>
+<pre class="wp-block-preformatted">Note: sometimes you need to modify the PQ because of the different header for the synonym columns (ex. Synonyms[en-GB] vs Synomyns[en-US])</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:image {"align":"center","id":809,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image aligncenter size-full"><img src="{{site.baseurl}}/assets/2022/06/RunScripts.gif" alt="" class="wp-image-809"><br />
+<figcaption>Running the scripts</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2>Summary</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>I created two versions of the scripts and files so you can use with or without Vertipaq info.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":808,"sizeSlug":"full","linkDestination":"none"} --></p>
+<figure class="wp-block-image size-full"><img src="{{site.baseurl}}/assets/2022/06/GithubDocumentation.png" alt="" class="wp-image-808"></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>You can find both solutions in my GitHub repo <a href="https://github.com/KavasiMihaly/SelfServiceBIBlog/tree/main/TabularEditor/Documentation" target="_blank" rel="noreferrer noopener">here</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Hope you like this blog post and it helps you documenting your Power BI report easier.</p>
+<p><!-- /wp:paragraph --><br />
+</body></html></p>
