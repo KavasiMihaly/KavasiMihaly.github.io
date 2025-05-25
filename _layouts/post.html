@@ -2,76 +2,120 @@
 layout: default
 ---
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <div class="post-meta">
-      <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: "%B %d, %Y" }}
-      </time>
-      <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        by <span itemprop="name">
-          {% if page.author.display_name %}
-        {{ page.author.display_name }}
-          {% elsif page.author %}
-        {{ page.author }}
-          {% else %}
-        {{ site.author }}
-          {% endif %}
-        </span>
-      </span>
-      <span class="reading-time">
-        {% assign words = content | number_of_words %}
-        {% if words < 360 %}
-          1 min read
-        {% else %}
-          {{ words | divided_by: 180 }} min read
+<div class="post-layout">
+  <main class="post-main">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <div class="post-meta">
+          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+          <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            by <span itemprop="name">
+              {% if page.author.display_name %}
+            {{ page.author.display_name }}
+              {% elsif page.author %}
+            {{ page.author }}
+              {% else %}
+            {{ site.author }}
+              {% endif %}
+            </span>
+          </span>
+          <span class="reading-time">
+            {% assign words = content | number_of_words %}
+            {% if words < 360 %}
+              1 min read
+            {% else %}
+              {{ words | divided_by: 180 }} min read
+            {% endif %}
+          </span>
+        </div>
+        
+        {% if page.categories.size > 0 %}
+          <div class="post-categories">
+            {% for category in page.categories %}
+              <a href="{{ '/category/' | append: category | slugify | append: '/' | relative_url }}" class="category-link">
+                {{ category }}
+              </a>
+            {% endfor %}
+          </div>
         {% endif %}
-      </span>
-    </div>
-    
-    {% if page.categories.size > 0 %}
-      <div class="post-categories">
-        {% for category in page.categories %}
-          <a href="{{ '/category/' | append: category | slugify | append: '/' | relative_url }}" class="category-link">
-            {{ category }}
-          </a>
-        {% endfor %}
+      </header>
+
+      <div class="post-content" itemprop="articleBody">
+        {{ content }}
       </div>
+
+      {% if page.tags.size > 0 %}
+        <footer class="post-footer">
+          <div class="post-tags">
+            <strong>Tags:</strong>
+            {% for tag in page.tags %}
+              <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="tag-link">
+                {{ tag }}
+              </a>
+            {% endfor %}
+          </div>
+        </footer>
+      {% endif %}
+    </article>
+
+    <!-- Social Sharing -->
+    <div class="social-sharing">
+      <h3>Share this post</h3>
+      <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" 
+           target="_blank" rel="noopener" class="share-btn facebook" aria-label="Share on Facebook">
+          📘 Facebook
+        </a>
+        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}&via=KavasiM" 
+           target="_blank" rel="noopener" class="share-btn twitter" aria-label="Share on Twitter">
+          🐦 Twitter
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" 
+           target="_blank" rel="noopener" class="share-btn linkedin" aria-label="Share on LinkedIn">
+          💼 LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    {% assign related_posts = site.related_posts | limit: 3 %}
+    {% if related_posts.size > 0 %}
+      <section class="related-posts">
+        <h2>Related Posts</h2>
+        <div class="related-posts-grid">
+          {% for post in related_posts %}
+            <article class="related-post">
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              <time class="post-date">{{ post.date | date: "%B %d, %Y" }}</time>
+              <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
     {% endif %}
-  </header>
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
-
-  {% if page.tags.size > 0 %}
-    <footer class="post-footer">
-      <div class="post-tags">
-        <strong>Tags:</strong>
-        {% for tag in page.tags %}
-          <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="tag-link">
-            {{ tag }}
-          </a>
-        {% endfor %}
+    <!-- Author Bio -->
+    <section class="author-bio">
+      <h2>About the Author</h2>
+      <div class="author-info">
+        <h3>Mihaly Kavasi</h3>
+        <p>Data-driven Decision-Making Enthusiast. Power BI Expert and Trainer. Helping organizations and communities to use data effectively.</p>
+        <p>Working @<a href="https://twitter.com/Avanade" target="_blank" rel="noopener">Avanade</a></p>
+        <p>Speaker profile @<a href="https://sessionize.com/mihalykavasi/" target="_blank" rel="noopener">Sessionize</a></p>
+        <div class="author-links">
+          <a href="{{ '/author/selfservicebi/' | relative_url }}" class="btn">View All Posts</a>
+          <a href="https://twitter.com/KavasiM" target="_blank" rel="noopener" class="social-link">Twitter</a>
+          <a href="https://www.linkedin.com/in/kavasimihaly/" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+        </div>
       </div>
-    </footer>
-  {% endif %}
-</article>
+    </section>
+  </main>
 
-<!-- Related Posts -->
-{% assign related_posts = site.related_posts | limit: 3 %}
-{% if related_posts.size > 0 %}
-  <section class="related-posts">
-    <h2>Related Posts</h2>
-    <div class="related-posts-grid">
-      {% for post in related_posts %}
-        <article class="related-post">
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <time class="post-date">{{ post.date | date: "%B %d, %Y" }}</time>
-          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-{% endif %}
+  <!-- Sidebar -->
+  <aside class="post-sidebar">
+    {% include sidebar.html %}
+  </aside>
+</div>
