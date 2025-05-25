@@ -1,0 +1,58 @@
+<!-- Newsletter Signup -->
+<div class="sidebar-section newsletter-signup">
+  <h3>Sign Up to Receive Notification</h3>
+  <p>If you want to be notified when a new blog post is published, then sign up here.</p>
+  <form class="newsletter-form" action="#" method="post" aria-label="Newsletter signup">
+    <div class="form-group">
+      <label for="email" class="sr-only">Email address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true">
+      <button type="submit" class="btn-subscribe">Subscribe</button>
+    </div>
+    <p class="privacy-note">By continuing, you accept the <a href="{{ '/privacy-policy/' | relative_url }}">privacy policy</a></p>
+  </form>
+</div>
+
+<!-- Categories -->
+<div class="sidebar-section">
+  <h3>Categories</h3>
+  <ul class="category-list">
+    <li><a href="{{ '/category/analytics-edge/' | relative_url }}">Analytics Edge <span class="post-count">(11)</span></a></li>
+    <li><a href="{{ '/category/big-picture/' | relative_url }}">Big Picture <span class="post-count">(6)</span></a></li>
+    <li><a href="{{ '/category/get-data/' | relative_url }}">Get to the Data <span class="post-count">(9)</span></a></li>
+    <li><a href="{{ '/category/governance-is-key/' | relative_url }}">Governance is key <span class="post-count">(7)</span></a></li>
+    <li><a href="{{ '/category/improve-the-experience/' | relative_url }}">Improve the Experience <span class="post-count">(17)</span></a></li>
+    <li><a href="{{ '/category/uncategorized/' | relative_url }}">Uncategorized <span class="post-count">(2)</span></a></li>
+  </ul>
+</div>
+
+<!-- Tags -->
+<div class="sidebar-section">
+  <h3>Tags</h3>
+  <div class="tag-cloud">
+    <a href="{{ '/tag/administration/' | relative_url }}" class="tag-link">Administration</a>
+    <a href="{{ '/tag/adoption/' | relative_url }}" class="tag-link">Adoption</a>
+    <a href="{{ '/tag/analyze-in-excel/' | relative_url }}" class="tag-link">Analyze in Excel</a>
+    <a href="{{ '/tag/api/' | relative_url }}" class="tag-link">API</a>
+    <a href="{{ '/tag/best-practice/' | relative_url }}" class="tag-link">Best Practice</a>
+    <a href="{{ '/tag/cx/' | relative_url }}" class="tag-link">CX</a>
+    <a href="{{ '/tag/data-model/' | relative_url }}" class="tag-link">Data Model</a>
+    <a href="{{ '/tag/governance/' | relative_url }}" class="tag-link">Governance</a>
+    <a href="{{ '/tag/log-analytics/' | relative_url }}" class="tag-link">Log Analytics</a>
+    <a href="{{ '/tag/performance/' | relative_url }}" class="tag-link">Performance</a>
+    <a href="{{ '/tag/power-bi/' | relative_url }}" class="tag-link">Power BI</a>
+    <a href="{{ '/tag/security/' | relative_url }}" class="tag-link">Security</a>
+  </div>
+</div>
+
+<!-- Recent Posts -->
+<div class="sidebar-section">
+  <h3>Recent Posts</h3>
+  <ul class="recent-posts">
+    {% for post in site.posts limit: 5 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <time class="post-date">{{ post.date | date: "%B %d, %Y" }}</time>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
