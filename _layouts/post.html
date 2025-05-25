@@ -1,41 +1,69 @@
 ---
 layout: default
 ---
-<article class="post">
-  {% if page.meta._thumbnail_id %}
-  <div class="featured-image">
-    <img src="{{ site.baseurl }}/assets/featured/{{ page.meta._thumbnail_id }}.png" alt="{{ page.title }}">
-  </div>
-  {% endif %}
-  
-  <h1>{{ page.title }}</h1>
-  <p class="post-meta">Posted on {{ page.date | date: "%B %-d, %Y" }}{% if page.author.display_name %} · Written by {{ page.author.display_name }}{% endif %}</p>
-  
-  {% if page.categories.size > 0 %}
-  <div class="post-categories-inline">
-    <p class="post-meta-categories">
-      Categories: 
-      {% for category in page.categories %}
-        <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-      {% endfor %}
-    </p>
-  </div>
-  {% endif %}
-  
-  <div class="post-content">
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <div class="post-meta">
+      <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%B %d, %Y" }}
+      </time>
+      <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        by <span itemprop="name">{{ page.author | default: site.author }}</span>
+      </span>
+      <span class="reading-time">
+        {% assign words = content | number_of_words %}
+        {% if words < 360 %}
+          1 min read
+        {% else %}
+          {{ words | divided_by: 180 }} min read
+        {% endif %}
+      </span>
+    </div>
+    
+    {% if page.categories.size > 0 %}
+      <div class="post-categories">
+        {% for category in page.categories %}
+          <a href="{{ '/category/' | append: category | slugify | append: '/' | relative_url }}" class="category-link">
+            {{ category }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
+
+  {% if page.tags.size > 0 %}
+    <footer class="post-footer">
+      <div class="post-tags">
+        <strong>Tags:</strong>
+        {% for tag in page.tags %}
+          <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="tag-link">
+            {{ tag }}
+          </a>
+        {% endfor %}
+      </div>
+    </footer>
+  {% endif %}
 </article>
 
-<!-- In your index.html and category.html templates -->
-<li>
-  {% if post.meta._thumbnail_id %}
-  <div class="post-thumbnail">
-    <img src="{{ site.baseurl }}/assets/featured/{{ post.meta._thumbnail_id }}.png" alt="{{ post.title }}">
-  </div>
-  {% endif %}
-  <div class="post-content-preview">
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    <!-- rest of post preview -->
-  </div>
-</li>
+<!-- Related Posts -->
+{% assign related_posts = site.related_posts | limit: 3 %}
+{% if related_posts.size > 0 %}
+  <section class="related-posts">
+    <h2>Related Posts</h2>
+    <div class="related-posts-grid">
+      {% for post in related_posts %}
+        <article class="related-post">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <time class="post-date">{{ post.date | date: "%B %d, %Y" }}</time>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
