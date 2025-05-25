@@ -7,19 +7,39 @@
 
 .related-posts-details {
   summary {
-    list-style: none;
     cursor: pointer;
+    -webkit-user-select: none;
     user-select: none;
     
+    // Style the native marker
+    &::marker {
+      content: "▼ ";
+      font-size: 0.875rem;
+      color: #666;
+    }
+    
+    // For WebKit browsers
     &::-webkit-details-marker {
-      display: none;
+      content: "▼ ";
+      font-size: 0.875rem;
+      color: #666;
+    }
+  }
+  
+  // Rotate marker when open
+  &[open] summary {
+    &::marker {
+      content: "▲ ";
+    }
+    
+    &::-webkit-details-marker {
+      content: "▲ ";
     }
   }
 }
 
 .related-posts-toggle {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background: #f8f9fa;
   padding: 1rem 1.5rem;
@@ -36,19 +56,9 @@
     font-weight: 600;
     color: #333;
   }
-  
-  .toggle-icon {
-    font-size: 0.875rem;
-    color: #666;
-    transition: transform 0.2s ease;
-  }
 }
 
 .related-posts-details[open] {
-  .toggle-icon {
-    transform: rotate(180deg);
-  }
-  
   .related-posts-toggle {
     border-bottom: 1px solid #e9ecef;
   }
