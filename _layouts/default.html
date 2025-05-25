@@ -36,19 +36,17 @@
     <!-- Add main navigation for better UX -->
     <nav class="main-navigation" role="navigation" aria-label="Main navigation">
       <div class="nav-container">
-        <ul class="nav-categories">
-          {% assign categories = site.categories | sort %}
-          {% for category in categories %}
-          {% assign category_name = category[0] %}
-          {% assign posts = category[1] %}
-          <li>
-            <a href="{{ '/category/' | append: category_name | downcase | replace: ' ', '-' | relative_url }}" class="nav-link">
-            {{ category_name | replace: '-', ' ' | capitalize }}
-             <span class="post-count">({{ category[1].size }})</span>
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="nav-categories"></div>
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+        {% assign category_name = category[0] %}
+        {% assign posts = category[1] %}
+        <a href="{{ '/category/' | append: category_name | downcase | replace: ' ', '-' | relative_url }}" class="nav-button">
+        <span class="category-name">{{ category_name | replace: '-', ' ' | capitalize }}</span>
+        <span class="post-count">{{ category[1].size }}</span>
+        </a>
+        {% endfor %}
+      </div>
       </div>
     </nav>
 
