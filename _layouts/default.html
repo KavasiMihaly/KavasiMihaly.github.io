@@ -10,23 +10,55 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% feed_meta %}
   {% seo %}
+  
+  <!-- Improved SEO and accessibility -->
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="Mihaly Kavasi">
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BP52XBVTH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-8BP52XBVTH');
   </script>
 </head>
 <body>
   <div class="wrapper">
     {% include header.html %}
-    <main>
+    
+    <!-- Add main navigation for better UX -->
+    <nav class="main-navigation" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <ul class="nav-categories">
+          <li><a href="{{ '/category/big-picture/' | relative_url }}" class="nav-link">Big Picture</a></li>
+          <li><a href="{{ '/category/analytics-edge/' | relative_url }}" class="nav-link">Analytics Edge</a></li>
+          <li><a href="{{ '/category/improve-the-experience/' | relative_url }}" class="nav-link">Improve the Experience</a></li>
+          <li><a href="{{ '/category/get-data/' | relative_url }}" class="nav-link">Get to the Data</a></li>
+          <li><a href="{{ '/category/governance-is-key/' | relative_url }}" class="nav-link">Governance is Key</a></li>
+        </ul>
+        <div class="nav-extras">
+          <a href="{{ '/power-bi-features/' | relative_url }}" class="nav-link">Power BI Features</a>
+          <a href="{{ '/about-the-blog/' | relative_url }}" class="nav-link">About</a>
+          <a href="{{ '/contact/' | relative_url }}" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main">
       {{ content }}
     </main>
-      {% include footer.html %}
+    
+    {% include footer.html %}
   </div>
+
+  <!-- Accessibility: Skip to content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 </body>
 </html>
