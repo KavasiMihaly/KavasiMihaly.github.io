@@ -10,7 +10,15 @@ layout: default
         {{ page.date | date: "%B %d, %Y" }}
       </time>
       <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        by <span itemprop="name">{{ page.author | default: site.author }}</span>
+        by <span itemprop="name">
+          {% if page.author.display_name %}
+        {{ page.author.display_name }}
+          {% elsif page.author %}
+        {{ page.author }}
+          {% else %}
+        {{ site.author }}
+          {% endif %}
+        </span>
       </span>
       <span class="reading-time">
         {% assign words = content | number_of_words %}
