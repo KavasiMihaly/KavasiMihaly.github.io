@@ -1,0 +1,126 @@
+.related-posts {
+  margin: 2rem 0;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.related-posts-details {
+  summary {
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+
+.related-posts-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background: #e9ecef;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .toggle-icon {
+    font-size: 0.875rem;
+    color: #666;
+    transition: transform 0.2s ease;
+  }
+}
+
+.related-posts-details[open] {
+  .toggle-icon {
+    transform: rotate(180deg);
+  }
+  
+  .related-posts-toggle {
+    border-bottom: 1px solid #e9ecef;
+  }
+}
+
+.related-posts-content {
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.related-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.related-post {
+  padding: 1rem;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  background: #f8f9fa;
+  transition: box-shadow 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.3;
+    
+    a {
+      text-decoration: none;
+      color: #333;
+      
+      &:hover {
+        color: #1976d2;
+      }
+    }
+  }
+  
+  .post-date {
+    display: block;
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+  }
+}
+
+/* SEO-friendly: Ensure content is still crawlable */
+@media print {
+  .related-posts-details {
+    summary {
+      display: none;
+    }
+  }
+  
+  .related-posts-content {
+    display: block !important;
+  }
+}
