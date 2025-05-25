@@ -37,11 +37,16 @@
     <nav class="main-navigation" role="navigation" aria-label="Main navigation">
       <div class="nav-container">
         <ul class="nav-categories">
-          <li><a href="{{ '/category/big-picture/' | relative_url }}" class="nav-link">Big Picture</a></li>
-          <li><a href="{{ '/category/analytics-edge/' | relative_url }}" class="nav-link">Analytics Edge</a></li>
-          <li><a href="{{ '/category/improve-the-experience/' | relative_url }}" class="nav-link">Improve the Experience</a></li>
-          <li><a href="{{ '/category/get-to-the-data/' | relative_url }}" class="nav-link">Get to the Data</a></li>
-          <li><a href="{{ '/category/governance-is-key/' | relative_url }}" class="nav-link">Governance is Key</a></li>
+          {% assign categories = site.categories | sort %}
+          {% for category in categories %}
+          {% assign category_name = category[0] %}
+          {% assign posts = category[1] %}
+          <li>
+            <a href="{{ '/category/' | append: category_name | downcase | replace: ' ', '-' | relative_url }}" class="nav-link">
+            {{ category_name | replace: '-', ' ' | capitalize }}
+            </a>
+          </li>
+          {% endfor %}
         </ul>
       </div>
     </nav>
