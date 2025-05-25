@@ -112,6 +112,25 @@ layout: default
         </div>
       </div>
     </section>
+
+    <!-- Post Navigation -->
+    <nav class="post-navigation" aria-label="Post navigation">
+      <div class="nav-links">
+        {% if page.previous %}
+          <div class="nav-previous">
+            <span class="nav-subtitle">Previous Post</span>
+            <a href="{{ page.previous.url | relative_url }}" rel="prev">{{ page.previous.title }}</a>
+          </div>
+        {% endif %}
+        
+        {% if page.next %}
+          <div class="nav-next">
+            <span class="nav-subtitle">Next Post</span>
+            <a href="{{ page.next.url | relative_url }}" rel="next">{{ page.next.title }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </nav>
   </main>
 
   <!-- Sidebar -->
