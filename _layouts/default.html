@@ -44,6 +44,7 @@
           <li>
             <a href="{{ '/category/' | append: category_name | downcase | replace: ' ', '-' | relative_url }}" class="nav-link">
             {{ category_name | replace: '-', ' ' | capitalize }}
+             <span class="post-count">({{ category[1].size }})</span>
             </a>
           </li>
           {% endfor %}
