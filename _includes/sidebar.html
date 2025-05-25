@@ -15,14 +15,17 @@
 <!-- Categories -->
 <div class="sidebar-section">
   <h3>Categories</h3>
-  <ul class="category-list">
-    <li><a href="{{ '/category/analytics-edge/' | relative_url }}">Analytics Edge <span class="post-count">(11)</span></a></li>
-    <li><a href="{{ '/category/big-picture/' | relative_url }}">Big Picture <span class="post-count">(6)</span></a></li>
-    <li><a href="{{ '/category/get-data/' | relative_url }}">Get to the Data <span class="post-count">(9)</span></a></li>
-    <li><a href="{{ '/category/governance-is-key/' | relative_url }}">Governance is key <span class="post-count">(7)</span></a></li>
-    <li><a href="{{ '/category/improve-the-experience/' | relative_url }}">Improve the Experience <span class="post-count">(17)</span></a></li>
-    <li><a href="{{ '/category/uncategorized/' | relative_url }}">Uncategorized <span class="post-count">(2)</span></a></li>
-  </ul>
+<ul class="category-list">
+    {% assign categories = site.categories %}
+    {% for category in categories %}
+        <li>
+            <a href="{{ '/category/' | append: category[0] | slugify | append: '/' | relative_url }}">
+                {{ category[0] | replace: '-', ' ' | capitalize }}
+                <span class="post-count">({{ category[1].size }})</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
 </div>
 
 <!-- Tags -->
