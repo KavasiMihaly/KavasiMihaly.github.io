@@ -1,0 +1,50 @@
+// Improved tag cloud appearance
+.improved-tag-cloud {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5em 0.7em !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+
+  .tag-link {
+    display: inline-block !important;
+    padding: 0.35em 1.1em !important;
+    border-radius: 2em !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    background: #f6f8fa !important;
+    color: #2d3a4a !important;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
+    margin: 0.1em 0.2em !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.01em !important;
+    border: 1px solid #e0e6ed !important;
+
+    &:hover {
+      background: #1976d2 !important;
+      color: #fff !important;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12) !important;
+      border-color: #1976d2 !important;
+    }
+  }
+
+  // Tag size classes (adjust as needed for your tag count range)
+  .tag-size-1 { font-size: 0.95rem !important; }
+  .tag-size-2 { font-size: 1.05rem !important; }
+  .tag-size-3 { font-size: 1.15rem !important; }
+  .tag-size-4 { font-size: 1.25rem !important; }
+  .tag-size-5, .tag-size-6 { font-size: 1.35rem !important; }
+  .tag-size-7, .tag-size-8 { font-size: 1.45rem !important; }
+  .tag-size-9, .tag-size-10 { font-size: 1.55rem !important; }
+
+  // Tag color classes (cycle through 8 soft pastel hues)
+  .tag-color-0 { background: #eaf4fb !important; color: #2d3a4a !important; }
+  .tag-color-1 { background: #f7eafc !important; color: #2d3a4a !important; }
+  .tag-color-2 { background: #eafbf2 !important; color: #2d3a4a !important; }
+  .tag-color-3 { background: #fdf6ea !important; color: #2d3a4a !important; }
+  .tag-color-4 { background: #f3f0fa !important; color: #2d3a4a !important; }
+  .tag-color-5 { background: #f9faea !important; color: #2d3a4a !important; }
+  .tag-color-6 { background: #f0f2fa !important; color: #2d3a4a !important; }
+  .tag-color-7 { background: #faeeea !important; color: #2d3a4a !important; }
+}

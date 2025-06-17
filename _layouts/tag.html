@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="tag-index">
+  <h1>Posts tagged with "{{ page.tag }}"</h1>
+  <ul>
+    {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains page.tag" %}
+    {% if tag_posts.size > 0 %}
+      {% for post in tag_posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="post-date">({{ post.date | date: "%Y-%m-%d" }})</span>
+        </li>
+      {% endfor %}
+    {% else %}
+      <li>No posts found for this tag.</li>
+    {% endif %}
+  </ul>
+</div>

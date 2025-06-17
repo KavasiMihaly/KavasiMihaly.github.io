@@ -31,19 +31,15 @@
 <!-- Tags -->
 <div class="sidebar-section">
   <h3>Tags</h3>
-  <div class="tag-cloud">
-    <a href="{{ '/tag/administration/' | relative_url }}" class="tag-link">Administration</a>
-    <a href="{{ '/tag/adoption/' | relative_url }}" class="tag-link">Adoption</a>
-    <a href="{{ '/tag/analyze-in-excel/' | relative_url }}" class="tag-link">Analyze in Excel</a>
-    <a href="{{ '/tag/api/' | relative_url }}" class="tag-link">API</a>
-    <a href="{{ '/tag/best-practice/' | relative_url }}" class="tag-link">Best Practice</a>
-    <a href="{{ '/tag/cx/' | relative_url }}" class="tag-link">CX</a>
-    <a href="{{ '/tag/data-model/' | relative_url }}" class="tag-link">Data Model</a>
-    <a href="{{ '/tag/governance/' | relative_url }}" class="tag-link">Governance</a>
-    <a href="{{ '/tag/log-analytics/' | relative_url }}" class="tag-link">Log Analytics</a>
-    <a href="{{ '/tag/performance/' | relative_url }}" class="tag-link">Performance</a>
-    <a href="{{ '/tag/power-bi/' | relative_url }}" class="tag-link">Power BI</a>
-    <a href="{{ '/tag/security/' | relative_url }}" class="tag-link">Security</a>
+  <div class="tag-cloud improved-tag-cloud">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      {% assign tag_size = tag[1].size %}
+      {% assign size_class = 'tag-size-' | append: tag_size | slice: 0, 10 %}
+      <a href="{{ '/tag/' | append: tag[0] | slugify | append: '/' | relative_url }}" class="tag-link {{ size_class }} tag-color-{{ forloop.index0 | modulo: 8 }}">
+        {{ tag[0] }}
+      </a>
+    {% endfor %}
   </div>
 </div>
 
