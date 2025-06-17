@@ -2,15 +2,14 @@
   <div class="site-header-image">
     <img src="{{ site.baseurl }}/assets/images/Header.png" alt="Self-Service BI Blog Header" width="100%">
   </div>
-  <h1><a href="/">{{ site.title }}</a></h1>
-  <nav>
+  <h1><a href="/">{{ site.title }}</a></h1>  <nav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/speaking/">Speaking</a></li>
-      <li><a href="/github-projects/">GitHub Projects</a></li>
-      <li><a href="/useful-links/">Useful Links</a></li>
-      <li><a href="/power-bi-features/">Power BI Features</a></li>
+      <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+      <li><a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
+      <li><a href="/speaking/" {% if page.url == "/speaking/" %}class="active"{% endif %}>Speaking</a></li>
+      <li><a href="/github-projects/" {% if page.url == "/github-projects/" %}class="active"{% endif %}>GitHub Projects</a></li>
+      <li><a href="/useful-links/" {% if page.url == "/useful-links/" %}class="active"{% endif %}>Useful Links</a></li>
+      <li><a href="/power-bi-features/" {% if page.url == "/power-bi-features/" %}class="active"{% endif %}>Power BI Features</a></li>
     </ul>
   </nav>
 </div>

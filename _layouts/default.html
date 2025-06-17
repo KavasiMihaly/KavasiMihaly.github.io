@@ -30,27 +30,7 @@
   </script>
 </head>
 <body>
-  <div class="wrapper">
-    {% include header.html %}
-    
-    <!-- Add main navigation for better UX -->
-    <nav class="main-navigation" role="navigation" aria-label="Main navigation">
-      <div class="nav-container">
-      <div class="nav-categories"></div>
-          {% assign categories = site.categories | sort %}
-          {% for category in categories %}
-          {% assign category_name = category[0] %}
-          {% assign posts = category[1] %}
-          <li>
-            <a href="{{ '/category/' | append: category_name | downcase | replace: ' ', '-' | relative_url }}" class="nav-link">
-            {{ category_name | replace: '-', ' ' | capitalize }}
-             <span class="post-count">({{ category[1].size }})</span>
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </nav>
+  <div class="wrapper">    {% include header.html %}
 
     <main role="main">
       {{ content }}

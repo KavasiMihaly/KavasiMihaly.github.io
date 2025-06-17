@@ -4,8 +4,6 @@ title: Speaking
 permalink: /speaking/
 ---
 
-# My Speaking Engagements
-
 Below you can find my sessions and upcoming and past speaking engagements. I regularly present at conferences and user groups on topics related to Self-Service BI, Power BI, and data analytics.
 
 ## My Sessions

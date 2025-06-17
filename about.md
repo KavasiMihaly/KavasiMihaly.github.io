@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-# Hello everyone,
+Hello everyone,
 
 This blog is about Self-Service BI using Microsoft's Azure and Power BI tool sets, focusing on the benefits and problems organizations face when trying to adopt this new way of driving decisions with data.
 
