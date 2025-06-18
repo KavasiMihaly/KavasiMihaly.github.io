@@ -49,7 +49,6 @@ pagination:
         <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
       </div>
     </li>{% endfor %}  </ul>
-
   {% if paginator.total_pages and paginator.total_pages > 1 %}
   <div class="pagination">
     {% if paginator.previous_page %}
@@ -61,4 +60,17 @@ pagination:
     {% endif %}
   </div>
   {% endif %}
+
+  <!-- Tags Cloud -->
+  <div class="home-tags-section">
+    <h3>Explore by Tags</h3>
+    <div class="tag-cloud improved-tag-cloud">
+      {% assign tags = site.tags | sort %}
+      {% for tag in tags %}
+        <a href="{{ '/tag/' | append: tag[0] | slugify | append: '/' | relative_url }}" class="tag-link tag-color-{{ forloop.index0 | modulo: 8 }}">
+          {{ tag[0] }} ({{ tag[1].size }})
+        </a>
+      {% endfor %}
+    </div>
+  </div>
 </div>
