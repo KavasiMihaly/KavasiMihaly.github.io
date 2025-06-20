@@ -27,14 +27,36 @@ pagination:
       <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
     {% endif %}
   </div>
-  {% endif %}
-
-  <ul class="post-list">{% for post in paginator.posts %}
+  {% endif %}  <ul class="post-list">{% for post in paginator.posts %}
     <li>
-      {% if post.meta and post.meta._thumbnail_id %}
+      {% assign post_image = null %}
+      {% if post.image %}
+        {% assign post_image = post.image %}
+      {% elsif post.meta and post.meta._thumbnail_id %}
+        {% assign post_image = '/assets/featured/' | append: post.meta._thumbnail_id | append: '.png' %}
+      {% else %}
+        {% assign first_image = post.content | split: '<img ' | slice: 1 %}
+        {% if first_image %}
+          {% assign src_start = first_image | split: 'src="' | slice: 1 %}
+          {% if src_start %}
+            {% assign post_image = src_start | split: '"' | first %}
+          {% endif %}
+        {% endif %}
+        {% unless post_image %}
+          {% assign markdown_images = post.content | split: '![' | slice: 1 %}
+          {% if markdown_images %}
+            {% assign img_url_part = markdown_images | split: '](' | slice: 1 %}
+            {% if img_url_part %}
+              {% assign post_image = img_url_part | split: ')' | first %}
+            {% endif %}
+          {% endif %}
+        {% endunless %}
+      {% endif %}
+      
+      {% if post_image %}
       <div class="post-thumbnail-header">
         <a href="{{ post.url | relative_url }}">
-          <img src="{{ site.baseurl }}/assets/featured/{{ post.meta._thumbnail_id }}.png" alt="{{ post.title }}">
+          <img src="{{ site.baseurl }}{{ post_image }}" alt="{{ post.title }}">
         </a>
       </div>
       {% endif %}
@@ -48,7 +70,7 @@ pagination:
         {% endif %}
         <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
       </div>
-    </li>{% endfor %}  </ul>
+    </li>{% endfor %}</ul>
   {% if paginator.total_pages and paginator.total_pages > 1 %}
   <div class="pagination">
     {% if paginator.previous_page %}

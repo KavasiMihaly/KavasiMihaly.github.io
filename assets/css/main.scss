@@ -325,6 +325,35 @@ a {
   }
 }
 
+// For post thumbnail headers in home page
+.post-thumbnail-header {
+  margin-bottom: 1rem;
+  max-width: 200px;
+  max-height: 120px;
+  overflow: hidden;
+  float: left;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+  img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
+  
+  a {
+    display: block;
+    line-height: 0;
+  }
+}
+
 .post-content-preview {
   overflow: hidden; // Creates a new block formatting context
 }
@@ -388,5 +417,36 @@ a {
     margin-bottom: 1.5rem;
     color: $accent-color;
     font-size: 1.4rem;
+  }
+}
+
+// Responsive styles for post thumbnails
+@media (max-width: 768px) {
+  .post-thumbnail-header {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    max-height: 200px;
+    
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  
+  .post-content-preview {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-thumbnail-header {
+    max-height: 150px;
+    
+    img {
+      height: 150px;
+    }
   }
 }
