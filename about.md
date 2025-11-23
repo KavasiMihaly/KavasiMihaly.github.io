@@ -16,31 +16,38 @@ The **Analytics Edge** section will contain deep dive pieces about certain capab
 
 ## About Me
 
-My name is Mihaly Kavasi. I am a practicing consultant working with data and self-service BI tools.
+<div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+  <img src="/assets/conference photo.jpg" alt="Mihaly Kavasi" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+  <img src="/assets/onedaybilogo_transparent.png" alt="One Day BI Logo" style="width: 100px; height: auto;">
+</div>
 
-Currently, I mainly use the Microsoft cloud stack, where I am also a trainer. Previously, I worked with other tools like Tableau.
+My name is Mihaly Kavasi. I am the founder of [One Day BI](https://www.onedaybi.com), where we transform Microsoft technology stacks into competitive advantage through transparent, daily improvements you can see and measure.
 
-I regularly see good and bad examples of how organizations start their journey to become a data-driven organization, and certain patterns emerged that seem to be universal for success. That led me to start this blog.
+At One Day BI, we specialize in:
+- **Analytics Governance** - Establishing robust frameworks for data quality, security, and compliance
+- **Self-Service BI Adoption Support** - Empowering teams to make data-driven decisions independently
+- **Analytics Platform Setup/Review** - Comprehensive configuration, security, and performance optimization
+- **BI Developer Training** - Practical, hands-on training tailored for all skill levels
+- **Open Data Integration** - Seamlessly integrating external data sources for enhanced insights
+- **Digital Marketing Analytics** - Transforming marketing data into actionable insights
 
-I would like to use this platform to organize my thoughts, share them with you, and based on feedback, improve my understanding of how to best approach this task of helping organizations reach their goals using data.
+Our commitment is to provide complete transparency at every step with daily progress updates and measurable improvements. We believe this builds the trust that makes data transformation successful.
+
+I regularly see good and bad examples of how organizations start their journey to become a data-driven organization, and certain patterns emerged that seem to be universal for success. That led me to start this blog - to organize my thoughts, share practical insights with you, and based on feedback, improve understanding of how to best help organizations reach their goals using data.
 
 ## Contact
 
-Let me know what questions and/or feedback you have for me. I’ll get back to you as quickly as I can.
+### Get in Touch
+
+For business inquiries and consulting services:
+- **Email**: [hello@onedaybi.com](mailto:hello@onedaybi.com)
+- **Phone**: [+44 7495 305 143](tel:+44 7495 305 143)
+- **Book a Consultation**: [Free Data Assessment](https://www.onedaybi.com/book-consultation)
+- **Website**: [www.onedaybi.com](https://www.onedaybi.com)
+
+For blog-related questions and feedback:
+- **Email**: [kavasi.mihaly@outlook.com](mailto:kavasi.mihaly@outlook.com)
+
+Let me know what questions or feedback you have for me. I'll get back to you as quickly as I can.
 
 Thanks! I look forward to hearing from you.
-
-<form action="https://formspree.io/f/your-form-id" method="POST">
-    <label for="name">Your Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
-    
-    <label for="email">Your Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-    
-    <label for="message">Your Message:</label><br>
-    <textarea id="message" name="message" rows="5" required></textarea><br><br>
-    
-    <button type="submit">Send</button>
-</form>
-
-<p>Your message will be sent to kavasi.mihaly@outlook.com. Thank you for reaching out!</p>
