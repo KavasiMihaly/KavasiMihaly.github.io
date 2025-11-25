@@ -149,3 +149,12 @@ layout: default
     {% include sidebar.html %}
   </aside>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.post-content a[href^="http"]').forEach(function (a) {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    });
+  });
+</script>
