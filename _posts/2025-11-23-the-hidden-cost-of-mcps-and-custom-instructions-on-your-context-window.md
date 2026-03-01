@@ -15,6 +15,14 @@ tags:
 excerpt: "Large context windows sound limitless—until you bolt on a few MCP servers and custom instructions. Here's how to stop burning 50% of your window before you paste a single line of code."
 author: Mihaly Kavasi
 image: /assets/images/the-hidden-cost-of-mcps-and-custom-instructions-on-your-context-window/Header.jpeg
+series: "context-window-optimization"
+series_title: "Context Window Optimization"
+series_part: 0
+series_total: 5
+permalink: /series/context-window-optimization/the-hidden-cost-of-mcps-and-custom-instructions-on-your-context-window/
+redirect_from:
+  - /analytics-edge/improve-the-experience/2025/11/23/the-hidden-cost-of-mcps-and-custom-instructions-on-your-context-window.html
+  - /analytics%20edge/improve%20the%20experience/2025/11/23/the-hidden-cost-of-mcps-and-custom-instructions-on-your-context-window.html
 ---
 
 ![Context Window Usage](/assets/images/the-hidden-cost-of-mcps-and-custom-instructions-on-your-context-window/Header.jpeg)

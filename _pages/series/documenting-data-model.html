@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Documenting Power BI Data Model Series"
+permalink: /series/documenting-data-model/
+---
+
+<div class="series-landing">
+  <h1>Documenting Power BI Data Model</h1>
+  <p class="series-landing__intro">A practical journey through documenting Power BI data models—from scripting approaches through Best Practice Analyzer actions, referential integrity checks, and a V2 with VertiPaq.</p>
+
+  {% assign series_posts = site.posts | where: "series", "documenting-data-model" | sort: "series_part" %}
+
+  {% for i in (1..4) %}
+    {% assign found = false %}
+    {% for post in series_posts %}
+      {% if post.series_part == i %}
+        <div class="series-landing__part">
+          <span class="series-landing__part-number">Part {{ i }}</span>
+          <h2 class="series-landing__part-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <div class="series-landing__part-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+          <p class="series-landing__part-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        </div>
+        {% assign found = true %}
+      {% endif %}
+    {% endfor %}
+    {% unless found %}
+      <div class="series-landing__part series-landing__part--upcoming">
+        <span class="series-landing__part-number">Part {{ i }}</span>
+        <h2 class="series-landing__part-title">Coming soon</h2>
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>

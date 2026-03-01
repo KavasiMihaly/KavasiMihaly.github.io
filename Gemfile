@@ -14,4 +14,5 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag", "~> 2.8"
   gem "jekyll-sitemap"
   gem "jekyll-paginate"
+  gem "jekyll-redirect-from"
 end

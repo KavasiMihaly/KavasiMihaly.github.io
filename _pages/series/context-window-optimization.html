@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Context Window Optimization Series"
+permalink: /series/context-window-optimization/
+---
+
+<div class="series-landing">
+  <h1>Context Window Optimization</h1>
+  <p class="series-landing__intro">Large context windows sound limitless—until you bolt on MCP servers and custom instructions. This series walks through every lever you can pull to reclaim your working memory.</p>
+
+  {% assign series_posts = site.posts | where: "series", "context-window-optimization" | sort: "series_part" %}
+
+  {% for i in (0..4) %}
+    {% assign found = false %}
+    {% for post in series_posts %}
+      {% if post.series_part == i %}
+        <div class="series-landing__part">
+          <span class="series-landing__part-number">Part {{ i }}</span>
+          <h2 class="series-landing__part-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <div class="series-landing__part-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+          <p class="series-landing__part-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        </div>
+        {% assign found = true %}
+      {% endif %}
+    {% endfor %}
+    {% unless found %}
+      <div class="series-landing__part series-landing__part--upcoming">
+        <span class="series-landing__part-number">Part {{ i }}</span>
+        <h2 class="series-landing__part-title">Coming soon</h2>
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>

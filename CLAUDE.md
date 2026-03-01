@@ -62,3 +62,44 @@ image: /assets/images/{post-slug}/Header.jpeg
 - Do NOT put new/draft blog posts directly in `_posts/` — use `_drafts/` first.
 - Image paths use forward slashes and start from site root: `/assets/images/slug/file.png`
 - Internal links to posts use the format: `/YYYY/MM/DD/slug.html`
+
+## Series Conventions
+
+### Front Matter Fields
+Posts that belong to a series must include these fields:
+```yaml
+series: "slug-identifier"           # URL-safe slug (e.g., "context-window-optimization")
+series_title: "Display Name"        # Human-readable name shown in UI
+series_part: 0                      # Integer part number (0-indexed or 1-indexed per series)
+series_total: 5                     # Total number of parts in the series
+permalink: /series/{slug}/{post-slug}/ # Canonical URL (use post's filename slug, NOT part-N)
+redirect_from:                      # Only for published posts with old URLs
+  - /old-url-here/
+```
+
+### Permalink Pattern
+All series posts use: `/series/{series-slug}/{post-slug}/` where `{post-slug}` is derived from the post filename (e.g., `the-hidden-cost-of-mcps-and-custom-instructions-on-your-context-window`). This is more SEO-friendly than generic `part-N` URLs.
+
+### Creating a New Series
+1. Choose a URL-safe slug (lowercase, hyphens)
+2. Add series front matter to each post
+3. Create a landing page at `_pages/series/{slug}.html`
+4. Add the series card to `_pages/series/index.html`
+5. For published posts changing URLs, add `redirect_from:` with old URL
+
+### Existing Series
+| Series | Slug | Parts |
+|--------|------|:-----:|
+| Context Window Optimization | `context-window-optimization` | 5 |
+| Built-in Analytics in Power BI | `built-in-analytics` | 4 |
+| Hidden Features of Analyze in Excel | `analyze-in-excel` | 3 |
+| Documenting Power BI Data Model | `documenting-data-model` | 4 |
+| Log Analytics for Power BI | `log-analytics-power-bi` | 2 |
+
+### Series Infrastructure Files
+- `_includes/series-nav.html` — In-post series TOC
+- `_includes/series-sidebar.html` — Sidebar widget
+- `_includes/series-schema.html` — Schema.org JSON-LD
+- `_sass/_series.scss` — Series styles
+- `_pages/series/index.html` — Master series listing
+- `_pages/series/{slug}.html` — Individual series landing pages

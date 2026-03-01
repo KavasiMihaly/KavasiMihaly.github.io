@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Built-in Analytics in Power BI Series"
+permalink: /series/built-in-analytics/
+---
+
+<div class="series-landing">
+  <h1>Built-in Analytics in Power BI</h1>
+  <p class="series-landing__intro">Exploring the analytical features already built into Power BI—from visual analytics lines to the Analyze feature and Explain the Change.</p>
+
+  {% assign series_posts = site.posts | where: "series", "built-in-analytics" | sort: "series_part" %}
+
+  {% for i in (1..4) %}
+    {% assign found = false %}
+    {% for post in series_posts %}
+      {% if post.series_part == i %}
+        <div class="series-landing__part">
+          <span class="series-landing__part-number">Part {{ i }}</span>
+          <h2 class="series-landing__part-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <div class="series-landing__part-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+          <p class="series-landing__part-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        </div>
+        {% assign found = true %}
+      {% endif %}
+    {% endfor %}
+    {% unless found %}
+      <div class="series-landing__part series-landing__part--upcoming">
+        <span class="series-landing__part-number">Part {{ i }}</span>
+        <h2 class="series-landing__part-title">Coming soon</h2>
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>

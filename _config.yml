@@ -16,6 +16,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-redirect-from
 
 # Tell Jekyll to process files in the _pages directory
 include: ["_pages"]

@@ -1,0 +1,32 @@
+{% if page.series %}
+{% assign series_posts = site.posts | where: "series", page.series | sort: "series_part" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "name": "{{ page.title | escape }}",
+  "headline": "{{ page.title | escape }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: 'Mihaly Kavasi' | escape }}"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "{{ page.series_title | escape }}",
+    "url": "{{ '/series/' | append: page.series | append: '/' | absolute_url }}",
+    "hasPart": [
+      {% for sp in series_posts %}
+      {
+        "@type": "Article",
+        "name": "{{ sp.title | escape }}",
+        "url": "{{ sp.url | absolute_url }}",
+        "position": {{ sp.series_part }}
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  },
+  "position": {{ page.series_part }}
+}
+</script>
+{% endif %}

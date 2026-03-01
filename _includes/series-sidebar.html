@@ -1,0 +1,34 @@
+{% if page.series %}
+{% assign series_posts = site.posts | where: "series", page.series | sort: "series_part" %}
+<div class="sidebar-section series-sidebar">
+  <h3>In This Series</h3>
+  <p class="series-sidebar__title">{{ page.series_title }}</p>
+  <ul class="series-sidebar__list">
+    {% for i in (0..page.series_total) %}
+      {% if i < page.series_total %}
+        {% assign found = false %}
+        {% for sp in series_posts %}
+          {% if sp.series_part == i %}
+            {% if i == page.series_part %}
+              <li class="series-sidebar__item series-sidebar__item--current">
+                <strong>Part {{ i }}: {{ sp.title | truncate: 50 }}</strong>
+              </li>
+            {% else %}
+              <li class="series-sidebar__item">
+                <a href="{{ sp.url | relative_url }}">Part {{ i }}: {{ sp.title | truncate: 50 }}</a>
+              </li>
+            {% endif %}
+            {% assign found = true %}
+          {% endif %}
+        {% endfor %}
+        {% unless found %}
+          <li class="series-sidebar__item series-sidebar__item--upcoming">
+            Part {{ i }}: Coming soon
+          </li>
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <a href="/series/{{ page.series }}/" class="series-sidebar__link">View full series &rarr;</a>
+</div>
+{% endif %}
