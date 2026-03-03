@@ -3,8 +3,7 @@ title: "The Hidden Cost of MCPs and Custom Instructions on Your Context Window"
 date: 2025-11-23 10:00:00 +0000
 layout: post
 categories:
-- Analytics Edge
-- Improve the Experience
+- AI Agents
 tags:
 - AI
 - Agents
@@ -18,7 +17,7 @@ image: /assets/images/the-hidden-cost-of-mcps-and-custom-instructions-on-your-co
 series: "context-window-optimization"
 series_title: "Context Window Optimization"
 series_part: 0
-series_total: 5
+series_total: 6
 permalink: /series/context-window-optimization/the-hidden-cost-of-mcps-and-custom-instructions-on-your-context-window/
 redirect_from:
   - /analytics-edge/improve-the-experience/2025/11/23/the-hidden-cost-of-mcps-and-custom-instructions-on-your-context-window.html

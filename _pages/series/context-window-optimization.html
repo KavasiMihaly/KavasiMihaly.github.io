@@ -10,7 +10,7 @@ permalink: /series/context-window-optimization/
 
   {% assign series_posts = site.posts | where: "series", "context-window-optimization" | sort: "series_part" %}
 
-  {% for i in (0..4) %}
+  {% for i in (0..5) %}
     {% assign found = false %}
     {% for post in series_posts %}
       {% if post.series_part == i %}

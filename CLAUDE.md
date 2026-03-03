@@ -90,7 +90,7 @@ All series posts use: `/series/{series-slug}/{post-slug}/` where `{post-slug}` i
 ### Existing Series
 | Series | Slug | Parts |
 |--------|------|:-----:|
-| Context Window Optimization | `context-window-optimization` | 5 |
+| Context Window Optimization | `context-window-optimization` | 6 |
 | Built-in Analytics in Power BI | `built-in-analytics` | 4 |
 | Hidden Features of Analyze in Excel | `analyze-in-excel` | 3 |
 | Documenting Power BI Data Model | `documenting-data-model` | 4 |
