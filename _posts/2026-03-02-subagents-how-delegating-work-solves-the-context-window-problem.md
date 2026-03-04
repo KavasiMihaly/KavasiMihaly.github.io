@@ -23,7 +23,7 @@ permalink: /series/context-window-optimization/subagents-how-delegating-work-sol
 
 ![Subagents Header](/assets/images/subagents-how-delegating-work-solves-the-context-window-problem/Agents_blog_header.png)
 
-I was experimenting /agebuilding an automated dbt data engineering solution—a SQL Server + dbt + Power BI pipeline—and I wanted Claude Code to help me build it layer by layer. The problem I kept running into: the agent would drift. When I asked it to build staging models, it would start making assumptions about fact table logic. When writing tests, it would forget the naming conventions from three messages earlier. Errors multiplied. The work got messier the longer the session ran.
+I was experimenting building an automated dbt data engineering solution—a SQL Server + dbt + Power BI pipeline—and I wanted Claude Code to help me build it layer by layer. The problem I kept running into: the agent would drift. When I asked it to build staging models, it would start making assumptions about fact table logic. When writing tests, it would forget the naming conventions from three messages earlier. Errors multiplied. The work got messier the longer the session ran.
 
 My first instinct was to write a more detailed CLAUDE.md. But the real issue wasn't instructions—it was focus. A single agent trying to hold the entire dbt project in its head at once was too much context, too many concerns at the same time.
 
