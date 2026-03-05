@@ -1,0 +1,4 @@
+[     559ms] [ERROR] {readyState: 0, getResponseHeader: , getAllResponseHeaders: , setRequestHeader: , overrideMimeType: } @ https://mikhail.io/js/bundle.min.js:6
+[     559ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://mikhailio-fa.azurewebsites.net/api/GetHeartCount:0
+[  143955ms] [ERROR] {readyState: 0, getResponseHeader: , getAllResponseHeaders: , setRequestHeader: , overrideMimeType: } @ https://mikhail.io/js/bundle.min.js:6
+[  143955ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://mikhailio-fa.azurewebsites.net/api/GetHeartCount:0
