@@ -246,10 +246,6 @@ Research $ARGUMENTS thoroughly:
 
 **`context: fork` skills don't have conversation history.** Forked subagent skills start clean and need any relevant context passed explicitly as arguments.
 
-## What's Next
-
-Skills and subagents keep your context lean during work — but the instructions that load *before* work begins matter just as much. Part 3 covers **CLAUDE.md files** — the global, project, and folder-level instruction hierarchy. A bloated CLAUDE.md taxes every conversation. Part 3 shows how to split instructions across levels so each file stays focused, nothing gets duplicated, and your agent behaves consistently across every repo.
-
 ## Key Takeaways
 
 **Skills are the on-demand alternative to always-loaded memory files**—only descriptions load at startup; full content loads only when invoked.
@@ -269,6 +265,10 @@ You don't have to start from scratch. Anthropic maintains an [open-source skills
 ![Anthropic's public skills repository on GitHub](/assets/images/skills-shrinking-your-memory-and-instruction-files/anthropics_skills_ Public repository.png)
 
 Browse the repo for patterns worth adopting — or fork it and contribute your own. If you've built a skill that solves a common problem (data profiling, code review, deployment checklists), others are likely duplicating the same instructions you just extracted.
+
+## What's Next
+
+Skills and subagents keep your context lean during work — but the instructions that load *before* work begins matter just as much. Part 3 covers **CLAUDE.md files** — the global, project, and folder-level instruction hierarchy. A bloated CLAUDE.md taxes every conversation. Part 3 shows how to split instructions across levels so each file stays focused, nothing gets duplicated, and your agent behaves consistently across every repo.
 
 ## Resources
 
